@@ -10,12 +10,15 @@ namespace Input
         private Camera _camera;
 
         private PlayerInput _playerInput;
+        private TileManager _tileManagrer;
 
         private void Awake()
         {
             _camera = GetComponent<Camera>();
 
             _playerInput = GameObject.FindAnyObjectByType<PlayerInput>();
+
+            _tileManagrer = GameObject.FindAnyObjectByType<TileManager>();
         }
 
         private void OnEnable()
@@ -36,8 +39,7 @@ namespace Input
             RaycastHit2D hit = Physics2D.Raycast(ray.origin, ray.direction);
             if (hit && hit.transform.tag == "Terrain")
             {
-                Tile tile = hit.transform.GetComponent<Tile>();
-                tile.GetSelected();
+                _tileManagrer.SetSelectedTile(hit.transform.GetComponent<Tile>());
             }
         }
     }

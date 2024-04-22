@@ -10,5 +10,10 @@ namespace Terrain
         {
             _spriteRenderer.color = Color.grey;
         }
+
+        public void Unselect()
+        {
+            _spriteRenderer.color = Color.white;
+        }
     }
 }
