@@ -7,7 +7,7 @@ namespace Terrain
     {
         [SerializeField] private Tile _selectedTile;
 
-        public static TileChanged tileChanged = new TileChanged();
+        public TileChanged tileChanged = new TileChanged();
 
         public void SetSelectedTile(Tile tile)
         {
@@ -17,7 +17,7 @@ namespace Terrain
             _selectedTile = tile;
             _selectedTile.GetSelected();
 
-            tileChanged.Invoke();
+            tileChanged.Invoke(_selectedTile);
         }
 
         public Tile GetSelectedTile()
@@ -25,6 +25,6 @@ namespace Terrain
             return _selectedTile;
         }
 
-        public class TileChanged : UnityEvent { }
+        public class TileChanged : UnityEvent<Tile> { }
     }
 }
