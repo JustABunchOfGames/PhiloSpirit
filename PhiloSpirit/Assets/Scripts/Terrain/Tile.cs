@@ -1,10 +1,13 @@
 using UnityEngine;
+using Resources;
 
 namespace Terrain
 {
     public class Tile : MonoBehaviour
     {
         [SerializeField] private SpriteRenderer _spriteRenderer;
+
+        [SerializeField] private Inventory _inventory;
 
         public void GetSelected()
         {
