@@ -24,7 +24,7 @@ namespace UI
         {
             _tileUI.SetActive(true);
 
-            _tileName.text = tile.name;
+            _tileName.text = tile.GetName();
             _tilePosition.text = tile.transform.position.x + " / " + tile.transform.position.y;
         }
     }

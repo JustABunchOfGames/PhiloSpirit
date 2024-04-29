@@ -5,19 +5,22 @@ namespace Terrain
 {
     public class TileManager : MonoBehaviour
     {
-        [SerializeField] private Tile _selectedTile;
+        [SerializeField] private GameObject _selectIndicatorPrefab;
+        private GameObject _selectIndicator;
+
+        private Tile _selectedTile;
 
         public TileChanged tileChanged = new TileChanged();
 
         public void SetSelectedTile(Tile tile)
         {
-            if (_selectedTile != tile && _selectedTile != null)
-                _selectedTile.Unselect();
-
             _selectedTile = tile;
-            _selectedTile.GetSelected();
-
             tileChanged.Invoke(_selectedTile);
+
+            if (_selectIndicator == null)
+                _selectIndicator = Instantiate(_selectIndicatorPrefab, transform);
+            
+            _selectIndicator.transform.position = _selectedTile.transform.position;
         }
 
         public Tile GetSelectedTile()

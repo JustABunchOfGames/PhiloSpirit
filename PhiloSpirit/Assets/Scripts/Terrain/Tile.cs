@@ -3,20 +3,23 @@ using Resources;
 
 namespace Terrain
 {
+    public enum TileType
+    {
+        Land,
+        Portal,
+        Forest,
+        Mountain
+    }
+
     public class Tile : MonoBehaviour
     {
-        [SerializeField] private SpriteRenderer _spriteRenderer;
+        [SerializeField] private TileType _tileType;
 
         [SerializeField] private Inventory _inventory;
 
-        public void GetSelected()
+        public string GetName()
         {
-            _spriteRenderer.color = Color.grey;
-        }
-
-        public void Unselect()
-        {
-            _spriteRenderer.color = Color.white;
+            return _tileType.ToString();
         }
     }
 }
