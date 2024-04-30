@@ -8,10 +8,11 @@ namespace UI
     {
         [SerializeField] private TileManager _tileManager;
 
-        // UI Element
+        [Header("UI Objects")]
         [SerializeField] private GameObject _tileUI;
+        [SerializeField] private TileInventoryUI _tileInventoryUI;
 
-        // Text Area
+        [Header("Text area")]
         [SerializeField] private Text _tileName;
         [SerializeField] private Text _tilePosition;
 
@@ -26,6 +27,8 @@ namespace UI
 
             _tileName.text = tile.GetName();
             _tilePosition.text = tile.transform.position.x + " / " + tile.transform.position.y;
+
+            _tileInventoryUI.ShowTileInventory(tile);
         }
     }
 }

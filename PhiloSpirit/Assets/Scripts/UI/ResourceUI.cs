@@ -1,0 +1,19 @@
+using Resources;
+using UnityEngine;
+using UnityEngine.UI;
+
+namespace UI
+{
+
+    public class ResourceUI : MonoBehaviour
+    {
+        [SerializeField] private Text _name;
+        [SerializeField] private Text _quantity;
+
+        public void Init(Resource resource)
+        {
+            _name.text = resource.type.ToString();
+            _quantity.text = resource.quantity.ToString();
+        }
+    }
+}

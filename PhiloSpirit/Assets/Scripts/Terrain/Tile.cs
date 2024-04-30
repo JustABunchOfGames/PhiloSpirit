@@ -15,7 +15,7 @@ namespace Terrain
     {
         [SerializeField] private TileType _tileType;
 
-        [SerializeField] private Inventory _inventory;
+        public Inventory inventory;
 
         public string GetName()
         {

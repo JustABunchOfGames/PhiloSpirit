@@ -1,4 +1,3 @@
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -8,6 +7,7 @@ namespace Resources
     public class Inventory
     {
         [SerializeField] private List<Resource> _inventory = new List<Resource>();
+        public List<Resource> resources { get { return _inventory; } }
 
         public void Add(Resource item)
         {
