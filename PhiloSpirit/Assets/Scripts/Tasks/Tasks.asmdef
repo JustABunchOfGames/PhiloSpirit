@@ -1,11 +1,10 @@
 {
-    "name": "UI",
+    "name": "Tasks",
     "rootNamespace": "",
     "references": [
-        "GUID:2bafac87e7f4b9b418d9448d219b01ab",
-        "GUID:7587003a1f72d1643b29230721e8925a",
         "GUID:1955344bde4b78947aff5eb76de0dd15",
-        "GUID:5702aad35098d1f4c9bd627efb89dd94"
+        "GUID:8c359999efbe39844b8b0b49a6d1800d",
+        "GUID:31b5e1df4ae7eff438435a1ddeb0c574"
     ],
     "includePlatforms": [],
     "excludePlatforms": [],

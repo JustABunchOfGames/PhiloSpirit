@@ -19,7 +19,7 @@ MonoBehaviour:
     width: 1920
     height: 997
   m_ShowMode: 4
-  m_Title: Hierarchy
+  m_Title: Inspector
   m_RootView: {fileID: 2}
   m_MinSize: {x: 875, y: 300}
   m_MaxSize: {x: 10000, y: 10000}
@@ -119,7 +119,7 @@ MonoBehaviour:
   m_MinSize: {x: 300, y: 100}
   m_MaxSize: {x: 24288, y: 16192}
   vertical: 0
-  controlID: 40
+  controlID: 99
 --- !u!114 &6
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -413,9 +413,9 @@ MonoBehaviour:
   m_SceneHierarchy:
     m_TreeViewState:
       scrollPos: {x: 0, y: 0}
-      m_SelectedIDs: 02f9ffff
-      m_LastClickedID: -1790
-      m_ExpandedIDs: c2a5ffff14fbffff16fbffff146400003064000042640000
+      m_SelectedIDs: 68d4ffff
+      m_LastClickedID: -11160
+      m_ExpandedIDs: 26c9ffff9cf4ffff02f9ffff14fbffff44640000
       m_RenameOverlay:
         m_UserAcceptedRename: 0
         m_Name: 
@@ -1015,7 +1015,7 @@ MonoBehaviour:
     m_SkipHidden: 0
     m_SearchArea: 1
     m_Folders:
-    - Assets/Scripts/FogOfWar
+    - Assets/Scripts/Tasks
     m_Globs: []
     m_OriginalText: 
     m_ImportLogFlags: 0
@@ -1023,16 +1023,16 @@ MonoBehaviour:
   m_ViewMode: 1
   m_StartGridSize: 16
   m_LastFolders:
-  - Assets/Scripts/FogOfWar
+  - Assets/Scripts/Tasks
   m_LastFoldersGridSize: 16
   m_LastProjectPath: C:\Unity_Projects\PhiloSpirit\PhiloSpirit
   m_LockTracker:
     m_IsLocked: 0
   m_FolderTreeState:
     scrollPos: {x: 0, y: 0}
-    m_SelectedIDs: c26c0000
-    m_LastClickedID: 27842
-    m_ExpandedIDs: 000000005e650000606500006265000064650000666500006865000000ca9a3b
+    m_SelectedIDs: 1e660000
+    m_LastClickedID: 26142
+    m_ExpandedIDs: 00000000826500008465000086650000886500008a6500008c65000000ca9a3b
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -1060,7 +1060,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
-    m_ExpandedIDs: 000000005e6500006065000062650000646500006665000068650000
+    m_ExpandedIDs: 00000000826500008465000086650000886500008a6500008c650000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -1186,7 +1186,7 @@ MonoBehaviour:
     m_OverlaysVisible: 1
   m_LockTracker:
     m_IsLocked: 0
-  m_LastSelectedObjectID: -1790
+  m_LastSelectedObjectID: -14042
 --- !u!114 &19
 MonoBehaviour:
   m_ObjectHideFlags: 52

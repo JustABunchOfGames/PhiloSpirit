@@ -26,5 +26,12 @@ namespace Resources
 
             _inventory.Add(item);
         }
+
+        public void Remove(Resource item)
+        {
+            item.quantity = -item.quantity;
+
+            Add(item);
+        }
     }
 }
