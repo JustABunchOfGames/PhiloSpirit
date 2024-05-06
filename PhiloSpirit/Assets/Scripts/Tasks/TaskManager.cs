@@ -1,6 +1,7 @@
 using Resources;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 namespace Tasks
 {
@@ -9,7 +10,12 @@ namespace Tasks
     {
         [SerializeField] private List<Task> _currentTasks = new List<Task>();
 
+         // Inventory for the cost of accepted tasks
         [SerializeField] private Inventory _totalCost = new Inventory();
+        public Inventory totalCost { get { return _totalCost; } private set { } } 
+
+        // Event to notify a change in cost for UI
+        public TaskCostChangeEvent costChanged = new TaskCostChangeEvent();
 
         [SerializeField] private List<Task> _completedTasks = new List<Task>();
 
@@ -21,6 +27,8 @@ namespace Tasks
             {
                 _totalCost.Add(resource);
             }
+
+            costChanged.Invoke();
         }
 
         public void RemoveTask(Task task)
@@ -31,9 +39,11 @@ namespace Tasks
             {
                 _totalCost.Remove(resource);
             }
+
+            costChanged.Invoke();
         }
 
-        public void ApplyAll()
+        public void CompleteTasks()
         {
             foreach (Task task in _currentTasks)
             {
@@ -42,6 +52,11 @@ namespace Tasks
             }
 
             _currentTasks.Clear();
+            _totalCost.resources.Clear();
+
+            costChanged.Invoke();
         }
     }
+
+    public class TaskCostChangeEvent : UnityEvent { }
 }
