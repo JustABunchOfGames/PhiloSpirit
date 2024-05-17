@@ -6,13 +6,15 @@ namespace UI {
 
     public class UsableSpiritListUI : MonoBehaviour
     {
+        [SerializeField] private SpiritManager _spiritManager;
+
         [SerializeField] private SpiritColorScriptable _spiritColor;
 
         [SerializeField] private List<UsableSpiritType> _usableSpiritList;
 
         private Dictionary<SpiritType, UsableSpiritUI> _usableSpiritDictionaty;
 
-        private void Start()
+        private void Awake()
         {
             _usableSpiritDictionaty = new Dictionary<SpiritType, UsableSpiritUI>();
 
@@ -22,11 +24,14 @@ namespace UI {
 
                 _usableSpiritDictionaty.Add(usableSpiritType.spiritType, usableSpiritType.spiritUI);
             }
+
+            _spiritManager.updateSpiritEvent.AddListener(UpdateSpirit);
         }
 
-        private void UpdateQuantity(SpiritType type, int quantity)
+        private void UpdateSpirit(SpiritData spiritData, int quantity)
         {
-            _usableSpiritDictionaty[type].UpdateQuantity(quantity);
+            // We update the usableSpirit quantity, we don't care if we added or substracted a spirit
+            _usableSpiritDictionaty[spiritData.type].UpdateQuantity(spiritData.usableSpirit);
         }
     }
 

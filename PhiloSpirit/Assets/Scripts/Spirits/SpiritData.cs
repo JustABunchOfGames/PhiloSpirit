@@ -12,12 +12,13 @@ namespace Spirits
     [System.Serializable]
     public class SpiritData
     {
+        public SpiritType type { get; private set; }
         public int maxSpirit { get; private set; }
         public int usableSpirit { get; private set; }
         public int addCost { get; private set; }
         public int removeCost { get; private set; }
 
-        public SpiritData()
+        public SpiritData(SpiritType type)
         {
             maxSpirit = 0;
             usableSpirit = 0;
@@ -25,6 +26,7 @@ namespace Spirits
             addCost = 1;
             removeCost = 1;
 
+            this.type = type;
         }
 
         public void AddSpirit()

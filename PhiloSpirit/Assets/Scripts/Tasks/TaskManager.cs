@@ -25,7 +25,7 @@ namespace Tasks
         // SpiritManager for spirit cost
         [SerializeField] private SpiritManager _spiritManager;
 
-        private void Start()
+        private void Awake()
         {
             _spiritManager.updateSpiritEvent.AddListener(UpdateCostForSpirit);
         }

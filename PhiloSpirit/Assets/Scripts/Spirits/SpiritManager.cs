@@ -11,15 +11,23 @@ namespace Spirits
 
         public UpdateSpiritEvent updateSpiritEvent = new UpdateSpiritEvent();
 
-        private void Start()
+        private void Awake()
         {
             _spirits = new Dictionary<SpiritType, SpiritData>
             {
-                { SpiritType.Earth, new SpiritData() },
-                { SpiritType.Wind, new SpiritData() },
-                { SpiritType.Water, new SpiritData() },
-                { SpiritType.Fire, new SpiritData() }
+                { SpiritType.Earth, new SpiritData(SpiritType.Earth) },
+                { SpiritType.Wind, new SpiritData(SpiritType.Wind) },
+                { SpiritType.Water, new SpiritData(SpiritType.Water) },
+                { SpiritType.Fire, new SpiritData(SpiritType.Fire) }
             };
+        }
+
+        private void Start()
+        {
+            foreach (SpiritData spiritData in _spirits.Values)
+            {
+                updateSpiritEvent.Invoke(spiritData, 0);
+            }
         }
 
         public void AddSpirit(SpiritType spiritType)
@@ -46,7 +54,11 @@ namespace Spirits
 
         public void UsePirit(SpiritType spiritType, int quantity)
         {
-            _spirits[spiritType].UseSpirit(quantity);
+            if (CanUseSpirit(spiritType, quantity))
+            {
+                _spirits[spiritType].UseSpirit(quantity);
+                updateSpiritEvent.Invoke(_spirits[spiritType], 0);
+            }
         }
 
         public bool CanUseSpirit(SpiritType spiritType, int quantity)
