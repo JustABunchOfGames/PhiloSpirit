@@ -24,13 +24,19 @@ namespace Input
         private void OnEnable()
         {
             if (_playerInput != null)
+            {
                 _playerInput.actions["Select"].performed += SelectTile;
+                _playerInput.actions["Unselect"].performed += UnselectTile;
+            }
         }
 
         private void OnDisable()
         {
             if (_playerInput != null)
+            {
                 _playerInput.actions["Select"].performed -= SelectTile;
+                _playerInput.actions["Unselect"].performed -= UnselectTile;
+            }
         }
 
         private void SelectTile(InputAction.CallbackContext context)
@@ -41,6 +47,11 @@ namespace Input
             {
                 _tileManagrer.SetSelectedTile(hit.transform.GetComponent<Tile>());
             }
+        }
+
+        private void UnselectTile(InputAction.CallbackContext context)
+        {
+            _tileManagrer.SetSelectedTile(null);
         }
     }
 }

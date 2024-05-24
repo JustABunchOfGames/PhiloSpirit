@@ -11,6 +11,7 @@ namespace UI
         [Header("UI Objects")]
         [SerializeField] private GameObject _tileUI;
         [SerializeField] private TileInventoryUI _tileInventoryUI;
+        [SerializeField] private TileTransportUI _tileTransportUI;
 
         [Header("Text area")]
         [SerializeField] private Text _tileName;
@@ -23,12 +24,26 @@ namespace UI
 
         private void ShowTileUI(Tile tile)
         {
+            if (tile == null)
+            {
+                HideTileUI();
+                return;
+            }
+
             _tileUI.SetActive(true);
 
             _tileName.text = tile.GetName();
             _tilePosition.text = tile.transform.position.x + " / " + tile.transform.position.y;
 
             _tileInventoryUI.ShowTileInventory(tile);
+
+            _tileTransportUI.gameObject.SetActive(false);
+            _tileInventoryUI.gameObject.SetActive(true);
+        }
+
+        private void HideTileUI()
+        {
+            _tileUI.SetActive(false);
         }
     }
 }

@@ -31,6 +31,15 @@
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": false
+                },
+                {
+                    "name": "Unselect",
+                    "type": "Button",
+                    "id": "a34f361e-99c6-4447-a716-3e76bbf0364d",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
                 }
             ],
             "bindings": [
@@ -152,6 +161,17 @@
                     "processors": "",
                     "groups": ";Keyboard&Mouse",
                     "action": "Select",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "7d37bac7-f25a-4bc2-8e55-10152bc403b4",
+                    "path": "<Mouse>/rightButton",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Keyboard&Mouse",
+                    "action": "Unselect",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }

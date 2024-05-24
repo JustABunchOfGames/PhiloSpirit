@@ -1,0 +1,102 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Unity_Projects\\PhiloSpirit\\PhiloSpirit\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{F2FD197B-CAD6-278C-0BB2-420EB1C84C6C}|UI.csproj|C:\\Unity_Projects\\PhiloSpirit\\PhiloSpirit\\assets\\scripts\\ui\\tileui.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F2FD197B-CAD6-278C-0BB2-420EB1C84C6C}|UI.csproj|solutionrelative:assets\\scripts\\ui\\tileui.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F2FD197B-CAD6-278C-0BB2-420EB1C84C6C}|UI.csproj|c:\\unity_projects\\philospirit\\philospirit\\assets\\scripts\\ui\\tiletransportui.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F2FD197B-CAD6-278C-0BB2-420EB1C84C6C}|UI.csproj|solutionrelative:assets\\scripts\\ui\\tiletransportui.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F2FD197B-CAD6-278C-0BB2-420EB1C84C6C}|UI.csproj|C:\\Unity_Projects\\PhiloSpirit\\PhiloSpirit\\assets\\scripts\\ui\\tileinventoryui.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F2FD197B-CAD6-278C-0BB2-420EB1C84C6C}|UI.csproj|solutionrelative:assets\\scripts\\ui\\tileinventoryui.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{AA7B23D5-5570-4D17-443F-85CF55DD040C}|Input.csproj|C:\\Unity_Projects\\PhiloSpirit\\PhiloSpirit\\assets\\scripts\\input\\camerainput.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{AA7B23D5-5570-4D17-443F-85CF55DD040C}|Input.csproj|solutionrelative:assets\\scripts\\input\\camerainput.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F4488E99-EAEB-B2C7-9C0D-FE68E6CEE847}|Terrain.csproj|C:\\Unity_Projects\\PhiloSpirit\\PhiloSpirit\\assets\\scripts\\terrain\\tilemanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F4488E99-EAEB-B2C7-9C0D-FE68E6CEE847}|Terrain.csproj|solutionrelative:assets\\scripts\\terrain\\tilemanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 3,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "TileTransportUI.cs",
+              "DocumentMoniker": "C:\\Unity_Projects\\PhiloSpirit\\PhiloSpirit\\Assets\\Scripts\\UI\\TileTransportUI.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\UI\\TileTransportUI.cs",
+              "ToolTip": "C:\\Unity_Projects\\PhiloSpirit\\PhiloSpirit\\Assets\\Scripts\\UI\\TileTransportUI.cs",
+              "RelativeToolTip": "Assets\\Scripts\\UI\\TileTransportUI.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAUAAAAgAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-05-24T08:08:04.32Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "TileInventoryUI.cs",
+              "DocumentMoniker": "C:\\Unity_Projects\\PhiloSpirit\\PhiloSpirit\\Assets\\Scripts\\UI\\TileInventoryUI.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\UI\\TileInventoryUI.cs",
+              "ToolTip": "C:\\Unity_Projects\\PhiloSpirit\\PhiloSpirit\\Assets\\Scripts\\UI\\TileInventoryUI.cs",
+              "RelativeToolTip": "Assets\\Scripts\\UI\\TileInventoryUI.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-05-24T08:05:56.23Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "TileManager.cs",
+              "DocumentMoniker": "C:\\Unity_Projects\\PhiloSpirit\\PhiloSpirit\\Assets\\Scripts\\Terrain\\TileManager.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\Terrain\\TileManager.cs",
+              "ToolTip": "C:\\Unity_Projects\\PhiloSpirit\\PhiloSpirit\\Assets\\Scripts\\Terrain\\TileManager.cs",
+              "RelativeToolTip": "Assets\\Scripts\\Terrain\\TileManager.cs",
+              "ViewState": "AQIAAAMAAAAAAAAAAAAAABMAAAAoAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-05-24T07:50:22.77Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "TileUI.cs",
+              "DocumentMoniker": "C:\\Unity_Projects\\PhiloSpirit\\PhiloSpirit\\Assets\\Scripts\\UI\\TileUI.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\UI\\TileUI.cs",
+              "ToolTip": "C:\\Unity_Projects\\PhiloSpirit\\PhiloSpirit\\Assets\\Scripts\\UI\\TileUI.cs",
+              "RelativeToolTip": "Assets\\Scripts\\UI\\TileUI.cs",
+              "ViewState": "AQIAAAsAAAAAAAAAAAAQwCgAAAA4AAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-05-24T07:49:24.283Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "CameraInput.cs",
+              "DocumentMoniker": "C:\\Unity_Projects\\PhiloSpirit\\PhiloSpirit\\Assets\\Scripts\\Input\\CameraInput.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\Input\\CameraInput.cs",
+              "ToolTip": "C:\\Unity_Projects\\PhiloSpirit\\PhiloSpirit\\Assets\\Scripts\\Input\\CameraInput.cs",
+              "RelativeToolTip": "Assets\\Scripts\\Input\\CameraInput.cs",
+              "ViewState": "AQIAAAgAAAAAAAAAAAAYwCYAAAANAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-05-24T07:46:30.813Z"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

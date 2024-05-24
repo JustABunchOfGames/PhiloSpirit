@@ -14,6 +14,15 @@ namespace Terrain
 
         public void SetSelectedTile(Tile tile)
         {
+            if (tile == null)
+            {
+                _selectedTile = null;
+                Destroy(_selectIndicator);
+                _selectIndicator = null;
+                tileChanged.Invoke(_selectedTile);
+                return;
+            }
+
             _selectedTile = tile;
             tileChanged.Invoke(_selectedTile);
 
@@ -21,11 +30,6 @@ namespace Terrain
                 _selectIndicator = Instantiate(_selectIndicatorPrefab, transform);
             
             _selectIndicator.transform.position = _selectedTile.transform.position;
-        }
-
-        public Tile GetSelectedTile()
-        {
-            return _selectedTile;
         }
 
         public class TileChanged : UnityEvent<Tile> { }
