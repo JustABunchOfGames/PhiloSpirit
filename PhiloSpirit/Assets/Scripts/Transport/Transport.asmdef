@@ -1,13 +1,9 @@
 {
-    "name": "UI",
+    "name": "Transport",
     "rootNamespace": "",
     "references": [
-        "GUID:2bafac87e7f4b9b418d9448d219b01ab",
         "GUID:7587003a1f72d1643b29230721e8925a",
-        "GUID:1955344bde4b78947aff5eb76de0dd15",
-        "GUID:5702aad35098d1f4c9bd627efb89dd94",
-        "GUID:be55739e085e82344b95ab99c5b336ab",
-        "GUID:b3208ef087ae5b6498eff9b287950b4e"
+        "GUID:733a6d861dc762743bfc7fea3aa2aa21"
     ],
     "includePlatforms": [],
     "excludePlatforms": [],

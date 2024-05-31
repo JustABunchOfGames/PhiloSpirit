@@ -36,6 +36,7 @@ namespace UI
             _tilePosition.text = tile.transform.position.x + " / " + tile.transform.position.y;
 
             _tileInventoryUI.ShowTileInventory(tile);
+            _tileTransportUI.InitTransport(tile);
 
             _tileTransportUI.gameObject.SetActive(false);
             _tileInventoryUI.gameObject.SetActive(true);
