@@ -19,7 +19,7 @@ MonoBehaviour:
     width: 1920
     height: 997
   m_ShowMode: 4
-  m_Title: Game
+  m_Title: Scene
   m_RootView: {fileID: 2}
   m_MinSize: {x: 875, y: 300}
   m_MaxSize: {x: 10000, y: 10000}
@@ -413,9 +413,9 @@ MonoBehaviour:
   m_SceneHierarchy:
     m_TreeViewState:
       scrollPos: {x: 0, y: 0}
-      m_SelectedIDs: eae0ffff
-      m_LastClickedID: -7958
-      m_ExpandedIDs: eae0ffff14fbffff16fbffff70640000b4640000ce640000126500006c650000a6650000d0650000d6650000146600002e660000
+      m_SelectedIDs: e4640000
+      m_LastClickedID: 25828
+      m_ExpandedIDs: 14fbffff92640000e4640000
       m_RenameOverlay:
         m_UserAcceptedRename: 0
         m_Name: 
@@ -821,9 +821,9 @@ MonoBehaviour:
   m_PlayAudio: 0
   m_AudioPlay: 0
   m_Position:
-    m_Target: {x: 2.443886, y: -1.657622, z: 0.060032576}
+    m_Target: {x: 1.2239344, y: -0.088270865, z: 563.20825}
     speed: 2
-    m_Value: {x: 2.443886, y: -1.657622, z: 0.060032576}
+    m_Value: {x: 1.2239344, y: -0.088270865, z: 563.20825}
   m_RenderMode: 0
   m_CameraMode:
     drawMode: 0
@@ -873,9 +873,9 @@ MonoBehaviour:
     speed: 2
     m_Value: {x: 0, y: 0, z: 0, w: 1}
   m_Size:
-    m_Target: 3.2677755
+    m_Target: 5.460521
     speed: 2
-    m_Value: 3.2677755
+    m_Value: 5.460521
   m_Ortho:
     m_Target: 1
     speed: 2
@@ -1032,7 +1032,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 06680000
     m_LastClickedID: 26630
-    m_ExpandedIDs: 000000009c6700009e670000a0670000a2670000a4670000a667000000ca9a3b
+    m_ExpandedIDs: 00000000a4670000a6670000a8670000aa670000ac670000ae670000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -1060,7 +1060,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
-    m_ExpandedIDs: 000000009c6700009e670000a0670000a2670000a4670000a6670000
+    m_ExpandedIDs: 00000000a4670000a6670000a8670000aa670000ac670000ae670000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -1186,7 +1186,7 @@ MonoBehaviour:
     m_OverlaysVisible: 1
   m_LockTracker:
     m_IsLocked: 0
-  m_LastSelectedObjectID: -7958
+  m_LastSelectedObjectID: 25828
 --- !u!114 &19
 MonoBehaviour:
   m_ObjectHideFlags: 52
