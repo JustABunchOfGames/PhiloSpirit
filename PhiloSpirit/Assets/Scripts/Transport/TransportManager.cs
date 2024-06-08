@@ -1,23 +1,33 @@
 using Input;
 using System.Collections;
-using System.Xml.Linq;
 using Terrain;
 using UnityEngine;
+using UnityEngine.Events;
 
 namespace Transport
 {
 
     public class TransportManager : MonoBehaviour
     {
+        [Header("Managers")]
         [SerializeField] private InputManager _inputManager;
+        [SerializeField] private TileManager _tileManager;
+
+        [Header("LineRendering")]
         [SerializeField] private LineRenderer _lineRenderer;
 
         // Tile for transport
         private Tile _startTile;
         private Tile _endTile;
+
+        // Bool to know the direction of the transport
         private bool _startToEnd;
 
+        // Stop Rendering on the coroutine
         private bool _isRendering;
+
+        // Event for UI
+        public TransportScreenEvent screenEvent = new TransportScreenEvent();
 
         public void StartTransport(Tile tile, bool startToEnd)
         {
@@ -28,8 +38,12 @@ namespace Transport
             else
                 _endTile = tile;
 
+            // Change behaviour of InputManager to stop selecting tiles
             _inputManager.IsSelecting(false);
             _inputManager.tileClickedEvent.AddListener(TileClicked);
+
+            // Hide TileUI
+            _tileManager.SetSelectedTile(null);
 
             // Fix all lines at the selected tile
             DrawLineRenderer(tile.transform.position, true);
@@ -51,6 +65,9 @@ namespace Transport
             if (tile == null)
             {
                 _lineRenderer.gameObject.SetActive(false);
+
+                // Reshow tile
+                _tileManager.SetSelectedTile(_startToEnd ? _startTile : _endTile);
             }
             else
             {
@@ -62,6 +79,23 @@ namespace Transport
                 {
                     _startTile = tile;
                 }
+
+                screenEvent.Invoke(new TransportScreen(_startTile, _endTile));
+            }
+        }
+
+        public void EndTransport(bool confirmed)
+        {
+            if (!confirmed)
+            {
+                if (_startToEnd)
+                    StartTransport(_startTile, _startToEnd);
+                else
+                    StartTransport(_endTile, _startToEnd);
+            }
+            else
+            {
+                Debug.Log("Confirm Transport");
             }
         }
 
@@ -125,5 +159,7 @@ namespace Transport
             points = new Vector3[5] { position, endPos, u, v, endPos };
             _lineRenderer.SetPositions(points);
         }
+
+        public class TransportScreenEvent : UnityEvent<TransportScreen> { }
     }
 }

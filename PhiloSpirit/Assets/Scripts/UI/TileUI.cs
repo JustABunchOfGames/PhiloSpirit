@@ -6,8 +6,6 @@ namespace UI
 {
     public class TileUI : MonoBehaviour
     {
-        [SerializeField] private TileManager _tileManager;
-
         [Header("UI Objects")]
         [SerializeField] private GameObject _tileUI;
         [SerializeField] private TileInventoryUI _tileInventoryUI;
@@ -19,7 +17,7 @@ namespace UI
 
         private void Start()
         {
-            _tileManager.tileChanged.AddListener(ShowTileUI);
+            TileManager.tileChanged.AddListener(ShowTileUI);
         }
 
         private void ShowTileUI(Tile tile)

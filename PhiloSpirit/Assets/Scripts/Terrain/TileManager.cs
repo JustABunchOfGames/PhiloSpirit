@@ -10,7 +10,7 @@ namespace Terrain
 
         private Tile _selectedTile;
 
-        public TileChanged tileChanged = new TileChanged();
+        public static TileChanged tileChanged = new TileChanged();
 
         public void SetSelectedTile(Tile tile)
         {
