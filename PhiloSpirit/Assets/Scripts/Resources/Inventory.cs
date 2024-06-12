@@ -33,5 +33,12 @@ namespace Resources
 
             Add(item);
         }
+
+        public void Copy(Inventory inventory)
+        {
+            _inventory.Clear();
+            foreach(Resource res in inventory.resources)
+                _inventory.Add(new Resource(res.type, res.quantity));
+        }
     }
 }

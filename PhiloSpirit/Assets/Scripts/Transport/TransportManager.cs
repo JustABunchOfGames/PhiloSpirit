@@ -13,6 +13,9 @@ namespace Transport
         [SerializeField] private InputManager _inputManager;
         [SerializeField] private TileManager _tileManager;
 
+        [Header("Scriptable")]
+        [SerializeField] private TransportScreenScriptable _scriptable;
+
         [Header("LineRendering")]
         [SerializeField] private LineRenderer _lineRenderer;
 
@@ -25,9 +28,6 @@ namespace Transport
 
         // Stop Rendering on the coroutine
         private bool _isRendering;
-
-        // Event for UI
-        public TransportScreenEvent screenEvent = new TransportScreenEvent();
 
         public void StartTransport(Tile tile, bool startToEnd)
         {
@@ -80,7 +80,7 @@ namespace Transport
                     _startTile = tile;
                 }
 
-                screenEvent.Invoke(new TransportScreen(_startTile, _endTile));
+                _scriptable.InitScreen(_startTile, _endTile);
             }
         }
 
@@ -159,7 +159,5 @@ namespace Transport
             points = new Vector3[5] { position, endPos, u, v, endPos };
             _lineRenderer.SetPositions(points);
         }
-
-        public class TransportScreenEvent : UnityEvent<TransportScreen> { }
     }
 }
