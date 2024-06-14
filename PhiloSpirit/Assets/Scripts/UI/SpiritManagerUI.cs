@@ -22,13 +22,10 @@ namespace UI
         [Header("SubButton to lock it when it's unusable")]
         [SerializeField] private Button _subButton;
 
-        private SpiritManager _spiritManager;
         private SpiritType _spiritType;
 
-        public void Init(SpiritType type, Color backgroundColor, SpiritManager manager)
+        public void Init(SpiritType type, Color backgroundColor)
         {
-            _spiritManager = manager;
-
             _background.color = backgroundColor;
 
             _spiritName.text = type.ToString();
@@ -52,13 +49,13 @@ namespace UI
         // Called from Button
         public void AddSpirit()
         {
-            _spiritManager.AddSpirit(_spiritType);
+            SpiritManager.AddSpirit(_spiritType);
         }
 
         // Called from Button
         public void RemoveSpirit()
         {
-            _spiritManager.RemoveSpirit(_spiritType);
+            SpiritManager.RemoveSpirit(_spiritType);
         }
     }
 }

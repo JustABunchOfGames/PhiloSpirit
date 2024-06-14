@@ -7,9 +7,9 @@ namespace Spirits
 
     public class SpiritManager : MonoBehaviour
     {
-        private Dictionary<SpiritType, SpiritData> _spirits;
+        private static Dictionary<SpiritType, SpiritData> _spirits;
 
-        public UpdateSpiritEvent updateSpiritEvent = new UpdateSpiritEvent();
+        public static UpdateSpiritEvent updateSpiritEvent = new UpdateSpiritEvent();
 
         private void Awake()
         {
@@ -30,7 +30,7 @@ namespace Spirits
             }
         }
 
-        public void AddSpirit(SpiritType spiritType)
+        public static void AddSpirit(SpiritType spiritType)
         {
             // Add 1 to max spirit and usable spirit // Update costs
             _spirits[spiritType].AddSpirit();
@@ -39,7 +39,7 @@ namespace Spirits
             updateSpiritEvent.Invoke(_spirits[spiritType], 1);
         }
 
-        public void RemoveSpirit(SpiritType spiritType)
+        public static void RemoveSpirit(SpiritType spiritType)
         {
             // Check if we can remove a spirit from the usableSpirit pool
             if (_spirits[spiritType].usableSpirit < 0)
@@ -52,7 +52,7 @@ namespace Spirits
             updateSpiritEvent.Invoke(_spirits[spiritType], -1);
         }
 
-        public void UsePirit(SpiritType spiritType, int quantity)
+        public static void UsePirit(SpiritType spiritType, int quantity)
         {
             if (CanUseSpirit(spiritType, quantity))
             {
@@ -61,12 +61,12 @@ namespace Spirits
             }
         }
 
-        public bool CanUseSpirit(SpiritType spiritType, int quantity)
+        public static bool CanUseSpirit(SpiritType spiritType, int quantity)
         {
-            return _spirits[spiritType].usableSpirit > quantity;
+            return _spirits[spiritType].usableSpirit >= quantity;
         }
 
-        public int RecalculateCost()
+        public static int RecalculateCost()
         {
             int cost = 0;
 

@@ -22,12 +22,9 @@ namespace Tasks
         // Stock completed tasks for saving purposes
         [SerializeField] private List<Task> _completedTasks = new List<Task>();
 
-        // SpiritManager for spirit cost
-        [SerializeField] private SpiritManager _spiritManager;
-
         private void Awake()
         {
-            _spiritManager.updateSpiritEvent.AddListener(UpdateCostForSpirit);
+            SpiritManager.updateSpiritEvent.AddListener(UpdateCostForSpirit);
         }
 
         public void AddTask(Task task)
@@ -65,7 +62,7 @@ namespace Tasks
             _currentTasks.Clear();
             _totalCost.resources.Clear();
 
-            _totalCost.Add(new Resource(ResourceType.Food, _spiritManager.RecalculateCost()));
+            _totalCost.Add(new Resource(ResourceType.Food, SpiritManager.RecalculateCost()));
 
             costChanged.Invoke();
         }

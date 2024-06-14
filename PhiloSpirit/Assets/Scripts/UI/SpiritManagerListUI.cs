@@ -7,8 +7,6 @@ namespace UI
 
     public class SpiritManagerListUI : MonoBehaviour
     {
-        [SerializeField] private SpiritManager _spiritManager;
-
         [SerializeField] private SpiritColorScriptable _spiritColor;
 
         [SerializeField] private List<SpiritManagerType> _managerSpiritList;
@@ -21,12 +19,12 @@ namespace UI
 
             foreach (SpiritManagerType spiritManagerType in _managerSpiritList)
             {
-                spiritManagerType.spiritUI.Init(spiritManagerType.spiritType, _spiritColor.GetSpiritColor(spiritManagerType.spiritType), _spiritManager);
+                spiritManagerType.spiritUI.Init(spiritManagerType.spiritType, _spiritColor.GetSpiritColor(spiritManagerType.spiritType));
 
                 _managerSpiritDictionaty.Add(spiritManagerType.spiritType, spiritManagerType.spiritUI);
             }
 
-            _spiritManager.updateSpiritEvent.AddListener(UpdateSpirit);
+            SpiritManager.updateSpiritEvent.AddListener(UpdateSpirit);
         }
 
         private void UpdateSpirit(SpiritData spiritData, int quantity)

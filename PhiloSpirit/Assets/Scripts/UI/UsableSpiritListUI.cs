@@ -6,8 +6,6 @@ namespace UI {
 
     public class UsableSpiritListUI : MonoBehaviour
     {
-        [SerializeField] private SpiritManager _spiritManager;
-
         [SerializeField] private SpiritColorScriptable _spiritColor;
 
         [SerializeField] private List<UsableSpiritType> _usableSpiritList;
@@ -25,7 +23,7 @@ namespace UI {
                 _usableSpiritDictionaty.Add(usableSpiritType.spiritType, usableSpiritType.spiritUI);
             }
 
-            _spiritManager.updateSpiritEvent.AddListener(UpdateSpirit);
+            SpiritManager.updateSpiritEvent.AddListener(UpdateSpirit);
         }
 
         private void UpdateSpirit(SpiritData spiritData, int quantity)

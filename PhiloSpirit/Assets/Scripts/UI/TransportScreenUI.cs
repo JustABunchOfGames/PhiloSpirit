@@ -14,14 +14,25 @@ namespace UI
         [Header("Screen")]
         [SerializeField] private TransportScreenScriptable _scriptable;
         [SerializeField] private GameObject _screenGo;
-        [SerializeField] private TransportScreenInventoryUI _tileInventory;
+        [SerializeField] private TransportScreenInventoryUI _startTileInventory;
         [SerializeField] private TransportScreenInventoryUI _transportInventory;
+        [SerializeField] private TransportScreenInventoryUI _endTileInventory;
 
-        [Header("Text")]
+        [Header("TileText")]
         [SerializeField] private Text _startTileName;
         [SerializeField] private Text _startTileCoord;
         [SerializeField] private Text _endTileName;
         [SerializeField] private Text _endTileCoord;
+
+        [Header("Cost")]
+        [SerializeField] private Text _transportCostQuantity;
+        [SerializeField] private Text _tileTransportCostQuantity;
+        [SerializeField] private Text _neededSpiritQuantity;
+        [SerializeField] private Button _confirmButton;
+
+        [Header("Confirm")]
+        [SerializeField] private GameObject _confirmBox;
+        [SerializeField] private Toggle _ignoreConfirmBoxToggle;
 
         private void Start()
         {
@@ -33,6 +44,7 @@ namespace UI
         {
             // Show Screen
             _screenGo.gameObject.SetActive(true);
+            _confirmBox.gameObject.SetActive(false);
 
             Tile startTile = _scriptable.startTile;
             Tile endTile = _scriptable.endTile;
@@ -44,15 +56,23 @@ namespace UI
             _endTileName.text = endTile.GetName();
             _endTileCoord.text = endTile.transform.position.x + " / " + endTile.transform.position.y;
 
-            // Inventories for transport
-            _tileInventory.ShowTransportInventory(_scriptable.GetInventory(false));
-            _transportInventory.ShowTransportInventory(_scriptable.GetInventory(true));
+            // Cost
+            UpdateCost();
+
+            // Inventories for transport, copied to not affect tile inventory (yet)
+            _startTileInventory.ShowTransportInventory(_scriptable.tileInventory);
+            _transportInventory.ShowTransportInventory(_scriptable.transportInventory);
+
+            // Not a copy, we just show it but don't touch it
+            _endTileInventory.ShowTransportInventory(_scriptable.endTile.inventory);
         }
 
         private void UpdateTransportScreen(ResourceType resourceType, bool transport)
         {
-            _tileInventory.UpdateInventoryUI(resourceType, !transport);
+            _startTileInventory.UpdateInventoryUI(resourceType, !transport);
             _transportInventory.UpdateInventoryUI(resourceType, transport);
+
+            UpdateCost();
         }
 
         // Called from a button
@@ -60,6 +80,32 @@ namespace UI
         {
             _transportManager.EndTransport(false);
             _screenGo.gameObject.SetActive(false);
+        }
+        
+        // Called form a button
+        public void ShowConfirmBox()
+        {
+            if (_ignoreConfirmBoxToggle.isOn)
+            {
+                ConfirmTransport();
+                _scriptable.ConfirmTransport();
+            }
+            else
+                _confirmBox.gameObject.SetActive(true);
+        }
+
+        public void ConfirmTransport()
+        {
+            _transportManager.EndTransport(true);
+            _screenGo.gameObject.SetActive(false);
+        }
+
+        private void UpdateCost()
+        {
+            _transportCostQuantity.text = _scriptable.GetCost().ToString();
+            _tileTransportCostQuantity.text = _scriptable.GetCost().ToString();
+
+            _neededSpiritQuantity.text = _scriptable.GetSpiritCost().ToString();
         }
     }
 }

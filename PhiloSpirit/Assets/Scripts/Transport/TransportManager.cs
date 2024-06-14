@@ -2,7 +2,6 @@ using Input;
 using System.Collections;
 using Terrain;
 using UnityEngine;
-using UnityEngine.Events;
 
 namespace Transport
 {
@@ -60,11 +59,11 @@ namespace Transport
         {
             _isRendering = false;
             _inputManager.tileClickedEvent.RemoveListener(TileClicked);
-            _inputManager.IsSelecting(true);
 
             if (tile == null)
             {
                 _lineRenderer.gameObject.SetActive(false);
+                _inputManager.IsSelecting(true);
 
                 // Reshow tile
                 _tileManager.SetSelectedTile(_startToEnd ? _startTile : _endTile);
@@ -95,7 +94,8 @@ namespace Transport
             }
             else
             {
-                Debug.Log("Confirm Transport");
+                _inputManager.IsSelecting(true);
+                _lineRenderer.gameObject.SetActive(false);
             }
         }
 
@@ -130,8 +130,6 @@ namespace Transport
         /// <summary> Modify start/end of lineRenderer while drawing an arrow </summary>
         private void DrawLineRenderer(Vector3 position, bool start)
         {
-            
-            
             Vector3[] points;
             Vector3 startPos;
             Vector3 endPos;
@@ -156,7 +154,7 @@ namespace Transport
             Vector3 u = endPos - (Quaternion.AngleAxis(angle, Vector3.forward) * Vector3.Normalize(vector) * dist);
             Vector3 v = endPos - (Quaternion.AngleAxis(-angle, Vector3.forward) * Vector3.Normalize(vector) * dist);
 
-            points = new Vector3[5] { position, endPos, u, v, endPos };
+            points = new Vector3[5] { startPos, endPos, u, v, endPos };
             _lineRenderer.SetPositions(points);
         }
     }

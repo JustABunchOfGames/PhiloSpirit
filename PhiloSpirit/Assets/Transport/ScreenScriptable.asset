@@ -12,3 +12,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 47d019df8d408ef45b97cf223b357356, type: 3}
   m_Name: ScreenScriptable
   m_EditorClassIdentifier: 
+  _windSpiritCapacity: 10

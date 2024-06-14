@@ -57,7 +57,7 @@ namespace Spirits
 
         public void UseSpirit(int quantity)
         {
-            if (usableSpirit - quantity > 0)
+            if (usableSpirit - quantity >= 0)
             {
                 usableSpirit -= quantity;
             }
