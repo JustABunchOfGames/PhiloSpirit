@@ -1,5 +1,4 @@
 using Input;
-using System.Collections;
 using Terrain;
 using UnityEngine;
 
@@ -16,7 +15,7 @@ namespace Transport
         [SerializeField] private TransportScreenScriptable _scriptable;
 
         [Header("LineRendering")]
-        [SerializeField] private LineRenderer _lineRenderer;
+        [SerializeField] private TransportLineRenderer _transportLineRenderer;
 
         // Tile for transport
         private Tile _startTile;
@@ -25,9 +24,15 @@ namespace Transport
         // Bool to know the direction of the transport
         private bool _startToEnd;
 
-        // Stop Rendering on the coroutine
-        private bool _isRendering;
+        // Transport Logs
+        public TransportLogDictionary logDictionary { get; private set; }
 
+        private void Start()
+        {
+            logDictionary = new TransportLogDictionary();
+
+            _scriptable.screenConfirmEvent.AddListener(ConfirmTransport);
+        }
         public void StartTransport(Tile tile, bool startToEnd)
         {
             _startToEnd = startToEnd;
@@ -45,24 +50,20 @@ namespace Transport
             _tileManager.SetSelectedTile(null);
 
             // Fix all lines at the selected tile
-            DrawLineRenderer(tile.transform.position, true);
-            DrawLineRenderer(tile.transform.position, false);
+            _transportLineRenderer.DrawLineRenderer(tile.transform.position, true);
+            _transportLineRenderer.DrawLineRenderer(tile.transform.position, false);
 
-            _lineRenderer.gameObject.SetActive(true);
-
-            _isRendering = true;
-            StartCoroutine(LineRenderingTransport());
-            
+            _transportLineRenderer.Show(true);
+            StartCoroutine(_transportLineRenderer.LineRenderingTransport(_inputManager, _startToEnd));
         }
 
         private void TileClicked(Tile tile)
         {
-            _isRendering = false;
+            _transportLineRenderer.Show(false);
             _inputManager.tileClickedEvent.RemoveListener(TileClicked);
 
             if (tile == null)
             {
-                _lineRenderer.gameObject.SetActive(false);
                 _inputManager.IsSelecting(true);
 
                 // Reshow tile
@@ -78,84 +79,25 @@ namespace Transport
                 {
                     _startTile = tile;
                 }
-
                 _scriptable.InitScreen(_startTile, _endTile);
             }
         }
 
-        public void EndTransport(bool confirmed)
+        public void CancelTransport()
         {
-            if (!confirmed)
-            {
-                if (_startToEnd)
-                    StartTransport(_startTile, _startToEnd);
-                else
-                    StartTransport(_endTile, _startToEnd);
-            }
+            if (_startToEnd)
+                StartTransport(_startTile, _startToEnd);
             else
-            {
-                _inputManager.IsSelecting(true);
-                _lineRenderer.gameObject.SetActive(false);
-            }
+                StartTransport(_endTile, _startToEnd);
         }
 
-        private IEnumerator LineRenderingTransport()
+        public void ConfirmTransport(TransportLog log, int windSpiritNeeded)
         {
-            Tile tile;
-            Vector3 tilePos;
-            while (_isRendering)
-            {
-                yield return new WaitForFixedUpdate();
+            logDictionary.Add(_startToEnd ? log.startTileCoord : log.endTileCoord, log, windSpiritNeeded);
 
-                tile = _inputManager.GetHoveredTile();
+            _inputManager.IsSelecting(true);
 
-                if (tile != null)
-                {
-                    tilePos = tile.transform.position;
-
-                    if (_startToEnd)
-                    {
-                        // Modifying end position
-                        DrawLineRenderer(tilePos, false);
-                    }
-                    else
-                    {
-                        // Modifying start position
-                        DrawLineRenderer(tilePos, true);
-                    }
-                }
-            }
-        }
-
-        /// <summary> Modify start/end of lineRenderer while drawing an arrow </summary>
-        private void DrawLineRenderer(Vector3 position, bool start)
-        {
-            Vector3[] points;
-            Vector3 startPos;
-            Vector3 endPos;
-
-            // Modifying start position
-            if (start)
-            {
-                startPos = position;
-                endPos = _lineRenderer.GetPosition(1);
-            }
-            // Modifying end position
-            else
-            {
-                startPos = _lineRenderer.GetPosition(0);
-                endPos = position;
-            }
-
-            int angle = 20;
-            float dist = 0.2f;
-
-            Vector3 vector = (endPos - startPos) * dist;
-            Vector3 u = endPos - (Quaternion.AngleAxis(angle, Vector3.forward) * Vector3.Normalize(vector) * dist);
-            Vector3 v = endPos - (Quaternion.AngleAxis(-angle, Vector3.forward) * Vector3.Normalize(vector) * dist);
-
-            points = new Vector3[5] { startPos, endPos, u, v, endPos };
-            _lineRenderer.SetPositions(points);
+            _transportLineRenderer.Show(false);
         }
     }
 }

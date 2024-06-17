@@ -1,4 +1,3 @@
-using log4net.Util;
 using Resources;
 using Spirits;
 using Terrain;
@@ -22,6 +21,7 @@ namespace Transport
         // Events
         public TransportScreenStartedEvent screenStartEvent = new TransportScreenStartedEvent();
         public TransportScreenUpdateEvent screenUpdateEvent = new TransportScreenUpdateEvent();
+        public TransportScreenConfirmEvent screenConfirmEvent = new TransportScreenConfirmEvent();
 
         // Cost
         private float _distance;
@@ -86,9 +86,11 @@ namespace Transport
         {
             for (int i=0; i<_neededWindSpirit; i++)
             {
-                SpiritManager.AddSpirit(SpiritType.Wind);
+                if (!SpiritManager.CanUseSpirit(SpiritType.Wind, 1))
+                    SpiritManager.AddSpirit(SpiritType.Wind);
+                
+                SpiritManager.UsePirit(SpiritType.Wind, 1);
             }
-            SpiritManager.UsePirit(SpiritType.Wind, _neededWindSpirit);
 
             startTile.inventory.Copy(tileInventory);
 
@@ -96,10 +98,14 @@ namespace Transport
             {
                 endTile.inventory.Add(res);
             }
+
+            screenConfirmEvent.Invoke(new TransportLog(startTile.transform.position, endTile.transform.position, _transportCost), _neededWindSpirit);
         }
 
         public class TransportScreenStartedEvent : UnityEvent { }
 
         public class TransportScreenUpdateEvent : UnityEvent<ResourceType, bool> { }
+
+        public class TransportScreenConfirmEvent : UnityEvent<TransportLog, int> { }
     }
 }

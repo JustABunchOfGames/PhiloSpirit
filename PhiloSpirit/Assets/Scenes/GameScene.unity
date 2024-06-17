@@ -368,7 +368,7 @@ MonoBehaviour:
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
-          m_BoolArgument: 0
+          m_BoolArgument: 1
         m_CallState: 2
 --- !u!114 &44340545
 MonoBehaviour:
@@ -1480,7 +1480,7 @@ MonoBehaviour:
   _inputManager: {fileID: 1658368552}
   _tileManager: {fileID: 471436706}
   _scriptable: {fileID: 11400000, guid: c4e8898d867aea7479be0f8c43c889ef, type: 2}
-  _lineRenderer: {fileID: 673999869}
+  _transportLineRenderer: {fileID: 673999871}
 --- !u!4 &282476705
 Transform:
   m_ObjectHideFlags: 0
@@ -2795,13 +2795,14 @@ GameObject:
   m_Component:
   - component: {fileID: 673999870}
   - component: {fileID: 673999869}
+  - component: {fileID: 673999871}
   m_Layer: 2
   m_Name: Line
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!120 &673999869
 LineRenderer:
   serializedVersion: 2
@@ -2810,7 +2811,7 @@ LineRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 673999868}
-  m_Enabled: 1
+  m_Enabled: 0
   m_CastShadows: 0
   m_ReceiveShadows: 0
   m_DynamicOccludee: 1
@@ -2924,6 +2925,18 @@ Transform:
   m_Children: []
   m_Father: {fileID: 282476705}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &673999871
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 673999868}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8e034428e2fbd0b4ba8ee30376feba5c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &711717397
 GameObject:
   m_ObjectHideFlags: 0
@@ -3009,7 +3022,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1273923565}
         m_TargetAssemblyTypeName: UI.TransportScreenUI, UI
-        m_MethodName: ConfirmTransport
+        m_MethodName: HideScreen
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -3440,7 +3453,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4cd6d5cfce92fa34e992fab3679f68f8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _spiritManager: {fileID: 2043705218}
   _spiritColor: {fileID: 11400000, guid: 2795a1abc0985804bb6573740e66aae4, type: 2}
   _managerSpiritList:
   - spiritType: 0
@@ -5761,9 +5773,9 @@ RectTransform:
   - {fileID: 936566358}
   m_Father: {fileID: 1612510730}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 75, y: 130}
+  m_AnchorMin: {x: 1, y: 0}
+  m_AnchorMax: {x: 1, y: 0}
+  m_AnchoredPosition: {x: -75, y: 130}
   m_SizeDelta: {x: 150, y: 260}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &1264863121
@@ -6149,7 +6161,7 @@ MonoBehaviour:
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
-          m_BoolArgument: 1
+          m_BoolArgument: 0
         m_CallState: 2
 --- !u!114 &1341484715
 MonoBehaviour:
@@ -6889,9 +6901,9 @@ RectTransform:
   - {fileID: 1996998378}
   m_Father: {fileID: 1612510730}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 1, y: 0}
-  m_AnchorMax: {x: 1, y: 0}
-  m_AnchoredPosition: {x: -75, y: 130}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 75, y: 130}
   m_SizeDelta: {x: 150, y: 260}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &1457630179
@@ -7657,6 +7669,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _transportManager: {fileID: 282476704}
+  _transportToList: {fileID: 2113080082}
+  _transportFromList: {fileID: 1104770297}
+  _logPrefab: {fileID: 2978474712959289575, guid: 8fd1cc9edb26d5a49b1eac152c050981, type: 3}
 --- !u!1 &1658368551
 GameObject:
   m_ObjectHideFlags: 0

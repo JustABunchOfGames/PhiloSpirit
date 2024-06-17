@@ -78,27 +78,26 @@ namespace UI
         // Called from a button
         public void CancelTransport()
         {
-            _transportManager.EndTransport(false);
+            _transportManager.CancelTransport();
+            HideScreen();
+        }
+
+        public void HideScreen()
+        {
             _screenGo.gameObject.SetActive(false);
         }
-        
+
         // Called form a button
         public void ShowConfirmBox()
         {
             if (_ignoreConfirmBoxToggle.isOn)
             {
-                ConfirmTransport();
+                HideScreen();
                 _scriptable.ConfirmTransport();
             }
             else
                 _confirmBox.gameObject.SetActive(true);
-        }
-
-        public void ConfirmTransport()
-        {
-            _transportManager.EndTransport(true);
-            _screenGo.gameObject.SetActive(false);
-        }
+        }        
 
         private void UpdateCost()
         {
