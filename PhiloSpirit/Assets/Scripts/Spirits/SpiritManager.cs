@@ -4,12 +4,13 @@ using UnityEngine.Events;
 
 namespace Spirits
 {
-
     public class SpiritManager : MonoBehaviour
     {
         private static Dictionary<SpiritType, SpiritData> _spirits;
 
         public static UpdateSpiritEvent updateSpiritEvent = new UpdateSpiritEvent();
+
+        public static int transportCapacity = 10;
 
         private void Awake()
         {

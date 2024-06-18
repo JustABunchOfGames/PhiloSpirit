@@ -26,7 +26,6 @@ namespace UI
 
         [Header("Cost")]
         [SerializeField] private Text _transportCostQuantity;
-        [SerializeField] private Text _tileTransportCostQuantity;
         [SerializeField] private Text _neededSpiritQuantity;
         [SerializeField] private Button _confirmButton;
 
@@ -38,6 +37,7 @@ namespace UI
         {
             _scriptable.screenStartEvent.AddListener(StartTransportScreen);
             _scriptable.screenUpdateEvent.AddListener(UpdateTransportScreen);
+            _scriptable.screenConfirmEvent.AddListener(HideScreen);
         }
 
         private void StartTransportScreen()
@@ -91,10 +91,7 @@ namespace UI
         public void ShowConfirmBox()
         {
             if (_ignoreConfirmBoxToggle.isOn)
-            {
-                HideScreen();
                 _scriptable.ConfirmTransport();
-            }
             else
                 _confirmBox.gameObject.SetActive(true);
         }        
@@ -102,7 +99,6 @@ namespace UI
         private void UpdateCost()
         {
             _transportCostQuantity.text = _scriptable.GetCost().ToString();
-            _tileTransportCostQuantity.text = _scriptable.GetCost().ToString();
 
             _neededSpiritQuantity.text = _scriptable.GetSpiritCost().ToString();
         }

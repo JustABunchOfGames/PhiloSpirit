@@ -23,6 +23,12 @@ namespace Transport
             }
         }
 
+        public void Add(Vector3 coord)
+        {
+            if (!dictionary.ContainsKey(coord))
+                dictionary.Add(coord, new TransportLogLists(coord));
+        }
+
         public TransportLogLists GetLogs(Vector3 coord)
         {
             if (dictionary.ContainsKey(coord))

@@ -71,15 +71,20 @@ namespace Transport
             }
             else
             {
+                TransportLogLists logLists;
                 if (_startToEnd)
                 {
                     _endTile = tile;
+                    logDictionary.Add(_startTile.transform.position);
+                    logLists = logDictionary.GetLogs(_startTile.transform.position);
                 }
                 else
                 {
                     _startTile = tile;
+                    logDictionary.Add(_endTile.transform.position);
+                    logLists = logDictionary.GetLogs(_endTile.transform.position);
                 }
-                _scriptable.InitScreen(_startTile, _endTile);
+                _scriptable.InitScreen(_startTile, _endTile, logLists);
             }
         }
 
@@ -91,10 +96,8 @@ namespace Transport
                 StartTransport(_endTile, _startToEnd);
         }
 
-        public void ConfirmTransport(TransportLog log, int windSpiritNeeded)
+        public void ConfirmTransport()
         {
-            logDictionary.Add(_startToEnd ? log.startTileCoord : log.endTileCoord, log, windSpiritNeeded);
-
             _inputManager.IsSelecting(true);
 
             _transportLineRenderer.Show(false);

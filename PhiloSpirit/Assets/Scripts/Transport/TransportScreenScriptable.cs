@@ -23,24 +23,28 @@ namespace Transport
         public TransportScreenUpdateEvent screenUpdateEvent = new TransportScreenUpdateEvent();
         public TransportScreenConfirmEvent screenConfirmEvent = new TransportScreenConfirmEvent();
 
+        // Log
+        private TransportLogLists _log;
+
         // Cost
         private float _distance;
 
         private int _resourcesToTransport;
         private int _transportCost;
+        private int _transportCostBonus;
 
         private int _neededWindSpirit;
 
-        [SerializeField] private int _windSpiritCapacity;
-
-        public void InitScreen(Tile startTile, Tile endTile)
+        public void InitScreen(Tile startTile, Tile endTile, TransportLogLists log)
         {
             this.startTile = startTile;
             this.endTile = endTile;
+            _log = log;
 
             _distance = Vector3.Distance(startTile.transform.position, endTile.transform.position);
             _resourcesToTransport = 0;
             _neededWindSpirit = 0;
+            _transportCostBonus = _log.possibleCost - _log.totalCost; // Cost overpaid by other transport
             UpdateCost();
 
             // Make a copy of inventory to have a temporary one
@@ -77,9 +81,11 @@ namespace Transport
 
         private void UpdateCost()
         {
-            _transportCost = (int)(_resourcesToTransport * _distance);
-            _neededWindSpirit = _transportCost / _windSpiritCapacity +
-                ((_transportCost % _windSpiritCapacity == 0 || _transportCost % _windSpiritCapacity == _windSpiritCapacity) ? 0 : 1);
+            int capacity = SpiritManager.transportCapacity;
+
+            _transportCost = (int)(_resourcesToTransport * _distance) - _transportCostBonus;
+            _neededWindSpirit = _transportCost / capacity +
+                ((_transportCost % capacity <= 0 || _transportCost % capacity == capacity) ? 0 : 1);
         }
 
         public void ConfirmTransport()
@@ -99,13 +105,16 @@ namespace Transport
                 endTile.inventory.Add(res);
             }
 
-            screenConfirmEvent.Invoke(new TransportLog(startTile.transform.position, endTile.transform.position, _transportCost), _neededWindSpirit);
+            // Log & without applying the "bonus" previewed
+            _log.AddTransportLog(new TransportLog(startTile.transform.position, endTile.transform.position, _transportCost + _transportCostBonus), _neededWindSpirit);
+
+            screenConfirmEvent.Invoke();
         }
 
         public class TransportScreenStartedEvent : UnityEvent { }
 
         public class TransportScreenUpdateEvent : UnityEvent<ResourceType, bool> { }
 
-        public class TransportScreenConfirmEvent : UnityEvent<TransportLog, int> { }
+        public class TransportScreenConfirmEvent : UnityEvent { }
     }
 }

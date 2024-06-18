@@ -2,6 +2,7 @@ using System.Collections.Generic;
 using Terrain;
 using Transport;
 using UnityEngine;
+using UnityEngine.UI;
 
 namespace UI
 {
@@ -10,6 +11,10 @@ namespace UI
     {
         [Header("Manager")]
         [SerializeField] private TransportManager _transportManager;
+
+        [Header("Costs")]
+        [SerializeField] private Text _windSpirit;
+        [SerializeField] private Text _totalCost;
 
         [Header("Lists")]
         [SerializeField] private GameObject _transportToList;
@@ -32,7 +37,16 @@ namespace UI
             {
                 PopulateList(_transportToList, logLists.transportTo, false);
                 PopulateList(_transportFromList, logLists.transportFrom, true);
+
+                _windSpirit.text = logLists.windSpiritUsed.ToString();
+                _totalCost.text = logLists.totalCost.ToString() + " / " + logLists.possibleCost.ToString();
             }
+            else
+            {
+                _windSpirit.text = "0";
+                _totalCost.text = "0";
+            }
+
         }
 
         private void ClearList(GameObject list)
