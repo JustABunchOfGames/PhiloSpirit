@@ -9,8 +9,9 @@ namespace UI
 
     public class TileTransportUI : MonoBehaviour
     {
-        [Header("Manager")]
-        [SerializeField] private TransportManager _transportManager;
+        [Header("Scriptables")]
+        [SerializeField] private TransportScriptable _scriptable;
+        [SerializeField] private TransportLogger _logger;
 
         [Header("Costs")]
         [SerializeField] private Text _windSpirit;
@@ -32,7 +33,7 @@ namespace UI
             ClearList(_transportToList);
             ClearList(_transportFromList);
 
-            TransportLogLists logLists = _transportManager.logDictionary.GetLogs(_currentTile.transform.position);
+            TransportLogLists logLists = _logger.logDictionary.GetLogs(_currentTile.transform.position);
             if (logLists != null)
             {
                 PopulateList(_transportToList, logLists.transportTo, false);
@@ -71,9 +72,9 @@ namespace UI
         }
 
         // Called from button
-        public void StartTransport(bool startToEnd)
+        public void StartTransportCreation(TransportWay way)
         {
-            _transportManager.StartTransport(_currentTile, startToEnd);
+            _scriptable.StartTransportCreation(_currentTile, way);
         }
     }
 }

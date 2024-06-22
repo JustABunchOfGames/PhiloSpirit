@@ -8,7 +8,7 @@ namespace UI
 
     public class TransportResourceUI : MonoBehaviour
     {
-        [SerializeField] private TransportScreenScriptable _scriptable;
+        [SerializeField] private TransportScriptable _scriptable;
 
         [SerializeField] private Text _name;
         [SerializeField] private Text _quantityText;

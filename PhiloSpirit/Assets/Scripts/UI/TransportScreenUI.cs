@@ -8,11 +8,10 @@ namespace UI
 {
     public class TransportScreenUI : MonoBehaviour
     {
-        [Header("Manager")]
-        [SerializeField] private TransportManager _transportManager;
+        [Header("Scriptable")]
+        [SerializeField] private TransportScriptable _scriptable;
 
         [Header("Screen")]
-        [SerializeField] private TransportScreenScriptable _scriptable;
         [SerializeField] private GameObject _screenGo;
         [SerializeField] private TransportScreenInventoryUI _startTileInventory;
         [SerializeField] private TransportScreenInventoryUI _transportInventory;
@@ -78,7 +77,7 @@ namespace UI
         // Called from a button
         public void CancelTransport()
         {
-            _transportManager.CancelTransport();
+            _scriptable.CancelTransport();
             HideScreen();
         }
 
@@ -98,9 +97,9 @@ namespace UI
 
         private void UpdateCost()
         {
-            _transportCostQuantity.text = _scriptable.GetCost().ToString();
+            _transportCostQuantity.text = _scriptable.cost.transportCost.ToString();
 
-            _neededSpiritQuantity.text = _scriptable.GetSpiritCost().ToString();
+            _neededSpiritQuantity.text = _scriptable.cost.neededWindSpirit.ToString();
         }
     }
 }

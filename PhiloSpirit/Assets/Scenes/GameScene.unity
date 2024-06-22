@@ -287,6 +287,7 @@ GameObject:
   - component: {fileID: 44340546}
   - component: {fileID: 44340545}
   - component: {fileID: 44340544}
+  - component: {fileID: 44340547}
   m_Layer: 5
   m_Name: TransportButton
   m_TagString: Untagged
@@ -358,10 +359,10 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1612510731}
-        m_TargetAssemblyTypeName: UI.TileTransportUI, UI
-        m_MethodName: StartTransport
-        m_Mode: 6
+      - m_Target: {fileID: 44340547}
+        m_TargetAssemblyTypeName: UI.TransportCreationButton, UI
+        m_MethodName: StartTransportCreation
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -408,6 +409,20 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 44340542}
   m_CullTransparentMesh: 1
+--- !u!114 &44340547
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 44340542}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5fb91939239f06a4e84834815e0fc1d8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _tileTransportUI: {fileID: 1612510731}
+  _way: 0
 --- !u!1 &44431770
 GameObject:
   m_ObjectHideFlags: 0
@@ -6206,7 +6221,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 62867cd0a4812d64184633e3866457e3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _transportManager: {fileID: 282476704}
   _scriptable: {fileID: 11400000, guid: c4e8898d867aea7479be0f8c43c889ef, type: 2}
   _screenGo: {fileID: 254104109}
   _startTileInventory: {fileID: 860445614}
@@ -6381,6 +6395,7 @@ GameObject:
   - component: {fileID: 1341484716}
   - component: {fileID: 1341484715}
   - component: {fileID: 1341484714}
+  - component: {fileID: 1341484717}
   m_Layer: 5
   m_Name: TransportButton
   m_TagString: Untagged
@@ -6452,10 +6467,10 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1612510731}
-        m_TargetAssemblyTypeName: UI.TileTransportUI, UI
-        m_MethodName: StartTransport
-        m_Mode: 6
+      - m_Target: {fileID: 1341484717}
+        m_TargetAssemblyTypeName: UI.TransportCreationButton, UI
+        m_MethodName: StartTransportCreation
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -6502,6 +6517,20 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1341484712}
   m_CullTransparentMesh: 1
+--- !u!114 &1341484717
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1341484712}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5fb91939239f06a4e84834815e0fc1d8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _tileTransportUI: {fileID: 1612510731}
+  _way: 1
 --- !u!1001 &1349173551
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -7975,7 +8004,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b34e63c4e7e158647b1f2edeb82dd56f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _transportManager: {fileID: 282476704}
+  _scriptable: {fileID: 11400000, guid: c4e8898d867aea7479be0f8c43c889ef, type: 2}
+  _logger: {fileID: 11400000, guid: 48aaef738aa6fea48b7e21c163b1b42e, type: 2}
   _windSpirit: {fileID: 1083559051}
   _totalCost: {fileID: 1110025866}
   _transportToList: {fileID: 2113080082}

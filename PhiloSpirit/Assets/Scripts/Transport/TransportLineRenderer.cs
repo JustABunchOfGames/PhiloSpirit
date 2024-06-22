@@ -22,7 +22,7 @@ namespace Transport
             _isRendering = show;
         }
 
-        public IEnumerator LineRenderingTransport(InputManager inputManager, bool startToEnd)
+        public IEnumerator LineRenderingTransport(InputManager inputManager, TransportWay way)
         {
             Tile tile;
             Vector3 tilePos;
@@ -36,7 +36,7 @@ namespace Transport
                 {
                     tilePos = tile.transform.position;
 
-                    if (startToEnd)
+                    if (way == TransportWay.TransportTo)
                     {
                         // Modifying end position
                         DrawLineRenderer(tilePos, false);
