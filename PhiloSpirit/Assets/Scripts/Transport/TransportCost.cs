@@ -25,6 +25,15 @@ namespace Transport
             UpdateCost();
         }
 
+        public TransportCost(int cost, int spirit)
+        {
+            distance = 0;
+            resourcesToTransport = 0;
+            transportCost = cost;
+            transportCostBonus = 0;
+            neededWindSpirit = spirit;
+        }
+
         private void UpdateCost()
         {
             int capacity = SpiritManager.transportCapacity;

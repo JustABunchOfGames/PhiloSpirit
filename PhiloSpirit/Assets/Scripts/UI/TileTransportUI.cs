@@ -33,7 +33,7 @@ namespace UI
             ClearList(_transportToList);
             ClearList(_transportFromList);
 
-            TransportLogLists logLists = _logger.logDictionary.GetLogs(_currentTile.transform.position);
+            TransportLogLists logLists = _logger.logDictionary.GetLogs(_currentTile);
             if (logLists != null)
             {
                 PopulateList(_transportToList, logLists.transportTo, false);
@@ -64,10 +64,14 @@ namespace UI
 
         private void PopulateList(GameObject list, List<TransportLog> logList, bool start)
         {
-            foreach (TransportLog log in logList)
+            TransportWay way = start ? TransportWay.TransportFrom : TransportWay.TransportTo;
+            int index = 0;
+
+            foreach(TransportLog log in logList)
             {
                 TransportLogUI logUI = Instantiate(_logPrefab, list.transform);
-                logUI.Init(start ? log.startTileCoord : log.endTileCoord);
+                logUI.Init(start ? log.startTile.transform.position : log.endTile.transform.position, _currentTile, way, index);
+                index++;
             }
         }
 

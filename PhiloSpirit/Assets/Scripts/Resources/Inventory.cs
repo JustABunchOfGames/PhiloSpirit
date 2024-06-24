@@ -1,5 +1,6 @@
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 namespace Resources
 {
@@ -8,6 +9,8 @@ namespace Resources
     {
         [SerializeField] private List<Resource> _inventory = new List<Resource>();
         public List<Resource> resources { get { return _inventory; } }
+
+        public InventoryUpdateEvent updateEvent = new InventoryUpdateEvent();
 
         public void Add(Resource item)
         {
@@ -20,11 +23,13 @@ namespace Resources
                     if (_inventory[i].quantity <= 0)
                         _inventory.RemoveAt(i);
 
+                    updateEvent.Invoke();
                     return;
                 }
             }
 
             _inventory.Add(item);
+            updateEvent.Invoke();
         }
 
         public void Remove(Resource item)
@@ -41,4 +46,6 @@ namespace Resources
                 _inventory.Add(new Resource(res.type, res.quantity));
         }
     }
+
+    public class InventoryUpdateEvent : UnityEvent { }
 }

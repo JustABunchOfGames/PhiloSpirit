@@ -23,14 +23,8 @@ namespace UI
         [SerializeField] private Text _endTileName;
         [SerializeField] private Text _endTileCoord;
 
-        [Header("Cost")]
-        [SerializeField] private Text _transportCostQuantity;
-        [SerializeField] private Text _neededSpiritQuantity;
-        [SerializeField] private Button _confirmButton;
-
-        [Header("Confirm")]
-        [SerializeField] private GameObject _confirmBox;
-        [SerializeField] private Toggle _ignoreConfirmBoxToggle;
+        [Header("StateUI")]
+        [SerializeField] private TransportScreenStateUI _stateUI;
 
         private void Start()
         {
@@ -43,7 +37,6 @@ namespace UI
         {
             // Show Screen
             _screenGo.gameObject.SetActive(true);
-            _confirmBox.gameObject.SetActive(false);
 
             Tile startTile = _scriptable.startTile;
             Tile endTile = _scriptable.endTile;
@@ -54,9 +47,9 @@ namespace UI
 
             _endTileName.text = endTile.GetName();
             _endTileCoord.text = endTile.transform.position.x + " / " + endTile.transform.position.y;
-
-            // Cost
-            UpdateCost();
+            
+            // State Specific UI
+            _stateUI.Init(_scriptable.state, _scriptable.cost.transportCost.ToString(), _scriptable.cost.neededWindSpirit.ToString());
 
             // Inventories for transport, copied to not affect tile inventory (yet)
             _startTileInventory.ShowTransportInventory(_scriptable.tileInventory);
@@ -71,11 +64,11 @@ namespace UI
             _startTileInventory.UpdateInventoryUI(resourceType, !transport);
             _transportInventory.UpdateInventoryUI(resourceType, transport);
 
-            UpdateCost();
+            _stateUI.UpdateText(_scriptable.cost.transportCost.ToString(), _scriptable.cost.neededWindSpirit.ToString());
         }
 
         // Called from a button
-        public void CancelTransport()
+        public void QuitTransportScreen()
         {
             _scriptable.CancelTransport();
             HideScreen();
@@ -84,22 +77,6 @@ namespace UI
         public void HideScreen()
         {
             _screenGo.gameObject.SetActive(false);
-        }
-
-        // Called form a button
-        public void ShowConfirmBox()
-        {
-            if (_ignoreConfirmBoxToggle.isOn)
-                _scriptable.ConfirmTransport();
-            else
-                _confirmBox.gameObject.SetActive(true);
-        }        
-
-        private void UpdateCost()
-        {
-            _transportCostQuantity.text = _scriptable.cost.transportCost.ToString();
-
-            _neededSpiritQuantity.text = _scriptable.cost.neededWindSpirit.ToString();
         }
     }
 }

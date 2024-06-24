@@ -1,5 +1,6 @@
 using UnityEngine;
 using Resources;
+using UnityEngine.Events;
 
 namespace Terrain
 {
@@ -17,9 +18,23 @@ namespace Terrain
 
         public Inventory inventory;
 
+        public InventoryChangedEvent inventoryChangedEvent = new InventoryChangedEvent();
+
         public string GetName()
         {
             return _tileType.ToString();
         }
+
+        private void Start()
+        {
+            inventory.updateEvent.AddListener(InventoryEvent);
+        }
+
+        private void InventoryEvent()
+        {
+            inventoryChangedEvent.Invoke();
+        }
     }
+
+    public class InventoryChangedEvent : UnityEvent { }
 }

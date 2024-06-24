@@ -1,38 +1,39 @@
 using System.Collections.Generic;
+using Terrain;
 using UnityEngine;
 
 namespace Transport
 {
     public class TransportLogDictionary
     {
-        public Dictionary<Vector3, TransportLogLists> dictionary { get; private set; }
+        public Dictionary<Tile, TransportLogLists> dictionary { get; private set; }
 
         public TransportLogDictionary()
         {
-            dictionary = new Dictionary<Vector3, TransportLogLists>();
+            dictionary = new Dictionary<Tile, TransportLogLists>();
         }
 
-        public void Add(Vector3 coord, TransportLog log, int windSpiritUsed)
+        public void Add(Tile tile, TransportLog log, int windSpiritUsed)
         {
-            if (dictionary.ContainsKey(coord))
-                dictionary[coord].AddTransportLog(log, windSpiritUsed);
+            if (dictionary.ContainsKey(tile))
+                dictionary[tile].AddTransportLog(log, windSpiritUsed);
             else
             {
-                dictionary.Add(coord, new TransportLogLists(coord));
-                dictionary[coord].AddTransportLog(log, windSpiritUsed);
+                dictionary.Add(tile, new TransportLogLists(tile));
+                dictionary[tile].AddTransportLog(log, windSpiritUsed);
             }
         }
 
-        public void Add(Vector3 coord)
+        public void Add(Tile tile)
         {
-            if (!dictionary.ContainsKey(coord))
-                dictionary.Add(coord, new TransportLogLists(coord));
+            if (!dictionary.ContainsKey(tile))
+                dictionary.Add(tile, new TransportLogLists(tile));
         }
 
-        public TransportLogLists GetLogs(Vector3 coord)
+        public TransportLogLists GetLogs(Tile tile)
         {
-            if (dictionary.ContainsKey(coord))
-                return dictionary[coord];
+            if (dictionary.ContainsKey(tile))
+                return dictionary[tile];
             else
                 return null;
         }

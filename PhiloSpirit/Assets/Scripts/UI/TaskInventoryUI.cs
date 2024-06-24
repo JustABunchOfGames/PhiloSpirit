@@ -19,6 +19,7 @@ namespace UI
         private void Start()
         {
             _taskManager.costChanged.AddListener(ShowTaskInventory);
+            _portalTile.inventoryChangedEvent.AddListener(ShowTaskInventory);
         }
 
         public void ShowTaskInventory()

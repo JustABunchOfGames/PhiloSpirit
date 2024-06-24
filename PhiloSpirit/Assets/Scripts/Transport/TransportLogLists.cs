@@ -1,5 +1,6 @@
 using Spirits;
 using System.Collections.Generic;
+using Terrain;
 using UnityEngine;
 
 namespace Transport
@@ -7,7 +8,7 @@ namespace Transport
     [System.Serializable]
     public class TransportLogLists
     {
-        public Vector3 tileCoord { get; private set; }
+        public Tile tile { get; private set; }
 
         public List<TransportLog> transportTo { get; private set; }
         public List<TransportLog> transportFrom { get; private set; }
@@ -17,9 +18,9 @@ namespace Transport
         public int totalCost { get; private set; }
         public int possibleCost { get; private set; }
 
-        public TransportLogLists(Vector3 tileCoord)
+        public TransportLogLists(Tile tile)
         {
-            this.tileCoord = tileCoord;
+            this.tile = tile;
 
             transportTo = new List<TransportLog>();
             transportFrom = new List<TransportLog>();
@@ -31,9 +32,9 @@ namespace Transport
 
         public void AddTransportLog(TransportLog log, int windSpiritUsed)
         {
-            if (log.startTileCoord == tileCoord)
+            if (log.startTile == tile)
                 transportTo.Add(log);
-            if (log.endTileCoord == tileCoord)
+            if (log.endTile == tile)
                 transportFrom.Add(log);
 
             this.windSpiritUsed += windSpiritUsed;

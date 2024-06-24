@@ -24,6 +24,7 @@ namespace Transport
         {
             _scriptable.selectionStartEvent.AddListener(StartSelection);
             _scriptable.screenConfirmEvent.AddListener(ConfirmTransport);
+            _scriptable.screenStartEvent.AddListener(StopInputManager);
         }
         public void StartSelection(Tile tile, TransportWay way)
         {
@@ -65,7 +66,12 @@ namespace Transport
             }
         }
 
-        public void ConfirmTransport()
+        private void StopInputManager()
+        {
+            _inputManager.IsSelecting(false);
+        }
+
+        private void ConfirmTransport()
         {
             _inputManager.IsSelecting(true);
 

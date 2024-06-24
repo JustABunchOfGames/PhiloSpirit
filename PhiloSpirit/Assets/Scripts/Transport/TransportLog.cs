@@ -1,4 +1,5 @@
 using Resources;
+using Terrain;
 using UnityEngine;
 
 namespace Transport
@@ -6,20 +7,20 @@ namespace Transport
     [System.Serializable]
     public class TransportLog
     {
-        public Vector3 startTileCoord { get; private set; }
-        public Vector3 endTileCoord { get; private set; }
+        public Tile startTile { get; private set; }
+        public Tile endTile { get; private set; }
 
         public Inventory transportedResources {  get; private set; }
         public int transportCost { get; private set; }
 
-        public TransportLog(Vector3 startTileCoord, Vector3 endTileCoord, int cost) 
+        public TransportLog(Tile startTile, Tile endTile, Inventory inventory, int cost) 
         { 
             transportedResources = new Inventory();
 
-            this.startTileCoord = startTileCoord;
-            this.endTileCoord = endTileCoord;
+            this.startTile = startTile;
+            this.endTile = endTile;
 
-            transportCost = cost;
+            UpdateLog(inventory, cost);
         }
 
         public void UpdateLog(Inventory transportedResources, int cost)

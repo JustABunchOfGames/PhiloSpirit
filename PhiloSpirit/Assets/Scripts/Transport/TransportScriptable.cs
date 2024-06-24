@@ -15,7 +15,7 @@ namespace Transport
 
         // Enums
         private TransportWay _way;
-        private TransportState _state;
+        public TransportState state { get; private set; }
 
         // Temporary inventories
         public Inventory tileInventory {  get; private set; }
@@ -43,7 +43,7 @@ namespace Transport
         public void StartTransportCreation(Tile tile, TransportWay way)
         {
             _way = way;
-            _state = TransportState.Create;
+            state = TransportState.Create;
             
             if (IsTransportingTo(_way))
                 startTile = tile;
@@ -60,23 +60,27 @@ namespace Transport
             else
                 startTile = tile;
 
-            StartScreen();
+            StartCreationScreen();
         }
 
         public void CancelTransport()
         {
-            if (_state == TransportState.Create)
+            if (state == TransportState.Create)
             {
                 selectionStartEvent.Invoke(IsTransportingTo(_way) ? startTile : endTile , _way);
             }
+            if (state == TransportState.Show)
+            {
+                screenConfirmEvent.Invoke();
+            }
         }
 
-        private void StartScreen()
+        private void StartCreationScreen()
         {
             // Creation of logs for this tile + saving it locally
-            Vector3 coord = IsTransportingTo(_way) ? startTile.transform.position : endTile.transform.position;
-            _logger.logDictionary.Add(coord);
-            _log = _logger.logDictionary.GetLogs(coord);
+            Tile tile = IsTransportingTo(_way) ? startTile : endTile;
+            _logger.logDictionary.Add(tile);
+            _log = _logger.logDictionary.GetLogs(tile);
 
             // Cost initialization
             cost = new TransportCost(Vector3.Distance(startTile.transform.position, endTile.transform.position), _log.possibleCost - _log.totalCost);
@@ -85,6 +89,33 @@ namespace Transport
             tileInventory = new Inventory();
             tileInventory.Copy(startTile.inventory);
             transportInventory = new Inventory();
+
+            screenStartEvent.Invoke();
+        }
+
+        public void StartShowScreen(Tile tile, TransportWay way, int index)
+        {
+            state = TransportState.Show;
+            _way = way;
+
+            // Getting the logs
+            _log = _logger.logDictionary.dictionary[tile];
+            TransportLog log;
+            if (IsTransportingTo(_way))
+                log = _log.transportTo[index];
+            else
+                log = _log.transportFrom[index];
+
+            // Setting Tiles
+            startTile = log.startTile;
+            endTile = log.endTile;
+
+            // Setting the cost for UI
+            cost = new TransportCost(log.transportCost, SpiritManager.transportCapacity);
+
+            // Getting Log Inventory
+            tileInventory.Copy(startTile.inventory);
+            transportInventory.Copy(log.transportedResources);
 
             screenStartEvent.Invoke();
         }
@@ -120,7 +151,7 @@ namespace Transport
             }
 
             // Log & without applying the "bonus" previewed
-            _log.AddTransportLog(new TransportLog(startTile.transform.position, endTile.transform.position,
+            _log.AddTransportLog(new TransportLog(startTile, endTile, transportInventory,
                 cost.transportCost + cost.transportCostBonus), cost.neededWindSpirit);
 
             screenConfirmEvent.Invoke();
