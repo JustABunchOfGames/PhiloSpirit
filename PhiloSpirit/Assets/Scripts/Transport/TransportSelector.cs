@@ -74,6 +74,7 @@ namespace Transport
         private void ConfirmTransport()
         {
             _inputManager.IsSelecting(true);
+            _tileManager.SetSelectedTile(null);
 
             _transportLineRenderer.Show(false);
         }

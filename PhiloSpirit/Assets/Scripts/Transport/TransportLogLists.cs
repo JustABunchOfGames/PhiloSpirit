@@ -1,7 +1,6 @@
 using Spirits;
 using System.Collections.Generic;
 using Terrain;
-using UnityEngine;
 
 namespace Transport
 {
@@ -30,16 +29,29 @@ namespace Transport
             possibleCost = 0;
         }
 
-        public void AddTransportLog(TransportLog log, int windSpiritUsed)
+        public void AddTransportLog(TransportLog log)
         {
             if (log.startTile == tile)
                 transportTo.Add(log);
             if (log.endTile == tile)
                 transportFrom.Add(log);
 
-            this.windSpiritUsed += windSpiritUsed;
+            
             totalCost += log.transportCost;
-            possibleCost += windSpiritUsed * SpiritManager.transportCapacity;
+            windSpiritUsed = TransportCost.GetWindSpiritUsed(totalCost);
+            possibleCost = windSpiritUsed * SpiritManager.transportCapacity;
+        }
+
+        public void RemoveTransportLog(TransportLog log)
+        {
+            totalCost -= log.transportCost;
+            windSpiritUsed = TransportCost.GetWindSpiritUsed(totalCost);
+            possibleCost = windSpiritUsed * SpiritManager.transportCapacity;
+
+            if (log.startTile == tile)
+                transportTo.Remove(log);
+            if (log.endTile == tile)
+                transportFrom.Remove(log);
         }
     }
 }

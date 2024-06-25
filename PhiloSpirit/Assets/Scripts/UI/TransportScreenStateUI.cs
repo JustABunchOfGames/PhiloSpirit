@@ -19,6 +19,10 @@ namespace UI
         [SerializeField] private string _showCostText;
         [TextArea]
         [SerializeField] private string _showSpiritText;
+        [TextArea]
+        [SerializeField] private string _showModificationValue;
+        [TextArea]
+        [SerializeField] private string _showDeletionValue;
 
         [Header("Modify")]
         [SerializeField] private GameObject _modifyUI;
@@ -33,7 +37,11 @@ namespace UI
         [SerializeField] private Text _costQuantity;
         [SerializeField] private Text _spiritQuantity;
 
-        public void Init(TransportState state, string cost, string spirit)
+        [Header("ShowStateSpecificText")]
+        [SerializeField] private Text _modifyValue;
+        [SerializeField] private Text _deleteValue;
+
+        public void Init(TransportState state)
         {
             _createUI.SetActive(false);
             _showUI.SetActive(false);
@@ -55,14 +63,11 @@ namespace UI
                 case TransportState.Modify:
                     _modifyUI.SetActive(true);
                     InitStateText(_modifyCostText, _modifySpiritText);
-                    
                     break;
 
                 default:
                     break;
             }
-
-            UpdateText(cost, spirit);
         }
 
         private void InitStateText(string costString, string spiritString)
@@ -72,10 +77,24 @@ namespace UI
             _spiritText.text = spiritString;
         }
 
-        public void UpdateText(string cost, string spirit)
+        public void UpdateText(string cost, string spirit, bool show, bool deletionPossible)
         {
             _costQuantity.text = cost;
             _spiritQuantity.text = spirit;
+
+            if (show)
+            {
+                if (deletionPossible)
+                {
+                    _modifyValue.text = "Yes";
+                    _deleteValue.text = "Yes";
+                }
+                else
+                {
+                    _modifyValue.text = _showModificationValue;
+                    _deleteValue.text = _showDeletionValue;
+                }
+            }
         }
     }
 }

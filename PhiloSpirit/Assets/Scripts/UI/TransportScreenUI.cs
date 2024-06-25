@@ -49,7 +49,8 @@ namespace UI
             _endTileCoord.text = endTile.transform.position.x + " / " + endTile.transform.position.y;
             
             // State Specific UI
-            _stateUI.Init(_scriptable.state, _scriptable.cost.transportCost.ToString(), _scriptable.cost.neededWindSpirit.ToString());
+            _stateUI.Init(_scriptable.state);
+            UpdateStateScreen();
 
             // Inventories for transport, copied to not affect tile inventory (yet)
             _startTileInventory.ShowTransportInventory(_scriptable.tileInventory);
@@ -64,7 +65,7 @@ namespace UI
             _startTileInventory.UpdateInventoryUI(resourceType, !transport);
             _transportInventory.UpdateInventoryUI(resourceType, transport);
 
-            _stateUI.UpdateText(_scriptable.cost.transportCost.ToString(), _scriptable.cost.neededWindSpirit.ToString());
+            UpdateStateScreen();
         }
 
         // Called from a button
@@ -77,6 +78,14 @@ namespace UI
         public void HideScreen()
         {
             _screenGo.gameObject.SetActive(false);
+        }
+
+        private void UpdateStateScreen()
+        {
+            if (_scriptable.state == TransportState.Show)
+                _stateUI.UpdateText(_scriptable.cost.transportCost.ToString(), _scriptable.cost.neededWindSpirit.ToString(), true, _scriptable.IsDeletePossible());
+            else
+                _stateUI.UpdateText(_scriptable.cost.transportCost.ToString(), _scriptable.cost.neededWindSpirit.ToString(), false, false);
         }
     }
 }

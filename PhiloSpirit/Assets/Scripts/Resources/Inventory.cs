@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using System.Runtime.CompilerServices;
 using UnityEngine;
 using UnityEngine.Events;
 
@@ -44,6 +45,16 @@ namespace Resources
             _inventory.Clear();
             foreach(Resource res in inventory.resources)
                 _inventory.Add(new Resource(res.type, res.quantity));
+        }
+
+        public bool HasEnough(Resource item)
+        {
+            foreach(Resource res in resources)
+            {
+                if (res.type == item.type && res.quantity >= item.quantity)
+                    return true;
+            }
+            return false;
         }
     }
 

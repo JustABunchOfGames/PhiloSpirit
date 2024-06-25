@@ -1,6 +1,5 @@
 using System.Collections.Generic;
 using Terrain;
-using UnityEngine;
 
 namespace Transport
 {
@@ -13,14 +12,14 @@ namespace Transport
             dictionary = new Dictionary<Tile, TransportLogLists>();
         }
 
-        public void Add(Tile tile, TransportLog log, int windSpiritUsed)
+        public void Add(Tile tile, TransportLog log)
         {
             if (dictionary.ContainsKey(tile))
-                dictionary[tile].AddTransportLog(log, windSpiritUsed);
+                dictionary[tile].AddTransportLog(log);
             else
             {
                 dictionary.Add(tile, new TransportLogLists(tile));
-                dictionary[tile].AddTransportLog(log, windSpiritUsed);
+                dictionary[tile].AddTransportLog(log);
             }
         }
 

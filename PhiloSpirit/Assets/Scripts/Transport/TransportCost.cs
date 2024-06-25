@@ -36,17 +36,21 @@ namespace Transport
 
         private void UpdateCost()
         {
-            int capacity = SpiritManager.transportCapacity;
-
             transportCost = (int)(resourcesToTransport * distance) - transportCostBonus;
-            neededWindSpirit = transportCost / capacity +
-                ((transportCost % capacity <= 0 || transportCost % capacity == capacity) ? 0 : 1);
+            neededWindSpirit = GetWindSpiritUsed(transportCost);
         }
 
         public void AddResource(int quantity)
         {
             resourcesToTransport += quantity;
             UpdateCost();
+        }
+
+        public static int GetWindSpiritUsed(int cost)
+        {
+            int capacity = SpiritManager.transportCapacity;
+
+            return cost / capacity + ((cost % capacity <= 0 || cost % capacity == capacity) ? 0 : 1);
         }
     }
 }

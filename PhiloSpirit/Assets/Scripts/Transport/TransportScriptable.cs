@@ -30,7 +30,8 @@ namespace Transport
 
         // Log
         [SerializeField] private TransportLogger _logger;
-        private TransportLogLists _log;
+        private TransportLogLists _logLists;
+        private TransportLog _log;
 
         // Cost
         public TransportCost cost;
@@ -80,10 +81,10 @@ namespace Transport
             // Creation of logs for this tile + saving it locally
             Tile tile = IsTransportingTo(_way) ? startTile : endTile;
             _logger.logDictionary.Add(tile);
-            _log = _logger.logDictionary.GetLogs(tile);
+            _logLists = _logger.logDictionary.GetLogs(tile);
 
             // Cost initialization
-            cost = new TransportCost(Vector3.Distance(startTile.transform.position, endTile.transform.position), _log.possibleCost - _log.totalCost);
+            cost = new TransportCost(Vector3.Distance(startTile.transform.position, endTile.transform.position), _logLists.possibleCost - _logLists.totalCost);
 
             // Inventory initialization by copy
             tileInventory = new Inventory();
@@ -99,25 +100,29 @@ namespace Transport
             _way = way;
 
             // Getting the logs
-            _log = _logger.logDictionary.dictionary[tile];
-            TransportLog log;
+            _logLists = _logger.logDictionary.dictionary[tile];
             if (IsTransportingTo(_way))
-                log = _log.transportTo[index];
+                _log = _logLists.transportTo[index];
             else
-                log = _log.transportFrom[index];
+                _log = _logLists.transportFrom[index];
 
             // Setting Tiles
-            startTile = log.startTile;
-            endTile = log.endTile;
+            startTile = _log.startTile;
+            endTile = _log.endTile;
 
             // Setting the cost for UI
-            cost = new TransportCost(log.transportCost, SpiritManager.transportCapacity);
+            cost = new TransportCost(_log.transportCost, SpiritManager.transportCapacity);
 
             // Getting Log Inventory
             tileInventory.Copy(startTile.inventory);
-            transportInventory.Copy(log.transportedResources);
+            transportInventory.Copy(_log.transportedResources);
 
             screenStartEvent.Invoke();
+        }
+
+        public void StartModifyScreen()
+        {
+
         }
 
         public void Transport(ResourceType resourceType, bool transport)
@@ -133,7 +138,7 @@ namespace Transport
             screenUpdateEvent.Invoke(resourceType, transport);
         }
 
-        public void ConfirmTransport()
+        public void CreateTransport()
         {
             for (int i=0; i < cost.neededWindSpirit; i++)
             {
@@ -151,10 +156,46 @@ namespace Transport
             }
 
             // Log & without applying the "bonus" previewed
-            _log.AddTransportLog(new TransportLog(startTile, endTile, transportInventory,
-                cost.transportCost + cost.transportCostBonus), cost.neededWindSpirit);
+            _logLists.AddTransportLog(new TransportLog(startTile, endTile, transportInventory,
+                cost.transportCost + cost.transportCostBonus));
 
             screenConfirmEvent.Invoke();
+        }
+
+        public void ModifyTransport()
+        {
+
+        }
+
+        public void DeleteTransport()
+        {
+            if (!IsDeletePossible())
+                return;
+
+            foreach(Resource res in transportInventory.resources)
+            {
+                startTile.inventory.Add(res);
+                endTile.inventory.Remove(res);
+            }
+
+            int oldWindSpiritCost = _logLists.windSpiritUsed;
+
+            _logLists.RemoveTransportLog(_log);
+
+            SpiritManager.UsePirit(SpiritType.Wind, _logLists.windSpiritUsed - oldWindSpiritCost);
+
+            screenConfirmEvent.Invoke();
+        }
+
+        public bool IsDeletePossible()
+        {
+            foreach(Resource res in transportInventory.resources)
+            {
+                if (!endTile.inventory.HasEnough(res))
+                    return false;
+            }
+
+            return true;
         }
 
         public class TransportSelectionStartEvent : UnityEvent<Tile, TransportWay> { }
