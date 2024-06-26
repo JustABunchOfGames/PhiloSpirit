@@ -36,22 +36,29 @@ namespace Transport
             if (log.endTile == tile)
                 transportFrom.Add(log);
 
-            
-            totalCost += log.transportCost;
-            windSpiritUsed = TransportCost.GetWindSpiritUsed(totalCost);
-            possibleCost = windSpiritUsed * SpiritManager.transportCapacity;
+            CalculateCosts(log.transportCost);
         }
 
         public void RemoveTransportLog(TransportLog log)
         {
-            totalCost -= log.transportCost;
-            windSpiritUsed = TransportCost.GetWindSpiritUsed(totalCost);
-            possibleCost = windSpiritUsed * SpiritManager.transportCapacity;
+            CalculateCosts(-log.transportCost);
 
             if (log.startTile == tile)
                 transportTo.Remove(log);
             if (log.endTile == tile)
                 transportFrom.Remove(log);
+        }
+
+        public void UpdateCost(int cost)
+        {
+            CalculateCosts(cost);
+        }
+
+        private void CalculateCosts(int cost)
+        {
+            totalCost += cost;
+            windSpiritUsed = TransportCost.GetWindSpiritUsed(totalCost);
+            possibleCost = windSpiritUsed * SpiritManager.transportCapacity;
         }
     }
 }

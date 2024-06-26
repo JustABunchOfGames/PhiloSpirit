@@ -1,5 +1,6 @@
 using Resources;
 using Spirits;
+using System.Collections.Generic;
 using Terrain;
 using UnityEngine;
 using UnityEngine.Events;
@@ -122,7 +123,23 @@ namespace Transport
 
         public void StartModifyScreen()
         {
+            state = TransportState.Modify;
 
+            foreach(Resource res in transportInventory.resources)
+            {
+                if (!endTile.inventory.Contains(res.type))
+                    transportInventory.Remove(res);
+                else
+                {
+                    int quantity = endTile.inventory.GetQuantity(res.type);
+                    if (res.quantity >= quantity)
+                        res.quantity = quantity;
+                }
+            }
+
+            cost = new TransportCost(Vector3.Distance(startTile.transform.position, endTile.transform.position), 0);
+
+            screenStartEvent.Invoke();
         }
 
         public void Transport(ResourceType resourceType, bool transport)
@@ -164,13 +181,58 @@ namespace Transport
 
         public void ModifyTransport()
         {
+            // Update Inventories
+            startTile.inventory.Copy(tileInventory);
 
+            List<ResourceType> types = new List<ResourceType>(); // List of resource types already updated
+
+            foreach (Resource res in transportInventory.resources)
+            {
+                endTile.inventory.Add(new Resource(res.type, res.quantity - _log.transportedResources.GetQuantity(res.type)));
+                types.Add(res.type);
+            }
+            foreach (Resource res in _log.transportedResources.resources)
+            {
+                if (!types.Contains(res.type))
+                {
+                    endTile.inventory.Add(new Resource(res.type, transportInventory.GetQuantity(res.type) - res.quantity));
+                }
+            }
+
+            // Save old wind spirit cost
+            int windSpiritModif = _logLists.windSpiritUsed;
+
+            // Update Logs
+            _log.UpdateLog(transportInventory, _log.transportCost + cost.transportCost);
+            if (_log.transportCost <= 0)
+                _logLists.RemoveTransportLog(_log);
+
+            _logLists.UpdateCost(cost.transportCost);
+
+            // Update usage of Wind Spirit
+            int windSpirit = _logLists.windSpiritUsed - windSpiritModif;
+            if (windSpiritModif <= 0)
+                SpiritManager.UsePirit(SpiritType.Wind, windSpiritModif);
+            else
+            {
+                while(windSpiritModif > 0)
+                {
+                    SpiritManager.AddSpirit(SpiritType.Wind);
+                    SpiritManager.UsePirit(SpiritType.Wind, 1);
+                    windSpiritModif--; ;
+                }
+            }
+
+            // Close screen
+            screenConfirmEvent.Invoke();
         }
 
         public void DeleteTransport()
         {
             if (!IsDeletePossible())
                 return;
+
+            state = TransportState.Delete;
 
             foreach(Resource res in transportInventory.resources)
             {

@@ -1,5 +1,4 @@
 using System.Collections.Generic;
-using System.Runtime.CompilerServices;
 using UnityEngine;
 using UnityEngine.Events;
 
@@ -55,6 +54,26 @@ namespace Resources
                     return true;
             }
             return false;
+        }
+
+        public bool Contains(ResourceType type)
+        {
+            foreach(Resource res in resources)
+            {
+                if (res.type == type)
+                    return true;
+            }
+            return false;
+        }
+
+        public int GetQuantity(ResourceType type)
+        {
+            foreach(Resource res in resources)
+            {
+                if (res.type == type)
+                    return res.quantity;
+            }
+            return 0;
         }
     }
 
