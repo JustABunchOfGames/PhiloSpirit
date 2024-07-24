@@ -10,12 +10,12 @@ namespace Transport
         public float distance {  get; private set; }
 
         public int resourcesToTransport { get; private set; }
-        public int transportCost { get; private set; }
-        public int transportCostBonus { get; private set; }
+        public float transportCost { get; private set; }
+        public float transportCostBonus { get; private set; }
 
         public int neededWindSpirit { get; private set; }
 
-        public TransportCost(float dist, int costBonus)
+        public TransportCost(float dist, float costBonus)
         {
             distance = dist;
             resourcesToTransport = 0;
@@ -25,18 +25,18 @@ namespace Transport
             UpdateCost();
         }
 
-        public TransportCost(int cost, int spirit)
+        public TransportCost(float cost, int spirit)
         {
-            distance = 0;
+            distance = 0f;
             resourcesToTransport = 0;
             transportCost = cost;
-            transportCostBonus = 0;
+            transportCostBonus = 0f;
             neededWindSpirit = spirit;
         }
 
         private void UpdateCost()
         {
-            transportCost = (int)(resourcesToTransport * distance) - transportCostBonus;
+            transportCost = (resourcesToTransport * distance) - transportCostBonus;
             neededWindSpirit = GetWindSpiritUsed(transportCost);
         }
 
@@ -46,11 +46,11 @@ namespace Transport
             UpdateCost();
         }
 
-        public static int GetWindSpiritUsed(int cost)
+        public static int GetWindSpiritUsed(float cost)
         {
             int capacity = SpiritManager.transportCapacity;
 
-            return cost / capacity + ((cost % capacity <= 0 || cost % capacity == capacity) ? 0 : 1);
+            return (int) cost / capacity + ((cost % capacity <= 0 || cost % capacity == capacity) ? 0 : 1);
         }
     }
 }

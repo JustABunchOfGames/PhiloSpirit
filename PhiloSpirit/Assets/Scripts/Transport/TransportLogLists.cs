@@ -14,8 +14,8 @@ namespace Transport
 
         public int windSpiritUsed { get; private set; }
 
-        public int totalCost { get; private set; }
-        public int possibleCost { get; private set; }
+        public float totalCost { get; private set; }
+        public float possibleCost { get; private set; }
 
         public TransportLogLists(Tile tile)
         {
@@ -49,12 +49,12 @@ namespace Transport
                 transportFrom.Remove(log);
         }
 
-        public void UpdateCost(int cost)
+        public void UpdateCost(float cost)
         {
             CalculateCosts(cost);
         }
 
-        private void CalculateCosts(int cost)
+        private void CalculateCosts(float cost)
         {
             totalCost += cost;
             windSpiritUsed = TransportCost.GetWindSpiritUsed(totalCost);

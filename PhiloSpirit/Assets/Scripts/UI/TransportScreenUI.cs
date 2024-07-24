@@ -83,9 +83,9 @@ namespace UI
         private void UpdateStateScreen()
         {
             if (_scriptable.state == TransportState.Show)
-                _stateUI.UpdateText(_scriptable.cost.transportCost.ToString(), _scriptable.cost.neededWindSpirit.ToString(), true, _scriptable.IsDeletePossible());
+                _stateUI.UpdateText(_scriptable.cost.transportCost.ToString("0.0"), _scriptable.cost.neededWindSpirit.ToString(), true, _scriptable.IsDeletePossible());
             else
-                _stateUI.UpdateText(_scriptable.cost.transportCost.ToString(), _scriptable.cost.neededWindSpirit.ToString(), false, false);
+                _stateUI.UpdateText(_scriptable.cost.transportCost.ToString("0.0"), _scriptable.cost.neededWindSpirit.ToString(), false, false);
         }
     }
 }

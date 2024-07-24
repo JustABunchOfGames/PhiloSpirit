@@ -1,6 +1,5 @@
 using Resources;
 using Terrain;
-using UnityEngine;
 
 namespace Transport
 {
@@ -11,9 +10,9 @@ namespace Transport
         public Tile endTile { get; private set; }
 
         public Inventory transportedResources {  get; private set; }
-        public int transportCost { get; private set; }
+        public float transportCost { get; private set; }
 
-        public TransportLog(Tile startTile, Tile endTile, Inventory inventory, int cost) 
+        public TransportLog(Tile startTile, Tile endTile, Inventory inventory, float cost) 
         { 
             transportedResources = new Inventory();
 
@@ -23,7 +22,7 @@ namespace Transport
             UpdateLog(inventory, cost);
         }
 
-        public void UpdateLog(Inventory transportedResources, int cost)
+        public void UpdateLog(Inventory transportedResources, float cost)
         {
             this.transportedResources.Copy(transportedResources);
 

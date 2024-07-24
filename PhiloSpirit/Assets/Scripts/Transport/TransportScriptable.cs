@@ -159,10 +159,10 @@ namespace Transport
         {
             for (int i=0; i < cost.neededWindSpirit; i++)
             {
-                if (!SpiritManager.CanUseSpirit(SpiritType.Wind, 1))
-                    SpiritManager.AddSpirit(SpiritType.Wind);
-                
-                SpiritManager.UsePirit(SpiritType.Wind, 1);
+                if (!SpiritManager.CanUseSpirit(Spirits.SpiritType.Wind, 1))
+                    SpiritManager.AddSpirit(Spirits.SpiritType.Wind);
+
+                SpiritManager.UsePirit(Spirits.SpiritType.Wind, 1);
             }
 
             startTile.inventory.Copy(tileInventory);
@@ -212,13 +212,13 @@ namespace Transport
             // Update usage of Wind Spirit
             int windSpirit = _logLists.windSpiritUsed - windSpiritModif;
             if (windSpiritModif <= 0)
-                SpiritManager.UsePirit(SpiritType.Wind, windSpiritModif);
+                SpiritManager.UsePirit(Spirits.SpiritType.Wind, windSpiritModif);
             else
             {
                 while(windSpiritModif > 0)
                 {
-                    SpiritManager.AddSpirit(SpiritType.Wind);
-                    SpiritManager.UsePirit(SpiritType.Wind, 1);
+                    SpiritManager.AddSpirit(Spirits.SpiritType.Wind);
+                    SpiritManager.UsePirit(Spirits.SpiritType.Wind, 1);
                     windSpiritModif--; ;
                 }
             }
@@ -244,7 +244,7 @@ namespace Transport
 
             _logLists.RemoveTransportLog(_log);
 
-            SpiritManager.UsePirit(SpiritType.Wind, _logLists.windSpiritUsed - oldWindSpiritCost);
+            SpiritManager.UsePirit(Spirits.SpiritType.Wind, _logLists.windSpiritUsed - oldWindSpiritCost);
 
             screenConfirmEvent.Invoke();
         }

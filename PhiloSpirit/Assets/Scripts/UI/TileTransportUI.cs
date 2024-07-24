@@ -40,7 +40,7 @@ namespace UI
                 PopulateList(_transportFromList, logLists.transportFrom, true);
 
                 _windSpirit.text = logLists.windSpiritUsed.ToString();
-                _totalCost.text = logLists.totalCost.ToString() + " / " + logLists.possibleCost.ToString();
+                _totalCost.text = logLists.totalCost.ToString("0.0") + " / " + logLists.possibleCost.ToString();
             }
             else
             {
