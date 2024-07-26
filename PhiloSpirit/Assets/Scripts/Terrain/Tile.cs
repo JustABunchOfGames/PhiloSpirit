@@ -15,6 +15,7 @@ namespace Terrain
     public class Tile : MonoBehaviour
     {
         [SerializeField] private TileType _tileType;
+        public TileType tileType { get { return _tileType; } private set { } }
 
         public Inventory inventory;
 
