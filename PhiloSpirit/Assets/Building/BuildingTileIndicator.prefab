@@ -73,7 +73,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 2
   m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
   m_Color: {r: 0.94509804, g: 0, b: 0, a: 0.78431374}
   m_FlipX: 0
@@ -100,3 +100,5 @@ MonoBehaviour:
   _renderer: {fileID: 8730914703540256519}
   _okColor: {r: 0.19397558, g: 0.745283, b: 0.12304199, a: 0.78431374}
   _koColor: {r: 0.9433962, g: 0, b: 0, a: 0.78431374}
+  _terrainTag: Terrain
+  _fowTag: FogOfWar

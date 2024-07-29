@@ -70,6 +70,8 @@ namespace UI
             ClearList(_costList);
             ClearList(_outputList);
 
+
+
             foreach(SpiritCost cost in data.cost.spiritCost)
             {
                 SpiritCostUI costUI = Instantiate(_spiritCostPrefab, _costList.transform);

@@ -24,17 +24,19 @@ namespace Transport
 
         public IEnumerator LineRenderingTransport(InputManager inputManager, TransportWay way)
         {
-            Tile tile;
+            GameObject terrain;
             Vector3 tilePos;
+
+
             while (_isRendering)
             {
                 yield return new WaitForFixedUpdate();
 
-                tile = inputManager.GetHoveredTile();
+                terrain = inputManager.GetHoveredTerrain();
 
-                if (tile != null)
+                if (terrain != null)
                 {
-                    tilePos = tile.transform.position;
+                    tilePos = terrain.transform.position;
 
                     if (way == TransportWay.TransportTo)
                     {

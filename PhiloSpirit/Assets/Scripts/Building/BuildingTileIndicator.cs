@@ -9,6 +9,9 @@ namespace Building
         [SerializeField] private Color _okColor;
         [SerializeField] private Color _koColor;
 
+        [SerializeField] private string _terrainTag;
+        [SerializeField] private string _fowTag;
+
         private TileType _requiredType;
 
         public void Init(TileType type)
@@ -19,19 +22,26 @@ namespace Building
         public bool Check()
         {
             // Get Tile under the indicator
-            Ray ray = new Ray(transform.position, transform.forward * -1);
-            RaycastHit2D hit = Physics2D.Raycast(ray.origin, ray.direction);
-            if (hit && hit.transform.tag == "Terrain")
-            {
-                if (hit.collider.GetComponent<Tile>().tileType == _requiredType)
-                    return ChangeColor(true);
+            GameObject terrain = null;
+            bool _inFogOfWar = false;
 
-                return ChangeColor(false);
-            }
-            else
+            RaycastHit2D[] hits = Physics2D.RaycastAll(transform.position, transform.forward * -1);
+            foreach(RaycastHit2D hit in hits)
             {
-                return ChangeColor(false);
+                if (hit.transform.tag == _terrainTag)
+                    terrain = hit.transform.gameObject;
+
+                if (hit.transform.tag == _fowTag)
+                    _inFogOfWar = true;
             }
+
+            if (!_inFogOfWar && terrain != null)
+            {
+                if (terrain.GetComponent<Tile>().tileType == _requiredType)
+                    return ChangeColor(true);
+            }
+
+            return ChangeColor(false);
         }
 
         private bool ChangeColor(bool isOk)

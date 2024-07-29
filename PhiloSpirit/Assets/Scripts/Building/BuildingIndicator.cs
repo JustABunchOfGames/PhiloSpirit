@@ -1,6 +1,5 @@
 using Input;
 using System.Collections;
-using System.Collections.Generic;
 using Terrain;
 using UnityEngine;
 using UnityEngine.Events;
@@ -29,8 +28,9 @@ namespace Building {
             _currentData = data;
 
             // Change behaviour of InputManager to stop selecting tiles
-            _inputManager.IsSelecting(false);
-            _inputManager.tileClickedEvent.AddListener(TileClicked);
+            _inputManager.CanSelectTile(false);
+            _inputManager.terrainClickedEvent.AddListener(TerrainClicked);
+            _inputManager.scrollEvent.AddListener(RotateIndicator);
 
             // Hide TileUI
             _tileManager.SetSelectedTile(null);
@@ -47,29 +47,46 @@ namespace Building {
             StartCoroutine(CheckCoroutine());
         }
 
-        private void TileClicked(Tile tile)
+        private void TerrainClicked(GameObject terrain)
         {
             // Clicked with tile bad alignment
-            if (tile != null && !_allCheckOK)
+            if (terrain != null && !_allCheckOK)
                 return;
 
-            /// Called either by clicking a tile or right-clicking to cancel
-            DestroyIndicator();
-            _inputManager.tileClickedEvent.RemoveListener(TileClicked);
+            // Called either by clicking a tile or right-clicking to cancel
+            _isChecking = false;
+            _inputManager.terrainClickedEvent.RemoveListener(TerrainClicked);
 
-            _inputManager.IsSelecting(true);
+            DestroyIndicator();
 
             // Cancelled
-            if (tile == null)
+            if (terrain == null)
             {
                 // Reshow BuilingUI
                 cancelEvent.Invoke();
+
+                _inputManager.CanSelectTile(true);
             }
             // Complete
             else if (_allCheckOK)
             {
                 // Show BuildCost screen to confirm building
-                completeEvent.Invoke(_currentData);
+                completeEvent.Invoke(_currentData, terrain.GetComponent<Tile>());
+            }
+        }
+
+        private void RotateIndicator(float direction)
+        {
+            if (direction == 0)
+                return;
+
+            if (direction < 0)
+            {
+                _indicatorGo.transform.Rotate(transform.forward, -90f);
+            }
+            else if (direction > 0)
+            {
+                _indicatorGo.transform.Rotate(transform.forward, 90f);
             }
         }
 
@@ -83,17 +100,17 @@ namespace Building {
 
         private IEnumerator CheckCoroutine()
         {
-            Tile tile;
+            GameObject terrain;
 
             while (_isChecking)
             {
                 yield return new WaitForFixedUpdate();
 
-                tile = _inputManager.GetHoveredTile();
+                terrain = _inputManager.GetHoveredTerrain();
 
-                if (tile != null)
+                if (terrain != null)
                 {
-                    _indicatorGo.transform.position = tile.transform.position + transform.forward * -1;
+                    _indicatorGo.transform.position = terrain.transform.position + transform.forward * -1;
 
                     Check();
                 }
@@ -112,7 +129,12 @@ namespace Building {
             }
         }
 
-        public class IndicatorComplete : UnityEvent<BuildingData> { }
+        public void BuildingComplete()
+        {
+            _inputManager.CanSelectTile(true);
+        }
+
+        public class IndicatorComplete : UnityEvent<BuildingData, Tile> { }
         public class IndicatorCancelled : UnityEvent { }
     }
 }

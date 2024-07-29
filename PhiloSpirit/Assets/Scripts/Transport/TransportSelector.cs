@@ -31,8 +31,8 @@ namespace Transport
             _fixedTile = tile;
 
             // Change behaviour of InputManager to stop selecting tiles
-            _inputManager.IsSelecting(false);
-            _inputManager.tileClickedEvent.AddListener(TileClicked);
+            _inputManager.CanSelectTile(false);
+            _inputManager.terrainClickedEvent.AddListener(TerrainClicked);
 
             // Hide TileUI
             _tileManager.SetSelectedTile(null);
@@ -45,35 +45,35 @@ namespace Transport
             StartCoroutine(_transportLineRenderer.LineRenderingTransport(_inputManager, way));
         }
 
-        private void TileClicked(Tile tile)
+        private void TerrainClicked(GameObject terrain)
         {
             /// Called either by clicking a tile or right-clicking to cancel
 
             _transportLineRenderer.Show(false);
-            _inputManager.tileClickedEvent.RemoveListener(TileClicked);
+            _inputManager.terrainClickedEvent.RemoveListener(TerrainClicked);
 
             // Cancelled
-            if (tile == null)
+            if (terrain == null)
             {
-                _inputManager.IsSelecting(true);
+                _inputManager.CanSelectTile(true);
 
                 // Reshow tile
                 _tileManager.SetSelectedTile(_fixedTile);
             }
             else
             {
-                _scriptable.ConfirmSelection(tile);
+                _scriptable.ConfirmSelection(terrain.GetComponent<Tile>());
             }
         }
 
         private void StopInputManager()
         {
-            _inputManager.IsSelecting(false);
+            _inputManager.CanSelectTile(false);
         }
 
         private void ConfirmTransport()
         {
-            _inputManager.IsSelecting(true);
+            _inputManager.CanSelectTile(true);
             _tileManager.SetSelectedTile(null);
 
             _transportLineRenderer.Show(false);
