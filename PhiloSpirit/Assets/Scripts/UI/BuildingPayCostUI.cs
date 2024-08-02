@@ -3,13 +3,14 @@ using Resources;
 using Terrain;
 using UnityEngine;
 using UnityEngine.UI;
+using static PlasticPipe.Server.MonitorStats;
 
 namespace UI
 {
     public class BuildingPayCostUI : MonoBehaviour
     {
         [Header("Building")]
-        [SerializeField] private BuildingIndicator _indicator;
+        [SerializeField] private BuildingCostManager _costManager;
 
         [Header("Screen")]
         [SerializeField] private GameObject _screen;
@@ -24,35 +25,28 @@ namespace UI
         [Header("ConfirmButton")]
         [SerializeField] private Button _confirmButton;
 
-        private BuildingData _currentData;
-        private Tile _currentTile;
-
         private void Start()
         {
-            _indicator.completeEvent.AddListener(StartScreen);
+            _costManager.showCostEvent.AddListener(StartScreen);
         }
 
-        private void StartScreen(BuildingData data, Tile tile)
+        private void StartScreen(BuildingData data, Tile tile, bool isCostPayable)
         {
-            // Save data for building later
-            _currentData = data;
-            _currentTile = tile;
-
             // Show screen
             _screen.SetActive(true);
 
-            // Set button to interactable (for now)
-            _confirmButton.interactable = true;
+            // Set button to interactable if confirm possible
+            _confirmButton.interactable = isCostPayable;
+
+            // Reset List
+            ClearList(_costList);
+            ClearList(_inventoryList);
 
             // Populate lists
             foreach (Resource resource in data.cost.resourceCost.resources)
             {
                 ResourceUI resourceUI = Instantiate(_resourceUIPrefab, _costList.transform);
                 resourceUI.Init(resource);
-
-                // Test at the same time if we can complete building
-                if (_confirmButton.interactable && !tile.inventory.HasEnough(resource))
-                    _confirmButton.interactable = false;
             }
 
             foreach(Resource resource in tile.inventory.resources)
@@ -61,6 +55,14 @@ namespace UI
                 resourceUI.Init(resource);
             }
         }
+        private void ClearList(GameObject list)
+        {
+            foreach (Transform child in list.transform)
+            {
+                Destroy(child.gameObject);
+            }
+        }
+
 
         // Button Functions
         public void Confirm()
@@ -68,7 +70,7 @@ namespace UI
             // Hide screen
             _screen.SetActive(false);
 
-            _indicator.BuildingComplete();
+            _costManager.ConfirmCost();
         }
 
         public void Cancel()
@@ -76,7 +78,7 @@ namespace UI
             // Hide screen
             _screen.SetActive(false);
 
-            _indicator.StartIndicator(_currentData);
+            _costManager.CancelCost();
         }
     }
 }

@@ -5,11 +5,13 @@ using UnityEngine;
 using UnityEngine.Events;
 
 namespace Building {
-    public class BuildingIndicator : MonoBehaviour
+    public class BuildingPositioningManager : MonoBehaviour
     {
         [Header("Managers")]
+        private BuildingManager _buildingManager;
         [SerializeField] private InputManager _inputManager;
         [SerializeField] private TileManager _tileManager;
+        
 
         [Header("Indicator")]
         [SerializeField] private GameObject _indicatorGo;
@@ -20,8 +22,16 @@ namespace Building {
 
         private BuildingData _currentData;
 
-        public IndicatorComplete completeEvent = new IndicatorComplete();
-        public IndicatorCancelled cancelEvent = new IndicatorCancelled();
+        private void Awake()
+        {
+            _buildingManager = GetComponent<BuildingManager>();
+        }
+
+        private void Start()
+        {
+            _buildingManager.buildingPositioningEvent.AddListener(StartIndicator);
+            _buildingManager.completeBuildingEvent.AddListener(RestartSelecting);
+        }
 
         public void StartIndicator(BuildingData data)
         {
@@ -56,6 +66,7 @@ namespace Building {
             // Called either by clicking a tile or right-clicking to cancel
             _isChecking = false;
             _inputManager.terrainClickedEvent.RemoveListener(TerrainClicked);
+            _inputManager.scrollEvent.RemoveListener(RotateIndicator);
 
             DestroyIndicator();
 
@@ -63,16 +74,21 @@ namespace Building {
             if (terrain == null)
             {
                 // Reshow BuilingUI
-                cancelEvent.Invoke();
+                _buildingManager.CancelPositioning();
 
                 _inputManager.CanSelectTile(true);
             }
             // Complete
             else if (_allCheckOK)
             {
-                // Show BuildCost screen to confirm building
-                completeEvent.Invoke(_currentData, terrain.GetComponent<Tile>());
+                // Confirm Placement
+                _buildingManager.SetPosition(terrain.GetComponent<Tile>(), _indicatorGo.transform.rotation);
             }
+        }
+
+        private void RestartSelecting(BuildingData data, Tile tile, Quaternion rotation)
+        {
+            _inputManager.CanSelectTile(true);
         }
 
         private void RotateIndicator(float direction)
@@ -128,13 +144,5 @@ namespace Building {
                     _allCheckOK = false;
             }
         }
-
-        public void BuildingComplete()
-        {
-            _inputManager.CanSelectTile(true);
-        }
-
-        public class IndicatorComplete : UnityEvent<BuildingData, Tile> { }
-        public class IndicatorCancelled : UnityEvent { }
     }
 }

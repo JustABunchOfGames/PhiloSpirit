@@ -71,7 +71,7 @@ namespace Transport
             {
                 selectionStartEvent.Invoke(IsTransportingTo(_way) ? startTile : endTile , _way);
             }
-            if (state == TransportState.Show)
+            if (state == TransportState.Show || state == TransportState.Modify)
             {
                 screenConfirmEvent.Invoke();
             }
@@ -125,19 +125,22 @@ namespace Transport
         {
             state = TransportState.Modify;
 
-            foreach(Resource res in transportInventory.resources)
+            // Repopulate list with only refundable resources
+            transportInventory = new Inventory();
+
+            foreach (Resource res in _log.transportedResources.resources)
             {
-                if (!endTile.inventory.Contains(res.type))
-                    transportInventory.Remove(res);
-                else
-                {
-                    int quantity = endTile.inventory.GetQuantity(res.type);
-                    if (res.quantity >= quantity)
-                        res.quantity = quantity;
+                int quantity = endTile.inventory.GetQuantity(res.type);
+                if (0 < quantity) {
+
+                    if (quantity < res.quantity)
+                        transportInventory.Add(new Resource(res.type, quantity));
+                    else
+                        transportInventory.Add(new Resource(res.type, res.quantity));
                 }
             }
 
-            cost = new TransportCost(Vector3.Distance(startTile.transform.position, endTile.transform.position), 0);
+            cost = new TransportCost(Vector3.Distance(startTile.transform.position, endTile.transform.position), 0f);
 
             screenStartEvent.Invoke();
         }
@@ -165,7 +168,7 @@ namespace Transport
                 if (!SpiritManager.CanUseSpirit(SpiritType.Wind, 1))
                     SpiritManager.AddSpirit(SpiritType.Wind);
 
-                SpiritManager.UsePirit(SpiritType.Wind, 1);
+                SpiritManager.UseSpirit(SpiritType.Wind, 1);
             }
 
             startTile.inventory.Copy(tileInventory);
@@ -215,13 +218,13 @@ namespace Transport
             // Update usage of Wind Spirit
             int windSpirit = _logLists.windSpiritUsed - windSpiritModif;
             if (windSpiritModif <= 0)
-                SpiritManager.UsePirit(SpiritType.Wind, windSpiritModif);
+                SpiritManager.UseSpirit(SpiritType.Wind, windSpiritModif);
             else
             {
                 while(windSpiritModif > 0)
                 {
                     SpiritManager.AddSpirit(SpiritType.Wind);
-                    SpiritManager.UsePirit(SpiritType.Wind, 1);
+                    SpiritManager.UseSpirit(SpiritType.Wind, 1);
                     windSpiritModif--; ;
                 }
             }
@@ -247,7 +250,7 @@ namespace Transport
 
             _logLists.RemoveTransportLog(_log);
 
-            SpiritManager.UsePirit(SpiritType.Wind, _logLists.windSpiritUsed - oldWindSpiritCost);
+            SpiritManager.UseSpirit(SpiritType.Wind, _logLists.windSpiritUsed - oldWindSpiritCost);
 
             screenConfirmEvent.Invoke();
         }

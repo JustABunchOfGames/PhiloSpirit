@@ -2,6 +2,7 @@ using Terrain;
 using Resources;
 using UnityEngine;
 using Tasks;
+using UnityEngine.Events;
 
 namespace UI
 {
@@ -15,6 +16,8 @@ namespace UI
         [SerializeField] private Tile _portalTile;
 
         [SerializeField] private TaskManager _taskManager;
+
+        public CostChangedEvent costChangedEvent = new CostChangedEvent();
 
         private void Start()
         {
@@ -54,6 +57,8 @@ namespace UI
                     resourceUI.Init(resource, new Resource(resource.type));
                 }
             }
+
+            costChangedEvent.Invoke();
         }
 
         public bool IsTaskCompletionPossible()
@@ -93,5 +98,7 @@ namespace UI
         {
             _taskManager.CompleteTasks();
         }
+
+        public class CostChangedEvent : UnityEvent { }
     }
 }

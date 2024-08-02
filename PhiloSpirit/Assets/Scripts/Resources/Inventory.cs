@@ -34,9 +34,7 @@ namespace Resources
 
         public void Remove(Resource item)
         {
-            item.quantity = -item.quantity;
-
-            Add(item);
+            Add(new Resource(item.type, -item.quantity));
         }
 
         public void Copy(Inventory inventory)

@@ -53,7 +53,7 @@ namespace Spirits
             updateSpiritEvent.Invoke(_spirits[spiritType], -1);
         }
 
-        public static void UsePirit(SpiritType spiritType, int quantity)
+        public static void UseSpirit(SpiritType spiritType, int quantity)
         {
             if (CanUseSpirit(spiritType, quantity))
             {

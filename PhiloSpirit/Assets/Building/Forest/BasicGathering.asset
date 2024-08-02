@@ -14,6 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _id: 20001
   _buildingName: Basic Gathering
+  _prefab: {fileID: 4669051791428119982, guid: 277ac68cf8185fb4eb77c65177f658b8, type: 3}
   _tiles:
   - coord: {x: 0, y: 0, z: 0}
     neededTileType: 2

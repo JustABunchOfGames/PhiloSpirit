@@ -41,7 +41,7 @@ namespace UI
         [SerializeField] private Text _modifyValue;
         [SerializeField] private Text _deleteValue;
 
-        public void Init(TransportState state)
+        public void Init(TransportState state, bool show, bool deletionPossible)
         {
             _createUI.SetActive(false);
             _showUI.SetActive(false);
@@ -58,6 +58,19 @@ namespace UI
                 case TransportState.Show:
                     _showUI.SetActive(true);
                     InitStateText(_showCostText, _showSpiritText);
+                    if (show)
+                    {
+                        if (deletionPossible)
+                        {
+                            _modifyValue.text = "Yes";
+                            _deleteValue.text = "Yes";
+                        }
+                        else
+                        {
+                            _modifyValue.text = _showModificationValue;
+                            _deleteValue.text = _showDeletionValue;
+                        }
+                    }
                     break;
 
                 case TransportState.Modify:
@@ -72,29 +85,16 @@ namespace UI
 
         private void InitStateText(string costString, string spiritString)
         {
-
             _costText.text = costString;
             _spiritText.text = spiritString;
         }
 
-        public void UpdateText(string cost, string spirit, bool show, bool deletionPossible)
+        public void UpdateText(string cost, string spirit)
         {
             _costQuantity.text = cost;
             _spiritQuantity.text = spirit;
 
-            if (show)
-            {
-                if (deletionPossible)
-                {
-                    _modifyValue.text = "Yes";
-                    _deleteValue.text = "Yes";
-                }
-                else
-                {
-                    _modifyValue.text = _showModificationValue;
-                    _deleteValue.text = _showDeletionValue;
-                }
-            }
+            
         }
     }
 }

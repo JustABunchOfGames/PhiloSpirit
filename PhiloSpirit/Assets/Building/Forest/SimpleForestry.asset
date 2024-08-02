@@ -14,6 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _id: 20002
   _buildingName: Simple Forestry
+  _prefab: {fileID: 4669051791428119982, guid: 7ed67f41c9e5c354997ae6dbe2f47feb, type: 3}
   _tiles:
   - coord: {x: 0, y: 0, z: 0}
     neededTileType: 2

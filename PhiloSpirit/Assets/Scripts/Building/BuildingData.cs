@@ -13,6 +13,9 @@ namespace Building
         [SerializeField] private string _buildingName;
         public string buildingName { get { return _buildingName; } private set { } }
 
+        [SerializeField] private BuildingGameObject _prefab;
+        public BuildingGameObject prefab { get { return _prefab; } private set { } }
+
         [SerializeField] private List<BuildingTile> _tiles;
         public List<BuildingTile> tiles { get { return _tiles; } private set { } }
 

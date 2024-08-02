@@ -759,7 +759,7 @@ MonoBehaviour:
   _spiritCostPrefab: {fileID: -3786195519833646515, guid: 6dd891cf13869d44b8f4b73feafe3d0f, type: 3}
   _costList: {fileID: 1489718175}
   _outputList: {fileID: 1073884922}
-  _buildingIndicator: {fileID: 517293020}
+  _buildingManager: {fileID: 517293022}
   _buildButton: {fileID: 1062290461}
 --- !u!1 &101824539
 GameObject:
@@ -1475,6 +1475,37 @@ MonoBehaviour:
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls: []
+--- !u!1 &204822758
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 204822759}
+  m_Layer: 0
+  m_Name: BuildingParent
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &204822759
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 204822758}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 517293019}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &220417663
 GameObject:
   m_ObjectHideFlags: 0
@@ -2686,7 +2717,10 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 517293019}
+  - component: {fileID: 517293022}
   - component: {fileID: 517293020}
+  - component: {fileID: 517293021}
+  - component: {fileID: 517293023}
   m_Layer: 0
   m_Name: BuildingManager
   m_TagString: Untagged
@@ -2708,6 +2742,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1606621410}
+  - {fileID: 204822759}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &517293020
@@ -2726,6 +2761,43 @@ MonoBehaviour:
   _tileManager: {fileID: 471436706}
   _indicatorGo: {fileID: 1606621409}
   _indicatorPrefab: {fileID: 8316754042233353991, guid: 464991d7d8371e14ebf7a4ca69c2b0a5, type: 3}
+--- !u!114 &517293021
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 517293018}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4c1d9d54d43656d47941d5bb93c3f614, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &517293022
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 517293018}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c4904da892110924aa31ad4341608de9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &517293023
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 517293018}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5ad959d1fe74d104b89447f82544d5ce, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _parent: {fileID: 204822759}
 --- !u!1 &538599071
 GameObject:
   m_ObjectHideFlags: 0
@@ -5343,7 +5415,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a5e9553dbb43f7f43b78a518d342c7d7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _indicator: {fileID: 517293020}
+  _costManager: {fileID: 517293021}
   _screen: {fileID: 1104439287}
   _costList: {fileID: 398604777}
   _inventoryList: {fileID: 1121340880}
@@ -7256,7 +7328,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 100481134}
         m_TargetAssemblyTypeName: UI.BuildingDetailsUI, UI
-        m_MethodName: ShowIndicator
+        m_MethodName: Select
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

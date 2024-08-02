@@ -47,9 +47,12 @@ namespace UI
 
             _endTileName.text = endTile.GetName();
             _endTileCoord.text = endTile.transform.position.x + " / " + endTile.transform.position.y;
-            
+
             // State Specific UI
-            _stateUI.Init(_scriptable.state);
+            if (_scriptable.state == TransportState.Show)
+                _stateUI.Init(_scriptable.state, true, _scriptable.IsDeletePossible());
+            else
+                _stateUI.Init(_scriptable.state, false, false);
             UpdateStateScreen();
 
             // Inventories for transport, copied to not affect tile inventory (yet)
@@ -82,10 +85,7 @@ namespace UI
 
         private void UpdateStateScreen()
         {
-            if (_scriptable.state == TransportState.Show)
-                _stateUI.UpdateText(_scriptable.cost.transportCost.ToString("0.0"), _scriptable.cost.neededWindSpirit.ToString(), true, _scriptable.IsDeletePossible());
-            else
-                _stateUI.UpdateText(_scriptable.cost.transportCost.ToString("0.0"), _scriptable.cost.neededWindSpirit.ToString(), false, false);
+            _stateUI.UpdateText(_scriptable.cost.transportCost.ToString("0.0"), _scriptable.cost.neededWindSpirit.ToString());
         }
     }
 }

@@ -26,8 +26,8 @@ namespace UI
         [SerializeField] private GameObject _costList;
         [SerializeField] private GameObject _outputList;
 
-        [Header("Indicator")]
-        [SerializeField] private BuildingIndicator _buildingIndicator;
+        [Header("Building")]
+        [SerializeField] private BuildingManager _buildingManager;
         [SerializeField] private Button _buildButton;
 
         private BuildingData _currentData;
@@ -36,7 +36,7 @@ namespace UI
         {
             Clear();
 
-            _buildingIndicator.cancelEvent.AddListener(IndicatorCancelled);
+            _buildingManager.canceledPositioningEvent.AddListener(IndicatorCancelled);
         }
 
         public void Clear()
@@ -99,11 +99,11 @@ namespace UI
             }
         }
 
-        public void ShowIndicator()
+        public void Select()
         {
             _screen.gameObject.SetActive(false);
 
-            _buildingIndicator.StartIndicator(_currentData);
+            _buildingManager.SelectBuilding(_currentData);
         }
 
         private void IndicatorCancelled()

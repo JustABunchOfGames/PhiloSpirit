@@ -13,7 +13,7 @@ namespace Tasks
         [SerializeField] private List<Task> _currentTasks = new List<Task>();
 
          // Inventory for the cost of accepted tasks
-        [SerializeField] private Inventory _totalCost = new Inventory();
+        [SerializeField] private Inventory _totalCost;
         public Inventory totalCost { get { return _totalCost; } private set { } } 
 
         // Event to notify a change in cost for UI
@@ -27,13 +27,18 @@ namespace Tasks
             SpiritManager.updateSpiritEvent.AddListener(UpdateCostForSpirit);
         }
 
+        private void Start()
+        {
+            _totalCost = new Inventory();
+        }
+
         public void AddTask(Task task)
         {
             _currentTasks.Add(task);
 
             foreach(Resource resource in task.cost.resources)
             {
-                _totalCost.Add(resource);
+                _totalCost.Add(new Resource(resource.type, resource.quantity));
             }
 
             costChanged.Invoke();
@@ -45,7 +50,7 @@ namespace Tasks
 
             foreach (Resource resource in task.cost.resources)
             {
-                _totalCost.Remove(resource);
+                _totalCost.Remove(new Resource(resource.type, resource.quantity));
             }
 
             costChanged.Invoke();
