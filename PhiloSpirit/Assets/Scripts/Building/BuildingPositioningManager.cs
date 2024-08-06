@@ -1,8 +1,8 @@
+using Core;
 using Input;
 using System.Collections;
 using Terrain;
 using UnityEngine;
-using UnityEngine.Events;
 
 namespace Building {
     public class BuildingPositioningManager : MonoBehaviour
@@ -10,8 +10,6 @@ namespace Building {
         [Header("Managers")]
         private BuildingManager _buildingManager;
         [SerializeField] private InputManager _inputManager;
-        [SerializeField] private TileManager _tileManager;
-        
 
         [Header("Indicator")]
         [SerializeField] private GameObject _indicatorGo;
@@ -30,20 +28,16 @@ namespace Building {
         private void Start()
         {
             _buildingManager.buildingPositioningEvent.AddListener(StartIndicator);
-            _buildingManager.completeBuildingEvent.AddListener(RestartSelecting);
         }
 
         public void StartIndicator(BuildingData data)
         {
             _currentData = data;
 
-            // Change behaviour of InputManager to stop selecting tiles
-            _inputManager.CanSelectTile(false);
-            _inputManager.terrainClickedEvent.AddListener(TerrainClicked);
+            // Subscribe to used events
+            _inputManager.selectEvent.AddListener(Select);
+            _inputManager.unselectEvent.AddListener(Unselect);
             _inputManager.scrollEvent.AddListener(RotateIndicator);
-
-            // Hide TileUI
-            _tileManager.SetSelectedTile(null);
 
             _indicatorGo.transform.position = new Vector3(0,0,-1);
 
@@ -57,38 +51,41 @@ namespace Building {
             StartCoroutine(CheckCoroutine());
         }
 
-        private void TerrainClicked(GameObject terrain)
+        private void Select()
         {
-            // Clicked with tile bad alignment
-            if (terrain != null && !_allCheckOK)
+            // Get Selected item
+            GameObject terrain = _inputManager.GetHoveredObjectByTag(Tags.terrainTag);
+
+            if (terrain == null)
                 return;
 
-            // Called either by clicking a tile or right-clicking to cancel
+            // Clicked with bad alignment
+            if (!_allCheckOK)
+                return;
+
+            // Stop Checking
             _isChecking = false;
-            _inputManager.terrainClickedEvent.RemoveListener(TerrainClicked);
-            _inputManager.scrollEvent.RemoveListener(RotateIndicator);
+
+            RemoveListeners();
 
             DestroyIndicator();
 
-            // Cancelled
-            if (terrain == null)
-            {
-                // Reshow BuilingUI
-                _buildingManager.CancelPositioning();
-
-                _inputManager.CanSelectTile(true);
-            }
             // Complete
-            else if (_allCheckOK)
+            if (_allCheckOK)
             {
                 // Confirm Placement
                 _buildingManager.SetPosition(terrain.GetComponent<Tile>(), _indicatorGo.transform.rotation);
             }
         }
 
-        private void RestartSelecting(BuildingData data, Tile tile, Quaternion rotation)
+        private void Unselect()
         {
-            _inputManager.CanSelectTile(true);
+            RemoveListeners();
+
+            DestroyIndicator();
+
+            // Reshow BuilingUI
+            _buildingManager.CancelPositioning();
         }
 
         private void RotateIndicator(float direction)
@@ -104,6 +101,14 @@ namespace Building {
             {
                 _indicatorGo.transform.Rotate(transform.forward, 90f);
             }
+        }
+
+        private void RemoveListeners()
+        {
+            // Remove listeners
+            _inputManager.selectEvent.RemoveListener(Select);
+            _inputManager.unselectEvent.RemoveListener(Unselect);
+            _inputManager.scrollEvent.RemoveListener(RotateIndicator);
         }
 
         private void DestroyIndicator()
@@ -122,7 +127,7 @@ namespace Building {
             {
                 yield return new WaitForFixedUpdate();
 
-                terrain = _inputManager.GetHoveredTerrain();
+                terrain = _inputManager.GetHoveredObjectByTag(Tags.terrainTag);
 
                 if (terrain != null)
                 {

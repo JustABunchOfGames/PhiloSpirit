@@ -1,3 +1,4 @@
+using Core;
 using Input;
 using Terrain;
 using UnityEngine;
@@ -30,12 +31,12 @@ namespace Transport
         {
             _fixedTile = tile;
 
-            // Change behaviour of InputManager to stop selecting tiles
-            _inputManager.CanSelectTile(false);
-            _inputManager.terrainClickedEvent.AddListener(TerrainClicked);
+            // Subscribe to used events
+            _inputManager.selectEvent.AddListener(Select);
+            _inputManager.unselectEvent.AddListener(Unselect);
 
-            // Hide TileUI
-            _tileManager.SetSelectedTile(null);
+            // Change behaviour to forbid tile selection
+            _tileManager.CanSelect(false);
 
             // Fix all lines at the selected tile
             _transportLineRenderer.DrawLineRenderer(tile.transform.position, true);
@@ -45,38 +46,50 @@ namespace Transport
             StartCoroutine(_transportLineRenderer.LineRenderingTransport(_inputManager, way));
         }
 
-        private void TerrainClicked(GameObject terrain)
+        private void Select()
         {
-            /// Called either by clicking a tile or right-clicking to cancel
+            // Get Selected item
+            GameObject terrain = _inputManager.GetHoveredObjectByTag(Tags.terrainTag);
+
+            if (terrain == null)
+                return;
 
             _transportLineRenderer.Show(false);
-            _inputManager.terrainClickedEvent.RemoveListener(TerrainClicked);
 
-            // Cancelled
-            if (terrain == null)
-            {
-                _inputManager.CanSelectTile(true);
+            RemoveListeners();
 
-                // Reshow tile
-                _tileManager.SetSelectedTile(_fixedTile);
-            }
-            else
-            {
-                _scriptable.ConfirmSelection(terrain.GetComponent<Tile>());
-            }
+            _scriptable.ConfirmSelection(terrain.GetComponent<Tile>());
         }
 
-        private void StopInputManager()
+        private void Unselect()
         {
-            _inputManager.CanSelectTile(false);
+            RemoveListeners();
+
+            _transportLineRenderer.Show(false);
+
+            // Change behaviour to allow tile selection
+            _tileManager.CanSelect(true);
+
+            // Reshow tile
+            _tileManager.SetSelectedTile(_fixedTile);
+        }
+
+        private void RemoveListeners()
+        {
+            _inputManager.selectEvent.RemoveListener(Select);
+            _inputManager.unselectEvent.RemoveListener(Unselect);
         }
 
         private void ConfirmTransport()
         {
-            _inputManager.CanSelectTile(true);
-            _tileManager.SetSelectedTile(null);
+            // Change behaviour to allow tile selection
+            _tileManager.CanSelect(true);
+        }
 
-            _transportLineRenderer.Show(false);
+        private void StopInputManager()
+        {
+            // Change behaviour to forbid tile selection
+            _tileManager.UnselectTile();
         }
     }
 }

@@ -6,7 +6,7 @@ using UnityEngine.UI;
 
 namespace UI
 {
-    public class BuildingPayCostUI : MonoBehaviour
+    public class BuildingRefundUI : MonoBehaviour
     {
         [Header("Building")]
         [SerializeField] private BuildingCostManager _costManager;
@@ -26,34 +26,35 @@ namespace UI
 
         private void Start()
         {
-            _costManager.showCostEvent.AddListener(StartScreen);
+            _costManager.showRefundEvent.AddListener(StartScreen);
         }
 
-        private void StartScreen(BuildingData data, Tile tile, bool isCostPayable)
+        private void StartScreen(BuildingData data, Tile tile, bool isRefundPossible)
         {
             // Show screen
             _screen.SetActive(true);
 
             // Set button to interactable if confirm possible
-            _confirmButton.interactable = isCostPayable;
+            _confirmButton.interactable = isRefundPossible;
 
             // Reset List
             ClearList(_costList);
             ClearList(_inventoryList);
 
             // Populate lists
-            foreach (Resource resource in data.cost.resourceCost.resources)
+            foreach (Resource resource in data.output.resources)
             {
                 ResourceUI resourceUI = Instantiate(_resourceUIPrefab, _costList.transform);
                 resourceUI.Init(resource);
             }
 
-            foreach(Resource resource in tile.inventory.resources)
+            foreach (Resource resource in tile.inventory.resources)
             {
                 ResourceUI resourceUI = Instantiate(_resourceUIPrefab, _inventoryList.transform);
                 resourceUI.Init(resource);
             }
         }
+
         private void ClearList(GameObject list)
         {
             foreach (Transform child in list.transform)
@@ -62,14 +63,13 @@ namespace UI
             }
         }
 
-
         // Button Functions
         public void Confirm()
         {
             // Hide screen
             _screen.SetActive(false);
 
-            _costManager.ConfirmCost();
+            _costManager.ConfirmRefund();
         }
 
         public void Cancel()
@@ -77,7 +77,7 @@ namespace UI
             // Hide screen
             _screen.SetActive(false);
 
-            _costManager.CancelCost();
+            _costManager.CancelRefund();
         }
     }
 }

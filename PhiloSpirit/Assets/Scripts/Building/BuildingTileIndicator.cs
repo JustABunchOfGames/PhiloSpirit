@@ -1,3 +1,4 @@
+using Core;
 using Terrain;
 using UnityEngine;
 
@@ -11,6 +12,7 @@ namespace Building
 
         [SerializeField] private string _terrainTag;
         [SerializeField] private string _fowTag;
+        [SerializeField] private string _buildingTag;
 
         private TileType _requiredType;
 
@@ -23,19 +25,22 @@ namespace Building
         {
             // Get Tile under the indicator
             GameObject terrain = null;
-            bool _inFogOfWar = false;
+            bool _isOk = true;
 
             RaycastHit2D[] hits = Physics2D.RaycastAll(transform.position, transform.forward * -1);
             foreach(RaycastHit2D hit in hits)
             {
-                if (hit.transform.tag == _terrainTag)
+                if (hit.transform.tag == Tags.terrainTag)
                     terrain = hit.transform.gameObject;
 
-                if (hit.transform.tag == _fowTag)
-                    _inFogOfWar = true;
+                if (hit.transform.tag == Tags.fogOfWarTag)
+                    _isOk = false;
+
+                if (hit.transform.tag == Tags.buildingTag)
+                    _isOk = false;
             }
 
-            if (!_inFogOfWar && terrain != null)
+            if (_isOk && terrain != null)
             {
                 if (terrain.GetComponent<Tile>().tileType == _requiredType)
                     return ChangeColor(true);

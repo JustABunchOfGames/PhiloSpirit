@@ -28,5 +28,16 @@ namespace Building
             BuildingGameObject building = Instantiate(data.prefab, tile.transform.position, rotation, _parent);
             _buildingDictionary.Add(building, data);
         }
+
+        public BuildingData GetData(BuildingGameObject building)
+        {
+            return _buildingDictionary[building];
+        }
+
+        public void DestroyBuilding(BuildingGameObject building)
+        {
+            _buildingDictionary.Remove(building);
+            Destroy(building.gameObject);
+        }
     }
 }

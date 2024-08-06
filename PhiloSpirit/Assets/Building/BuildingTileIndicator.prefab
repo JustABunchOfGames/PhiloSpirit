@@ -102,3 +102,4 @@ MonoBehaviour:
   _koColor: {r: 0.9433962, g: 0, b: 0, a: 0.78431374}
   _terrainTag: Terrain
   _fowTag: FogOfWar
+  _buildingTag: Building

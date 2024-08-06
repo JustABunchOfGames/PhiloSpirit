@@ -29,6 +29,7 @@ namespace UI
         [Header("Building")]
         [SerializeField] private BuildingManager _buildingManager;
         [SerializeField] private Button _buildButton;
+        [SerializeField] private BuildingUndoManager _undoManager;
 
         private BuildingData _currentData;
 
@@ -37,6 +38,7 @@ namespace UI
             Clear();
 
             _buildingManager.canceledPositioningEvent.AddListener(IndicatorCancelled);
+            _undoManager.unselectEvent.AddListener(IndicatorCancelled);
         }
 
         public void Clear()
@@ -99,11 +101,18 @@ namespace UI
             }
         }
 
-        public void Select()
+        public void StartBuilding()
         {
             _screen.gameObject.SetActive(false);
 
             _buildingManager.SelectBuilding(_currentData);
+        }
+
+        public void StartUndo()
+        {
+            _screen.gameObject.SetActive(false);
+
+            _undoManager.StartUndoSelection();
         }
 
         private void IndicatorCancelled()

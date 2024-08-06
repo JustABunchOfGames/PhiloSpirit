@@ -1,3 +1,4 @@
+using Core;
 using Input;
 using System.Collections;
 using Terrain;
@@ -32,7 +33,7 @@ namespace Transport
             {
                 yield return new WaitForFixedUpdate();
 
-                terrain = inputManager.GetHoveredTerrain();
+                terrain = inputManager.GetHoveredObjectByTag(Tags.terrainTag);
 
                 if (terrain != null)
                 {

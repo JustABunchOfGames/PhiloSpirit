@@ -1,8 +1,7 @@
+using Core;
 using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.InputSystem;
-using UnityEngine.InputSystem.HID;
-using UnityEngine.UIElements;
 
 namespace Input
 {
@@ -13,13 +12,8 @@ namespace Input
 
         [SerializeField] private Camera _camera;
 
-        [SerializeField] private string _terrainTag;
-        [SerializeField] private string _fowTag;
-
-        private bool _canSelect = true;
-
-        public TerrainSelectEvent terrainSelectEvent = new TerrainSelectEvent();
-        public TerrainClickedEvent terrainClickedEvent = new TerrainClickedEvent();
+        public SelectEvent selectEvent = new SelectEvent();
+        public UnselectEvent unselectEvent = new UnselectEvent();
         public ScrollEvent scrollEvent = new ScrollEvent();
 
         private void Awake()
@@ -51,50 +45,35 @@ namespace Input
 
         #endregion
 
-        private GameObject GetTerrainWithoutFoW(Ray ray)
+        private GameObject GetObjectByTag(Ray ray, string tag)
         {
-            GameObject terrain = null;
-            bool _inFogOfWar = false;
+            GameObject go = null;
+            bool _isGettable = true;
 
             RaycastHit2D[] hits = Physics2D.RaycastAll(ray.origin, ray.direction);
             foreach (RaycastHit2D hit in hits)
             {
-                if (hit.transform.tag == _terrainTag)
-                    terrain = hit.transform.gameObject;
+                if (hit.transform.tag == tag)
+                    go = hit.transform.gameObject;
 
-                if (hit.transform.tag == _fowTag)
-                    _inFogOfWar = true;
+                if (hit.transform.tag == Tags.fogOfWarTag)
+                    _isGettable = false;
             }
 
-            if (_inFogOfWar)
+            if (!_isGettable)
                 return null;
 
-            return terrain;
+            return go;
         }
 
         private void Select(InputAction.CallbackContext context)
         {
-            Ray ray = _camera.ScreenPointToRay(Mouse.current.position.ReadValue());
-            if (_canSelect)
-            {
-                GameObject terrain = GetTerrainWithoutFoW(ray);
-                if (terrain != null)
-                    terrainSelectEvent.Invoke(GetTerrainWithoutFoW(ray));
-            }
-            else
-                terrainClickedEvent.Invoke(GetTerrainWithoutFoW(ray));
+            selectEvent.Invoke();
         }
 
         private void Unselect(InputAction.CallbackContext context)
         {
-            if (_canSelect)
-            {
-                terrainSelectEvent.Invoke(null);
-            }
-            else
-            {
-                terrainClickedEvent.Invoke(null);
-            }
+            unselectEvent.Invoke();
         }
 
         private void Scroll(InputAction.CallbackContext context)
@@ -104,21 +83,15 @@ namespace Input
             scrollEvent.Invoke(mouseScrollY);
         }
 
-        public void CanSelectTile(bool selecting)
-        {
-            _canSelect = selecting;
-        }
-
-        public GameObject GetHoveredTerrain()
+        public GameObject GetHoveredObjectByTag(string tag)
         {
             Ray ray = _camera.ScreenPointToRay(Mouse.current.position.ReadValue());
 
-            return GetTerrainWithoutFoW(ray);
+            return GetObjectByTag(ray, tag);
         }
 
-        public class TerrainSelectEvent : UnityEvent<GameObject> { }
-
-        public class TerrainClickedEvent : UnityEvent<GameObject> { }
+        public class SelectEvent : UnityEvent { }
+        public class UnselectEvent : UnityEvent { }
 
         public class ScrollEvent : UnityEvent<float> { }
     }
