@@ -6,24 +6,27 @@ namespace UI
 
     public class TaskButton : MonoBehaviour
     {
-        [SerializeField] private TaskManager _manager;
+        [SerializeField] private TaskDetailsUI _details;
 
         [SerializeField] private Task _task;
 
-        private bool _isAccepted = false;
+        public bool isAccepted { get; private set; }
 
-        public void AcceptTask()
+        private void Start()
         {
-            if (_isAccepted)
-            {
-                _manager.RemoveTask(_task);
-                _isAccepted = false;
-            }
-            else
-            {
-                _manager.AddTask(_task);
-                _isAccepted = true;
-            }
+            isAccepted = false;
+        }
+
+        public void Select()
+        {
+            _details.ShowDetails(_task, isAccepted);
+
+            _details.acceptEvent.AddListener(Accept);
+        }
+
+        private void Accept()
+        {
+            isAccepted = !isAccepted;
         }
     }
 }

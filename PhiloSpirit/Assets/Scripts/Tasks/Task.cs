@@ -7,9 +7,9 @@ namespace Tasks
     [System.Serializable]
     public class Task
     {
-        public string name;
+        [TextArea] public string name;
 
-        public string description;
+        [TextArea]  public string description;
 
         public Inventory cost;
         

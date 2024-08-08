@@ -27,35 +27,20 @@ namespace UI
 
         public void ShowTaskInventory()
         {
+            // Clean UI List
             foreach (Transform child in _inventoryList.transform)
             {
                 Destroy(child.gameObject);
             }
 
-            bool resourceFound;
-
             // For every resoure in the task cost
             foreach (Resource resource in _taskManager.totalCost.resources)
             {
+                // Instantiate resource UI
                 ResourceUI resourceUI = Instantiate(_resourceUIPrefab, _inventoryList.transform);
 
-                // Search if a resource of the same type is on the portal tile
-                resourceFound = false;
-                foreach (Resource portalResource in _portalTile.inventory.resources)
-                {
-                    if (resource.type == portalResource.type)
-                    {
-                        // If there is, show it
-                        resourceUI.Init(resource, portalResource);
-                        resourceFound = true;
-                    }
-                }
-
-                // Else, show a 0 for portal resources
-                if (!resourceFound)
-                {
-                    resourceUI.Init(resource, new Resource(resource.type));
-                }
+                // Set type and quantities
+                resourceUI.Init(resource, new Resource(resource.type, _portalTile.inventory.GetQuantity(resource.type)));
             }
 
             costChangedEvent.Invoke();
@@ -66,28 +51,10 @@ namespace UI
             if (_taskManager == null || _taskManager.totalCost.resources.Count == 0)
                 return false;
 
-            bool resourceFound;
-
             // For every resoure in the task cost
             foreach (Resource resource in _taskManager.totalCost.resources)
             {
-                resourceFound = false;
-                // Search if a resource of the same type is on the portal tile
-                foreach (Resource portalResource  in _portalTile.inventory.resources)
-               {
-                    if (resource.type == portalResource.type) {
-                        // And check if there is enough quantity to "pay" the task cost
-                        // If its enough, OK
-                        // If it isn't, we can stop and say it's not OK
-                        if (portalResource.quantity >= resource.quantity)
-                            resourceFound = true;
-                        else
-                            return false;
-                    }
-               }
-
-                // If the resource wasn't found at all, not OK
-                if (!resourceFound)
+                if (!_portalTile.inventory.HasEnough(resource))
                     return false;
             }
 
