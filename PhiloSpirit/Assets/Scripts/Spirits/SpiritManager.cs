@@ -1,3 +1,5 @@
+using Core;
+using System;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
@@ -29,6 +31,8 @@ namespace Spirits
             {
                 updateSpiritEvent.Invoke(spiritData, 0);
             }
+
+            CleanManager.cleanCycleEvent.AddListener(CleanSpirit);
         }
 
         public static void AddSpirit(SpiritType spiritType)
@@ -77,6 +81,22 @@ namespace Spirits
             }
 
             return cost;
+        }
+
+        private void CleanSpirit()
+        {
+            // For each spirit type
+            foreach (SpiritType type in Enum.GetValues(typeof(SpiritType)))
+            {
+                // Remove the cost of recruitment
+                updateSpiritEvent.Invoke(_spirits[type], - _spirits[type].maxSpirit);
+
+                // Reset data
+                _spirits[type] = new SpiritData(type);
+
+                // Update UI
+                updateSpiritEvent.Invoke(_spirits[type], 0);
+            }
         }
     }
 

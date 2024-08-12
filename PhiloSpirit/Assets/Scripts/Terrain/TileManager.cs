@@ -22,6 +22,8 @@ namespace Terrain
             _canSelect = true;
             _inputManager.selectEvent.AddListener(SelectTile);
             _inputManager.unselectEvent.AddListener(UnselectTile);
+
+            CleanManager.cleanCycleEvent.AddListener(CleanInventory);
         }
 
         private void SelectTile()
@@ -61,6 +63,19 @@ namespace Terrain
 
             if (!_canSelect)
                 UnselectTile();
+        }
+
+        public void CleanInventory()
+        {
+            foreach (Transform child in transform)
+            {
+                Tile tile = child.GetComponent<Tile>();
+
+                if (tile != null)
+                {
+                    tile.CleanInventory();
+                }
+            }
         }
 
         public class TileChanged : UnityEvent<Tile> { }

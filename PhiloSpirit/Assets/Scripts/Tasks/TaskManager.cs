@@ -1,5 +1,6 @@
 using Resources;
 using Spirits;
+using System;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
@@ -84,8 +85,11 @@ namespace Tasks
             if (quantity == 0)
                 return;
 
-            _totalCost.Add(new Resource(ResourceType.Food,
+            for (int i = 0; i < MathF.Abs(quantity); i++)
+            {
+                _totalCost.Add(new Resource(ResourceType.Food,
                 quantity > 0 ? spiritData.removeCost : -spiritData.addCost));
+            }
 
             costChanged.Invoke();
         }

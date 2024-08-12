@@ -42,6 +42,8 @@ namespace Resources
             _inventory.Clear();
             foreach(Resource res in inventory.resources)
                 _inventory.Add(new Resource(res.type, res.quantity));
+
+            updateEvent.Invoke();
         }
 
         public bool HasEnough(Resource item)

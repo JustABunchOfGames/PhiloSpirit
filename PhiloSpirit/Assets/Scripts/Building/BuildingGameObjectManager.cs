@@ -1,3 +1,4 @@
+using Core;
 using System.Collections.Generic;
 using Terrain;
 using UnityEngine;
@@ -14,6 +15,8 @@ namespace Building
         private void Awake()
         {
             _manager = GetComponent<BuildingManager>();
+
+            CleanManager.cleanCycleEvent.AddListener(CleanBuilding);
         }
 
         private void Start()
@@ -38,6 +41,16 @@ namespace Building
         {
             _buildingDictionary.Remove(building);
             Destroy(building.gameObject);
+        }
+
+        private void CleanBuilding()
+        {
+            foreach(Transform child in _parent)
+            {
+                Destroy(child.gameObject);
+            }
+
+            _buildingDictionary.Clear();
         }
     }
 }

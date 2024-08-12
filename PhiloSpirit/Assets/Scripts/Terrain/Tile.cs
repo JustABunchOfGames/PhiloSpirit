@@ -35,6 +35,13 @@ namespace Terrain
         {
             inventoryChangedEvent.Invoke();
         }
+
+        public void CleanInventory()
+        {
+            inventory.resources.Clear();
+
+            InventoryEvent();
+        }
     }
 
     public class InventoryChangedEvent : UnityEvent { }
