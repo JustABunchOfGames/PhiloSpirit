@@ -6,7 +6,6 @@ using UnityEngine.Events;
 
 namespace UI
 {
-
     public class TaskInventoryUI : MonoBehaviour
     {
         [SerializeField] private GameObject _inventoryList;
@@ -59,11 +58,6 @@ namespace UI
             }
 
             return true;
-        }
-
-        public void CompleteTasks()
-        {
-            _taskManager.CompleteTasks();
         }
 
         public class CostChangedEvent : UnityEvent { }

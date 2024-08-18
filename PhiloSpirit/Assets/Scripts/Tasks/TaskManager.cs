@@ -10,6 +10,8 @@ namespace Tasks
 
     public class TaskManager : MonoBehaviour
     {
+        [SerializeField] private TaskScriptable _scriptable;
+
         // List of accepted Tasks
         [SerializeField] private List<Task> _currentTasks = new List<Task>();
 
@@ -26,14 +28,28 @@ namespace Tasks
         private void Awake()
         {
             SpiritManager.updateSpiritEvent.AddListener(UpdateCostForSpirit);
+
+            _scriptable.Init();
         }
 
         private void Start()
         {
             _totalCost = new Inventory();
+
+            _scriptable.acceptEvent.AddListener(AcceptTask);
+            _scriptable.completeEvent.AddListener(CompleteTasks);
         }
 
-        public void AddTask(Task task)
+        private void AcceptTask(Task task)
+        {
+            if (task.state == TaskState.Accepted)
+                AddTask(task);
+
+            else if (task.state == TaskState.Available)
+                RemoveTask(task);
+        }
+
+        private void AddTask(Task task)
         {
             _currentTasks.Add(task);
 
@@ -45,7 +61,7 @@ namespace Tasks
             costChanged.Invoke();
         }
 
-        public void RemoveTask(Task task)
+        private void RemoveTask(Task task)
         {
             _currentTasks.Remove(task);
 
@@ -57,11 +73,12 @@ namespace Tasks
             costChanged.Invoke();
         }
 
-        public void CompleteTasks()
+        private void CompleteTasks()
         {
             foreach (Task task in _currentTasks)
             {
                 task.reward.Apply();
+                task.state = TaskState.Completed;
                 _completedTasks.Add(task);
             }
 

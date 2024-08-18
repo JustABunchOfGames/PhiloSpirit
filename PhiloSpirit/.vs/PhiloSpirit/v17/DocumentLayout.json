@@ -3,24 +3,36 @@
   "WorkspaceRootPath": "C:\\Unity_Projects\\PhiloSpirit\\PhiloSpirit\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{69551CE5-C05C-CBE4-2DBA-3E88A97E8120}|Building.csproj|c:\\unity_projects\\philospirit\\philospirit\\assets\\scripts\\building\\buildinggameobjectmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{69551CE5-C05C-CBE4-2DBA-3E88A97E8120}|Building.csproj|solutionrelative:assets\\scripts\\building\\buildinggameobjectmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{F2FD197B-CAD6-278C-0BB2-420EB1C84C6C}|UI.csproj|c:\\unity_projects\\philospirit\\philospirit\\assets\\scripts\\ui\\taskdetailsui.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F2FD197B-CAD6-278C-0BB2-420EB1C84C6C}|UI.csproj|solutionrelative:assets\\scripts\\ui\\taskdetailsui.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{D29F6013-E17B-E65F-3A76-86A710D826BB}|Spirits.csproj|c:\\unity_projects\\philospirit\\philospirit\\assets\\scripts\\spirits\\spiritmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{D29F6013-E17B-E65F-3A76-86A710D826BB}|Spirits.csproj|solutionrelative:assets\\scripts\\spirits\\spiritmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{D29F6013-E17B-E65F-3A76-86A710D826BB}|Spirits.csproj|c:\\unity_projects\\philospirit\\philospirit\\assets\\scripts\\spirits\\spiritdata.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{D29F6013-E17B-E65F-3A76-86A710D826BB}|Spirits.csproj|solutionrelative:assets\\scripts\\spirits\\spiritdata.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{69F30B8B-7A43-F26B-8DE7-90B48202E914}|Tasks.csproj|c:\\unity_projects\\philospirit\\philospirit\\assets\\scripts\\tasks\\taskmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{69F30B8B-7A43-F26B-8DE7-90B48202E914}|Tasks.csproj|C:\\Unity_Projects\\PhiloSpirit\\PhiloSpirit\\assets\\scripts\\tasks\\taskmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{69F30B8B-7A43-F26B-8DE7-90B48202E914}|Tasks.csproj|solutionrelative:assets\\scripts\\tasks\\taskmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{3F320667-58C1-AA5F-3D61-F68B43CFC190}|Transport.csproj|C:\\Unity_Projects\\PhiloSpirit\\PhiloSpirit\\assets\\scripts\\transport\\transportselector.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{3F320667-58C1-AA5F-3D61-F68B43CFC190}|Transport.csproj|solutionrelative:assets\\scripts\\transport\\transportselector.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{69F30B8B-7A43-F26B-8DE7-90B48202E914}|Tasks.csproj|c:\\unity_projects\\philospirit\\philospirit\\assets\\scripts\\tasks\\taskscriptable.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{69F30B8B-7A43-F26B-8DE7-90B48202E914}|Tasks.csproj|solutionrelative:assets\\scripts\\tasks\\taskscriptable.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F2FD197B-CAD6-278C-0BB2-420EB1C84C6C}|UI.csproj|C:\\Unity_Projects\\PhiloSpirit\\PhiloSpirit\\assets\\scripts\\ui\\taskbutton.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F2FD197B-CAD6-278C-0BB2-420EB1C84C6C}|UI.csproj|solutionrelative:assets\\scripts\\ui\\taskbutton.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{69F30B8B-7A43-F26B-8DE7-90B48202E914}|Tasks.csproj|c:\\unity_projects\\philospirit\\philospirit\\assets\\scripts\\tasks\\taskstate.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{69F30B8B-7A43-F26B-8DE7-90B48202E914}|Tasks.csproj|solutionrelative:assets\\scripts\\tasks\\taskstate.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{69F30B8B-7A43-F26B-8DE7-90B48202E914}|Tasks.csproj|c:\\unity_projects\\philospirit\\philospirit\\assets\\scripts\\tasks\\task.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{69F30B8B-7A43-F26B-8DE7-90B48202E914}|Tasks.csproj|solutionrelative:assets\\scripts\\tasks\\task.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F2FD197B-CAD6-278C-0BB2-420EB1C84C6C}|UI.csproj|c:\\unity_projects\\philospirit\\philospirit\\assets\\scripts\\ui\\taskinventoryui.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F2FD197B-CAD6-278C-0BB2-420EB1C84C6C}|UI.csproj|solutionrelative:assets\\scripts\\ui\\taskinventoryui.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F2FD197B-CAD6-278C-0BB2-420EB1C84C6C}|UI.csproj|c:\\unity_projects\\philospirit\\philospirit\\assets\\scripts\\ui\\completetasksbutton.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F2FD197B-CAD6-278C-0BB2-420EB1C84C6C}|UI.csproj|solutionrelative:assets\\scripts\\ui\\completetasksbutton.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -30,71 +42,111 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 0,
+          "SelectedChildIndex": 2,
           "Children": [
             {
               "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "TaskInventoryUI.cs",
+              "DocumentMoniker": "C:\\Unity_Projects\\PhiloSpirit\\PhiloSpirit\\Assets\\Scripts\\UI\\TaskInventoryUI.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\UI\\TaskInventoryUI.cs",
+              "ToolTip": "C:\\Unity_Projects\\PhiloSpirit\\PhiloSpirit\\Assets\\Scripts\\UI\\TaskInventoryUI.cs",
+              "RelativeToolTip": "Assets\\Scripts\\UI\\TaskInventoryUI.cs",
+              "ViewState": "AQIAABEAAAAAAAAAAAAQwCYAAAAWAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-08-18T12:28:14.88Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "CompleteTasksButton.cs",
+              "DocumentMoniker": "C:\\Unity_Projects\\PhiloSpirit\\PhiloSpirit\\Assets\\Scripts\\UI\\CompleteTasksButton.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\UI\\CompleteTasksButton.cs",
+              "ToolTip": "C:\\Unity_Projects\\PhiloSpirit\\PhiloSpirit\\Assets\\Scripts\\UI\\CompleteTasksButton.cs",
+              "RelativeToolTip": "Assets\\Scripts\\UI\\CompleteTasksButton.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABoAAAAJAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-08-18T12:27:29.149Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "BuildingGameObjectManager.cs",
-              "DocumentMoniker": "C:\\Unity_Projects\\PhiloSpirit\\PhiloSpirit\\Assets\\Scripts\\Building\\BuildingGameObjectManager.cs",
-              "RelativeDocumentMoniker": "Assets\\Scripts\\Building\\BuildingGameObjectManager.cs",
-              "ToolTip": "C:\\Unity_Projects\\PhiloSpirit\\PhiloSpirit\\Assets\\Scripts\\Building\\BuildingGameObjectManager.cs",
-              "RelativeToolTip": "Assets\\Scripts\\Building\\BuildingGameObjectManager.cs",
-              "ViewState": "AQIAABsAAAAAAAAAAAAowDEAAAAoAAAA",
+              "Title": "TaskDetailsUI.cs",
+              "DocumentMoniker": "C:\\Unity_Projects\\PhiloSpirit\\PhiloSpirit\\Assets\\Scripts\\UI\\TaskDetailsUI.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\UI\\TaskDetailsUI.cs",
+              "ToolTip": "C:\\Unity_Projects\\PhiloSpirit\\PhiloSpirit\\Assets\\Scripts\\UI\\TaskDetailsUI.cs",
+              "RelativeToolTip": "Assets\\Scripts\\UI\\TaskDetailsUI.cs",
+              "ViewState": "AQIAABoAAAAAAAAAAAAQwCEAAABAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-08-12T17:10:44.481Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "SpiritData.cs",
-              "DocumentMoniker": "C:\\Unity_Projects\\PhiloSpirit\\PhiloSpirit\\Assets\\Scripts\\Spirits\\SpiritData.cs",
-              "RelativeDocumentMoniker": "Assets\\Scripts\\Spirits\\SpiritData.cs",
-              "ToolTip": "C:\\Unity_Projects\\PhiloSpirit\\PhiloSpirit\\Assets\\Scripts\\Spirits\\SpiritData.cs",
-              "RelativeToolTip": "Assets\\Scripts\\Spirits\\SpiritData.cs",
-              "ViewState": "AQIAAAUAAAAAAAAAAAAQwAAAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-08-12T17:02:18.209Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "TaskManager.cs",
-              "DocumentMoniker": "C:\\Unity_Projects\\PhiloSpirit\\PhiloSpirit\\Assets\\Scripts\\Tasks\\TaskManager.cs",
-              "RelativeDocumentMoniker": "Assets\\Scripts\\Tasks\\TaskManager.cs",
-              "ToolTip": "C:\\Unity_Projects\\PhiloSpirit\\PhiloSpirit\\Assets\\Scripts\\Tasks\\TaskManager.cs",
-              "RelativeToolTip": "Assets\\Scripts\\Tasks\\TaskManager.cs",
-              "ViewState": "AQIAAEAAAAAAAAAAAAAmwEsAAAA+AAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-08-12T15:46:41.556Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "SpiritManager.cs",
-              "DocumentMoniker": "C:\\Unity_Projects\\PhiloSpirit\\PhiloSpirit\\Assets\\Scripts\\Spirits\\SpiritManager.cs",
-              "RelativeDocumentMoniker": "Assets\\Scripts\\Spirits\\SpiritManager.cs",
-              "ToolTip": "C:\\Unity_Projects\\PhiloSpirit\\PhiloSpirit\\Assets\\Scripts\\Spirits\\SpiritManager.cs",
-              "RelativeToolTip": "Assets\\Scripts\\Spirits\\SpiritManager.cs",
-              "ViewState": "AQIAAE0AAAAAAAAAAAAmwGIAAAANAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-08-12T15:36:07.218Z",
+              "WhenOpened": "2024-08-18T11:59:13.863Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 4,
-              "Title": "TransportSelector.cs",
-              "DocumentMoniker": "C:\\Unity_Projects\\PhiloSpirit\\PhiloSpirit\\Assets\\Scripts\\Transport\\TransportSelector.cs",
-              "RelativeDocumentMoniker": "Assets\\Scripts\\Transport\\TransportSelector.cs",
-              "ToolTip": "C:\\Unity_Projects\\PhiloSpirit\\PhiloSpirit\\Assets\\Scripts\\Transport\\TransportSelector.cs",
-              "RelativeToolTip": "Assets\\Scripts\\Transport\\TransportSelector.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAwAAAAnAAAA",
+              "Title": "TaskState.cs",
+              "DocumentMoniker": "C:\\Unity_Projects\\PhiloSpirit\\PhiloSpirit\\Assets\\Scripts\\Tasks\\TaskState.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\Tasks\\TaskState.cs",
+              "ToolTip": "C:\\Unity_Projects\\PhiloSpirit\\PhiloSpirit\\Assets\\Scripts\\Tasks\\TaskState.cs",
+              "RelativeToolTip": "Assets\\Scripts\\Tasks\\TaskState.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAEAAAABAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-08-12T15:33:53.31Z"
+              "WhenOpened": "2024-08-18T11:51:45.952Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "Task.cs",
+              "DocumentMoniker": "C:\\Unity_Projects\\PhiloSpirit\\PhiloSpirit\\Assets\\Scripts\\Tasks\\Task.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\Tasks\\Task.cs",
+              "ToolTip": "C:\\Unity_Projects\\PhiloSpirit\\PhiloSpirit\\Assets\\Scripts\\Tasks\\Task.cs",
+              "RelativeToolTip": "Assets\\Scripts\\Tasks\\Task.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAEAAAAQAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-08-18T11:52:33.552Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "TaskButton.cs",
+              "DocumentMoniker": "C:\\Unity_Projects\\PhiloSpirit\\PhiloSpirit\\Assets\\Scripts\\UI\\TaskButton.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\UI\\TaskButton.cs",
+              "ToolTip": "C:\\Unity_Projects\\PhiloSpirit\\PhiloSpirit\\Assets\\Scripts\\UI\\TaskButton.cs",
+              "RelativeToolTip": "Assets\\Scripts\\UI\\TaskButton.cs",
+              "ViewState": "AQIAACAAAAAAAAAAAAA9wDsAAABEAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-08-18T11:49:07.375Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "TaskScriptable.cs",
+              "DocumentMoniker": "C:\\Unity_Projects\\PhiloSpirit\\PhiloSpirit\\Assets\\Scripts\\Tasks\\TaskScriptable.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\Tasks\\TaskScriptable.cs",
+              "ToolTip": "C:\\Unity_Projects\\PhiloSpirit\\PhiloSpirit\\Assets\\Scripts\\Tasks\\TaskScriptable.cs",
+              "RelativeToolTip": "Assets\\Scripts\\Tasks\\TaskScriptable.cs",
+              "ViewState": "AQIAAB4AAAAAAAAAAAAowBUAAABKAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-08-18T11:29:22.631Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "TaskManager.cs",
+              "DocumentMoniker": "C:\\Unity_Projects\\PhiloSpirit\\PhiloSpirit\\Assets\\Scripts\\Tasks\\TaskManager.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\Tasks\\TaskManager.cs",
+              "ToolTip": "C:\\Unity_Projects\\PhiloSpirit\\PhiloSpirit\\Assets\\Scripts\\Tasks\\TaskManager.cs",
+              "RelativeToolTip": "Assets\\Scripts\\Tasks\\TaskManager.cs",
+              "ViewState": "AQIAACkAAAAAAAAAAAAwwFkAAAAhAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-08-12T15:46:41.556Z",
+              "EditorCaption": ""
             }
           ]
         }

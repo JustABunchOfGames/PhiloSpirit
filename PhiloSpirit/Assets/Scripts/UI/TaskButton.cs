@@ -1,32 +1,63 @@
 using Tasks;
 using UnityEngine;
+using UnityEngine.UI;
 
 namespace UI
 {
 
     public class TaskButton : MonoBehaviour
     {
-        [SerializeField] private TaskDetailsUI _details;
+        [SerializeField] private TaskScriptable _scriptable;
 
         [SerializeField] private Task _task;
 
-        public bool isAccepted { get; private set; }
+        [SerializeField] private TaskButton _nextTask;
+
+        private Button _button;
+        private GameObject _indicator;
 
         private void Start()
         {
-            isAccepted = false;
+            _button = GetComponent<Button>();
+
+            ShowState();
+
+            _task.stateChangeEvent.AddListener(ShowState);
         }
 
         public void Select()
         {
-            _details.ShowDetails(_task, isAccepted);
-
-            _details.acceptEvent.AddListener(Accept);
+            _scriptable.ShowTask(_task);
         }
 
-        private void Accept()
+        public void Unlock()
         {
-            isAccepted = !isAccepted;
+            _button.interactable = true;
+
+            _task.state = TaskState.Available;
+            ShowState();
+        }
+
+        public void ShowState()
+        {
+            // Clean old indicator
+            if (_indicator != null)
+                Destroy(_indicator);
+
+            // Get state from task
+            TaskState state = _task.state;
+
+            // Lock self or unlock next if necessary
+            if (state == TaskState.Locked)
+                GetComponent<Button>().interactable = false;
+            else if (state == TaskState.Completed && _nextTask != null)
+                _nextTask.Unlock();
+
+            // Show indicator
+            TaskScriptable.TaskStateIndicator indicator = _scriptable.GetStateIndicator(state);
+
+            _indicator = Instantiate(indicator.indicator, transform);
+            _indicator.transform.localPosition = indicator.position;
         }
     }
 }

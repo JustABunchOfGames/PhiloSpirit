@@ -25,10 +25,5 @@ namespace UI
         {
             _completeTasksButton.interactable = _taskInventory.IsTaskCompletionPossible();
         }
-
-        public void CompleteTasks()
-        {
-            _taskInventory.CompleteTasks();
-        }
     }
 }

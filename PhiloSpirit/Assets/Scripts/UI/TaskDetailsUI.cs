@@ -1,7 +1,6 @@
 using Resources;
 using Tasks;
 using UnityEngine;
-using UnityEngine.Events;
 using UnityEngine.UI;
 
 namespace UI
@@ -9,7 +8,7 @@ namespace UI
     public class TaskDetailsUI : MonoBehaviour
     {
         [Header("Manager")]
-        [SerializeField] private TaskManager _manager;
+        [SerializeField] private TaskScriptable _scriptable;
 
         [Header("Unselected Details")]
         [SerializeField] private Button _button;
@@ -26,21 +25,17 @@ namespace UI
         [SerializeField] private ResourceUI _resourceUIPrefab;
         [SerializeField] private GameObject _costList;
 
-        private Task _currentTask;
-        private bool _accepted;
-
-        public AcceptEvent acceptEvent = new AcceptEvent();
-
         private void Start()
         {
             CleanDetails();
+
+            _scriptable.showEvent.AddListener(ShowDetails);
+            _scriptable.acceptEvent.AddListener(ShowState);
+            _scriptable.completeEvent.AddListener(CleanDetails);
         }
 
         public void CleanDetails()
         {
-            _currentTask = null;
-            acceptEvent.RemoveAllListeners();
-
             // Show "Clean" Text
             _nameText.text = "";
             _descriptionText.text = _startText;
@@ -55,22 +50,13 @@ namespace UI
             _button.gameObject.SetActive(false);
         }
 
-        public void ShowDetails(Task task, bool accepted)
+        public void ShowDetails(Task task)
         {
-            // Clear event listener
-            acceptEvent.RemoveAllListeners();
-
-            // Show button
-            _button.gameObject.SetActive(true);
-
-            // Save for later button click
-            _currentTask = task;
-            _accepted = accepted;
-
-            // Set Texts
+            // Set Texts & Button State
             _nameText.text = task.name;
             _descriptionText.text = task.description;
-            _buttonText.text = accepted ? _abandonText : _acceptText;
+
+            ShowState(task);
 
             // Set List
 
@@ -91,31 +77,24 @@ namespace UI
             }
         }
 
-        public void AcceptTask()
+        private void ShowState(Task task)
         {
-            if (_currentTask == null)
-                return;
-
-            // if the task for not already accepted
-            if (!_accepted)
+            switch (task.state)
             {
-                _manager.AddTask(_currentTask);
+                case TaskState.Available:
+                    _button.gameObject.SetActive(true);
+                    _buttonText.text = _acceptText;
+                    break;
 
-                _buttonText.text = _abandonText;
+                case TaskState.Accepted:
+                    _buttonText.gameObject.SetActive(true);
+                    _buttonText.text = _abandonText;
+                    break;
+
+                case TaskState.Completed:
+                    _button.gameObject.SetActive(false);
+                    break;
             }
-            else
-            {
-                _manager.RemoveTask(_currentTask);
-
-                _buttonText.text = _acceptText;
-            }
-            
-
-            _accepted = !_accepted;
-            acceptEvent.Invoke();
         }
-
-        public class AcceptEvent : UnityEvent { }
-
     }
 }
