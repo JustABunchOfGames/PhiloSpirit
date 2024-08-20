@@ -1,5 +1,7 @@
+using System.Collections.Generic;
 using Tasks;
 using UnityEngine;
+using UnityEngine.Events;
 using UnityEngine.UI;
 
 namespace UI
@@ -11,7 +13,9 @@ namespace UI
 
         [SerializeField] private Task _task;
 
-        [SerializeField] private TaskButton _nextTask;
+        // Unlocks
+        [SerializeField] private List<TaskButton> _taskToUnlock;
+        public CompleteEvent completeEvent = new CompleteEvent();
 
         private Button _button;
         private GameObject _indicator;
@@ -23,6 +27,13 @@ namespace UI
             ShowState();
 
             _task.stateChangeEvent.AddListener(ShowState);
+
+            Transform parent = transform.GetComponentInParent<Transform>();
+            foreach (TaskButton button in _taskToUnlock)
+            {
+                button.completeEvent.AddListener(Unlock);                
+                DrawLineBetweenObject.DrawLine(button.transform, transform, Color.black);
+            }
         }
 
         public void Select()
@@ -32,6 +43,14 @@ namespace UI
 
         public void Unlock()
         {
+            // CHeck if every prior task is completed
+            foreach(TaskButton button in _taskToUnlock)
+            {
+                if (button._task.state != TaskState.Completed)
+                    return;
+            }
+
+            // if it is, unlock this task
             _button.interactable = true;
 
             _task.state = TaskState.Available;
@@ -50,8 +69,8 @@ namespace UI
             // Lock self or unlock next if necessary
             if (state == TaskState.Locked)
                 GetComponent<Button>().interactable = false;
-            else if (state == TaskState.Completed && _nextTask != null)
-                _nextTask.Unlock();
+            else if (state == TaskState.Completed)
+                completeEvent.Invoke();
 
             // Show indicator
             TaskScriptable.TaskStateIndicator indicator = _scriptable.GetStateIndicator(state);
@@ -59,5 +78,7 @@ namespace UI
             _indicator = Instantiate(indicator.indicator, transform);
             _indicator.transform.localPosition = indicator.position;
         }
+
+        public class CompleteEvent : UnityEvent { }
     }
 }
