@@ -7,8 +7,8 @@ namespace UI
 
     public class ResourceUI : MonoBehaviour
     {
-        [SerializeField] private Text _name;
-        [SerializeField] private Text _quantity;
+        [SerializeField] protected Text _name;
+        [SerializeField] protected Text _quantity;
 
         public void Init(Resource resource)
         {

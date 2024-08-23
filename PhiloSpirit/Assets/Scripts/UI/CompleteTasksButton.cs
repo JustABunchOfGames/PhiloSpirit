@@ -1,4 +1,5 @@
 using Resources;
+using Tasks;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -7,23 +8,39 @@ namespace UI
 
     public class CompleteTasksButton : MonoBehaviour
     {
+        [Header("Manager")]
+        [SerializeField] private TaskManager _manager;
+
+        [Header("UI")]
         [SerializeField] private Button _completeTasksButton;
-
-        [SerializeField] private TaskInventoryUI _taskInventory;
-
-        private void OnEnable()
-        {
-            ChangeState();
-        }
 
         private void Start()
         {
-            _taskInventory.costChangedEvent.AddListener(ChangeState);
+            _completeTasksButton.interactable = false;
+
+            _manager.costChanged.AddListener(ChangeState);
         }
 
-        private void ChangeState()
+        private void ChangeState(Inventory portalInventory, Inventory taskInventory)
         {
-            _completeTasksButton.interactable = _taskInventory.IsTaskCompletionPossible();
+
+            if (taskInventory == null || taskInventory.resources.Count == 0)
+            {
+                _completeTasksButton.interactable = false;
+                return;
+            }
+
+            
+            foreach (Resource resource in taskInventory.resources)
+            {
+                if (!portalInventory.HasEnough(resource))
+                {
+                    _completeTasksButton.interactable = false;
+                    return;
+                }
+            }
+
+            _completeTasksButton.interactable = true;
         }
     }
 }
