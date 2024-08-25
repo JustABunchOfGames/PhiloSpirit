@@ -3,6 +3,14 @@
   "WorkspaceRootPath": "C:\\Unity_Projects\\PhiloSpirit\\PhiloSpirit\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{7B19E046-A148-4DD6-8332-A7C41EA52F5E}|Resources.csproj|c:\\unity_projects\\philospirit\\philospirit\\assets\\scripts\\resources\\resource.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7B19E046-A148-4DD6-8332-A7C41EA52F5E}|Resources.csproj|solutionrelative:assets\\scripts\\resources\\resource.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{69551CE5-C05C-CBE4-2DBA-3E88A97E8120}|Building.csproj|c:\\unity_projects\\philospirit\\philospirit\\assets\\scripts\\building\\buildingpositioningmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{69551CE5-C05C-CBE4-2DBA-3E88A97E8120}|Building.csproj|solutionrelative:assets\\scripts\\building\\buildingpositioningmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{F2FD197B-CAD6-278C-0BB2-420EB1C84C6C}|UI.csproj|c:\\unity_projects\\philospirit\\philospirit\\assets\\scripts\\ui\\taskresourceui.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{F2FD197B-CAD6-278C-0BB2-420EB1C84C6C}|UI.csproj|solutionrelative:assets\\scripts\\ui\\taskresourceui.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
@@ -11,15 +19,15 @@
       "RelativeMoniker": "D:0:0:{F2FD197B-CAD6-278C-0BB2-420EB1C84C6C}|UI.csproj|solutionrelative:assets\\scripts\\ui\\taskcompleteui.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{AA7B23D5-5570-4D17-443F-85CF55DD040C}|Input.csproj|c:\\unity_projects\\philospirit\\philospirit\\assets\\scripts\\input\\inputmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{AA7B23D5-5570-4D17-443F-85CF55DD040C}|Input.csproj|C:\\Unity_Projects\\PhiloSpirit\\PhiloSpirit\\assets\\scripts\\input\\inputmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{AA7B23D5-5570-4D17-443F-85CF55DD040C}|Input.csproj|solutionrelative:assets\\scripts\\input\\inputmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{F2FD197B-CAD6-278C-0BB2-420EB1C84C6C}|UI.csproj|c:\\unity_projects\\philospirit\\philospirit\\assets\\scripts\\ui\\setactivebutton.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{F2FD197B-CAD6-278C-0BB2-420EB1C84C6C}|UI.csproj|C:\\Unity_Projects\\PhiloSpirit\\PhiloSpirit\\assets\\scripts\\ui\\setactivebutton.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{F2FD197B-CAD6-278C-0BB2-420EB1C84C6C}|UI.csproj|solutionrelative:assets\\scripts\\ui\\setactivebutton.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{F2FD197B-CAD6-278C-0BB2-420EB1C84C6C}|UI.csproj|c:\\unity_projects\\philospirit\\philospirit\\assets\\scripts\\ui\\completetasksbutton.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{F2FD197B-CAD6-278C-0BB2-420EB1C84C6C}|UI.csproj|C:\\Unity_Projects\\PhiloSpirit\\PhiloSpirit\\assets\\scripts\\ui\\completetasksbutton.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{F2FD197B-CAD6-278C-0BB2-420EB1C84C6C}|UI.csproj|solutionrelative:assets\\scripts\\ui\\completetasksbutton.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
@@ -42,11 +50,37 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 3,
+          "SelectedChildIndex": 0,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 0,
+              "Title": "Resource.cs",
+              "DocumentMoniker": "C:\\Unity_Projects\\PhiloSpirit\\PhiloSpirit\\Assets\\Scripts\\Resources\\Resource.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\Resources\\Resource.cs",
+              "ToolTip": "C:\\Unity_Projects\\PhiloSpirit\\PhiloSpirit\\Assets\\Scripts\\Resources\\Resource.cs",
+              "RelativeToolTip": "Assets\\Scripts\\Resources\\Resource.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABAAAAAIAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-08-25T11:46:37.029Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "BuildingPositioningManager.cs",
+              "DocumentMoniker": "C:\\Unity_Projects\\PhiloSpirit\\PhiloSpirit\\Assets\\Scripts\\Building\\BuildingPositioningManager.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\Building\\BuildingPositioningManager.cs",
+              "ToolTip": "C:\\Unity_Projects\\PhiloSpirit\\PhiloSpirit\\Assets\\Scripts\\Building\\BuildingPositioningManager.cs",
+              "RelativeToolTip": "Assets\\Scripts\\Building\\BuildingPositioningManager.cs",
+              "ViewState": "AQIAABQAAAAAAAAAAAAQwJoAAAAfAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-08-25T11:30:43.614Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
               "Title": "InputManager.cs",
               "DocumentMoniker": "C:\\Unity_Projects\\PhiloSpirit\\PhiloSpirit\\Assets\\Scripts\\Input\\InputManager.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\Input\\InputManager.cs",
@@ -54,12 +88,11 @@
               "RelativeToolTip": "Assets\\Scripts\\Input\\InputManager.cs",
               "ViewState": "AQIAADoAAAAAAAAAAAAowAAAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-08-23T13:32:01.634Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-08-23T13:32:01.634Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 5,
               "Title": "SetActiveButton.cs",
               "DocumentMoniker": "C:\\Unity_Projects\\PhiloSpirit\\PhiloSpirit\\Assets\\Scripts\\UI\\SetActiveButton.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\UI\\SetActiveButton.cs",
@@ -67,12 +100,11 @@
               "RelativeToolTip": "Assets\\Scripts\\UI\\SetActiveButton.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-08-23T13:31:25.896Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-08-23T13:31:25.896Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 6,
               "Title": "CompleteTasksButton.cs",
               "DocumentMoniker": "C:\\Unity_Projects\\PhiloSpirit\\PhiloSpirit\\Assets\\Scripts\\UI\\CompleteTasksButton.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\UI\\CompleteTasksButton.cs",
@@ -80,12 +112,11 @@
               "RelativeToolTip": "Assets\\Scripts\\UI\\CompleteTasksButton.cs",
               "ViewState": "AQIAAAsAAAAAAAAAAAAQwBMAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-08-23T13:27:06.697Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-08-23T13:27:06.697Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 2,
               "Title": "TaskResourceUI.cs",
               "DocumentMoniker": "C:\\Unity_Projects\\PhiloSpirit\\PhiloSpirit\\Assets\\Scripts\\UI\\TaskResourceUI.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\UI\\TaskResourceUI.cs",
@@ -98,7 +129,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 8,
               "Title": "TextUI.cs",
               "DocumentMoniker": "C:\\Unity_Projects\\PhiloSpirit\\PhiloSpirit\\Assets\\Scripts\\UI\\TextUI.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\UI\\TextUI.cs",
@@ -110,7 +141,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 3,
               "Title": "TaskCompleteUI.cs",
               "DocumentMoniker": "C:\\Unity_Projects\\PhiloSpirit\\PhiloSpirit\\Assets\\Scripts\\UI\\TaskCompleteUI.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\UI\\TaskCompleteUI.cs",
@@ -118,12 +149,11 @@
               "RelativeToolTip": "Assets\\Scripts\\UI\\TaskCompleteUI.cs",
               "ViewState": "AQIAAGwAAAAAAAAAAAA4wH4AAAAtAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-08-23T11:11:18.159Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-08-23T11:11:18.159Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 9,
               "Title": "TaskInventoryUI.cs",
               "DocumentMoniker": "C:\\Unity_Projects\\PhiloSpirit\\PhiloSpirit\\Assets\\Scripts\\UI\\TaskInventoryUI.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\UI\\TaskInventoryUI.cs",
@@ -135,7 +165,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 7,
               "Title": "TaskManager.cs",
               "DocumentMoniker": "C:\\Unity_Projects\\PhiloSpirit\\PhiloSpirit\\Assets\\Scripts\\Tasks\\TaskManager.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\Tasks\\TaskManager.cs",
@@ -143,8 +173,7 @@
               "RelativeToolTip": "Assets\\Scripts\\Tasks\\TaskManager.cs",
               "ViewState": "AQIAAEoAAAAAAAAAAAAwwFwAAAAgAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-08-12T15:46:41.556Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-08-12T15:46:41.556Z"
             }
           ]
         }

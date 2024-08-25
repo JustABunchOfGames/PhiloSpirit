@@ -10,25 +10,23 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 05117e4bdb2e52243b24e254ff8ec995, type: 3}
-  m_Name: SimpleForestry
+  m_Name: StoneGathering
   m_EditorClassIdentifier: 
-  _id: 20002
-  _buildingName: Simple Forestry
-  _prefab: {fileID: 8083251817516436340, guid: 2f359c1d9b6eb1840bf0f999387c8052, type: 3}
+  _id: 30001
+  _buildingName: Stone Gathering
+  _prefab: {fileID: 1998846225780626795, guid: 7d99670b4bdccc14babbcef25cac3f46, type: 3}
   _tiles:
   - coord: {x: 0, y: 0, z: 0}
-    neededTileType: 2
-  - coord: {x: 1, y: 0, z: 0}
-    neededTileType: 0
+    neededTileType: 3
   _cost:
     resourceCost:
       _inventory:
-      - _type: 2
+      - _type: 1
         quantity: 1
     spiritCost:
     - type: 0
       quantity: 1
   _output:
     _inventory:
-    - _type: 1
-      quantity: 5
+    - _type: 2
+      quantity: 3

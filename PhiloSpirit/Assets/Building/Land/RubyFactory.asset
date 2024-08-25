@@ -10,25 +10,31 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 05117e4bdb2e52243b24e254ff8ec995, type: 3}
-  m_Name: SimpleForestry
+  m_Name: RubyFactory
   m_EditorClassIdentifier: 
-  _id: 20002
-  _buildingName: Simple Forestry
-  _prefab: {fileID: 8083251817516436340, guid: 2f359c1d9b6eb1840bf0f999387c8052, type: 3}
+  _id: 10032
+  _buildingName: Ruby Factory
+  _prefab: {fileID: 1193661285946401787, guid: 13c00274b27133b4faba54f98d20b2e8, type: 3}
   _tiles:
   - coord: {x: 0, y: 0, z: 0}
-    neededTileType: 2
+    neededTileType: 0
+  - coord: {x: -1, y: 0, z: 0}
+    neededTileType: 0
   - coord: {x: 1, y: 0, z: 0}
     neededTileType: 0
   _cost:
     resourceCost:
       _inventory:
+      - _type: 1
+        quantity: 2
       - _type: 2
-        quantity: 1
+        quantity: 2
+      - _type: 4
+        quantity: 2
     spiritCost:
-    - type: 0
-      quantity: 1
+    - type: 3
+      quantity: 5
   _output:
     _inventory:
-    - _type: 1
-      quantity: 5
+    - _type: 8
+      quantity: 1

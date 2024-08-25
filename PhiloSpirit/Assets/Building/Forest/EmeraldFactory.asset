@@ -10,23 +10,33 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 05117e4bdb2e52243b24e254ff8ec995, type: 3}
-  m_Name: Basic Foraging
+  m_Name: EmeraldFactory
   m_EditorClassIdentifier: 
-  _id: 10001
-  _buildingName: Basic Foraging
-  _prefab: {fileID: 4669051791428119982, guid: b578ca517364c4a489d09720cbf0d512, type: 3}
+  _id: 20031
+  _buildingName: Emerald Factory
+  _prefab: {fileID: 8083251817516436340, guid: adcfdef7e6c96a043ae8867e3e83b7a3, type: 3}
   _tiles:
   - coord: {x: 0, y: 0, z: 0}
+    neededTileType: 2
+  - coord: {x: 1, y: 0, z: 0}
+    neededTileType: 2
+  - coord: {x: 1, y: 1, z: 0}
+    neededTileType: 0
+  - coord: {x: 0, y: -1, z: 0}
     neededTileType: 0
   _cost:
     resourceCost:
       _inventory:
       - _type: 1
-        quantity: 1
+        quantity: 2
+      - _type: 2
+        quantity: 2
+      - _type: 4
+        quantity: 2
     spiritCost:
-    - type: 2
-      quantity: 1
+    - type: 1
+      quantity: 5
   _output:
     _inventory:
-    - _type: 0
-      quantity: 3
+    - _type: 6
+      quantity: 1

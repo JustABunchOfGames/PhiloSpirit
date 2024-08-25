@@ -10,11 +10,11 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 05117e4bdb2e52243b24e254ff8ec995, type: 3}
-  m_Name: BasicGathering
+  m_Name: WoodGathering
   m_EditorClassIdentifier: 
   _id: 20001
-  _buildingName: Basic Gathering
-  _prefab: {fileID: 4669051791428119982, guid: 277ac68cf8185fb4eb77c65177f658b8, type: 3}
+  _buildingName: Wood Gathering
+  _prefab: {fileID: 8083251817516436340, guid: 07dca179d2c83ad4a89e089e9379ffa5, type: 3}
   _tiles:
   - coord: {x: 0, y: 0, z: 0}
     neededTileType: 2

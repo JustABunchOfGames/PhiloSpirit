@@ -14,6 +14,7 @@ namespace Building {
         [Header("Indicator")]
         [SerializeField] private GameObject _indicatorGo;
         [SerializeField] private BuildingTileIndicator _indicatorPrefab;
+        [SerializeField] private GameObject _northIndicator;
 
         private bool _isChecking;
         private bool _allCheckOK;
@@ -40,6 +41,8 @@ namespace Building {
             _inputManager.scrollEvent.AddListener(RotateIndicator);
 
             _indicatorGo.transform.position = new Vector3(0,0,-1);
+
+            Instantiate(_northIndicator, _indicatorGo.transform);
 
             foreach (BuildingTile tile in data.tiles)
             {
@@ -143,10 +146,15 @@ namespace Building {
             _allCheckOK = true;
             foreach (Transform tile in _indicatorGo.transform)
             {
-                bool check = tile.GetComponent<BuildingTileIndicator>().Check();
+                BuildingTileIndicator indicator = tile.GetComponent<BuildingTileIndicator>();
 
-                if (!check)
-                    _allCheckOK = false;
+                if (indicator != null)
+                {
+                    bool check = indicator.Check();
+
+                    if (!check)
+                        _allCheckOK = false;
+                }
             }
         }
     }
