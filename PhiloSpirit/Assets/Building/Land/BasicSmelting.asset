@@ -10,25 +10,27 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 05117e4bdb2e52243b24e254ff8ec995, type: 3}
-  m_Name: SimpleForestry
+  m_Name: BasicSmelting
   m_EditorClassIdentifier: 
-  _id: 20002
-  _buildingName: Simple Forestry
-  _prefab: {fileID: 8083251817516436340, guid: 2f359c1d9b6eb1840bf0f999387c8052, type: 3}
+  _id: 10011
+  _buildingName: Basic Smelting
+  _prefab: {fileID: 1193661285946401787, guid: 02bb2b1eab0f837469610f4800cde281, type: 3}
   _tiles:
   - coord: {x: 0, y: 0, z: 0}
-    neededTileType: 2
+    neededTileType: 0
   - coord: {x: 1, y: 0, z: 0}
     neededTileType: 0
   _cost:
     resourceCost:
       _inventory:
-      - _type: 2
+      - _type: 3
+        quantity: 1
+      - _type: 0
         quantity: 1
     spiritCost:
-    - type: 0
+    - type: 3
       quantity: 1
   _output:
     _inventory:
-    - _type: 1
-      quantity: 5
+    - _type: 4
+      quantity: 1

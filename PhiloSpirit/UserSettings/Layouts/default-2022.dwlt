@@ -271,8 +271,8 @@ MonoBehaviour:
     y: 0
     width: 422
     height: 947
-  m_MinSize: {x: 275, y: 50}
-  m_MaxSize: {x: 4000, y: 4000}
+  m_MinSize: {x: 276, y: 71}
+  m_MaxSize: {x: 4001, y: 4021}
   m_ActualView: {fileID: 19}
   m_Panes:
   - {fileID: 19}
@@ -356,7 +356,7 @@ MonoBehaviour:
       y: 21
       width: 1182
       height: 511
-    m_Scale: {x: 0.4731481, y: 0.47314814}
+    m_Scale: {x: 0.47314814, y: 0.47314814}
     m_Translation: {x: 591, y: 255.5}
     m_MarginLeft: 0
     m_MarginRight: 0
@@ -412,10 +412,10 @@ MonoBehaviour:
     m_OverlaysVisible: 1
   m_SceneHierarchy:
     m_TreeViewState:
-      scrollPos: {x: 0, y: 81}
-      m_SelectedIDs: c0650000
-      m_LastClickedID: 26048
-      m_ExpandedIDs: d279ffff2e8effffe0daffffdaf1ffff14fbffff566500001266000036660000dc660000d46900006c6a0000
+      scrollPos: {x: 0, y: 120}
+      m_SelectedIDs: e06a0000
+      m_LastClickedID: 27360
+      m_ExpandedIDs: 14fbffffda650000346600000e670000466a0000486b0000
       m_RenameOverlay:
         m_UserAcceptedRename: 0
         m_Name: 
@@ -821,9 +821,9 @@ MonoBehaviour:
   m_PlayAudio: 0
   m_AudioPlay: 0
   m_Position:
-    m_Target: {x: -0.38613218, y: -1.8876235, z: -0.94195306}
+    m_Target: {x: -1.3603543, y: -2.0567253, z: -0.9147759}
     speed: 2
-    m_Value: {x: -0.3928966, y: 0.50127614, z: -0.012063511}
+    m_Value: {x: 0.5, y: 0.5, z: 0}
   m_RenderMode: 0
   m_CameraMode:
     drawMode: 0
@@ -873,9 +873,9 @@ MonoBehaviour:
     speed: 2
     m_Value: {x: 0, y: 0, z: 0, w: 1}
   m_Size:
-    m_Target: 3.5979118
+    m_Target: 3.518575
     speed: 2
-    m_Value: 1.5802696
+    m_Value: 1.4177446
   m_Ortho:
     m_Target: 1
     speed: 2
@@ -1030,9 +1030,9 @@ MonoBehaviour:
     m_IsLocked: 0
   m_FolderTreeState:
     scrollPos: {x: 0, y: 0}
-    m_SelectedIDs: 1a700000
-    m_LastClickedID: 28698
-    m_ExpandedIDs: 000000009a6f00009c6f00009e6f0000a06f0000a26f0000a46f0000f66f000000ca9a3b
+    m_SelectedIDs: 2a720000
+    m_LastClickedID: 29226
+    m_ExpandedIDs: 00000000aa710000ac710000ae710000b0710000b2710000b47100000672000000ca9a3b
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -1060,7 +1060,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
-    m_ExpandedIDs: 000000009a6f00009c6f00009e6f0000a06f0000a26f0000a46f0000
+    m_ExpandedIDs: 00000000aa710000ac710000ae710000b0710000b2710000b4710000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -1091,15 +1091,15 @@ MonoBehaviour:
     m_ExpandedInstanceIDs: c623000014bf000078120100c04001008875000070750000467700003a7800001a7900005a830000347c0000c28c0000f28b00000000000018720000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
-      m_Name: OnyxFactory
-      m_OriginalName: OnyxFactory
+      m_Name: PhilosopherStoneRitual
+      m_OriginalName: PhilosopherStoneRitual
       m_EditFieldRect:
         serializedVersion: 2
         x: 0
         y: 0
         width: 0
         height: 0
-      m_UserData: 50778
+      m_UserData: 28284
       m_IsWaitingForDelay: 0
       m_IsRenaming: 0
       m_OriginalEventType: 0
@@ -1112,7 +1112,7 @@ MonoBehaviour:
       m_Icon: {fileID: 0}
       m_ResourceFile: 
     m_NewAssetIndexInList: -1
-    m_ScrollPosition: {x: 0, y: 0}
+    m_ScrollPosition: {x: 0, y: 10}
     m_GridSize: 16
   m_SkipHiddenPackages: 0
   m_DirectoriesAreaWidth: 207

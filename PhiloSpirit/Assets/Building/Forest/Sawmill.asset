@@ -1,0 +1,34 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 05117e4bdb2e52243b24e254ff8ec995, type: 3}
+  m_Name: Sawmill
+  m_EditorClassIdentifier: 
+  _id: 20003
+  _buildingName: Sawmill
+  _prefab: {fileID: 8083251817516436340, guid: 9f9b3e61755ce5047b65e889cd632bb9, type: 3}
+  _tiles:
+  - coord: {x: 0, y: 0, z: 0}
+    neededTileType: 2
+  - coord: {x: 1, y: 0, z: 0}
+    neededTileType: 2
+  _cost:
+    resourceCost:
+      _inventory:
+      - _type: 4
+        quantity: 1
+    spiritCost:
+    - type: 2
+      quantity: 2
+  _output:
+    _inventory:
+    - _type: 1
+      quantity: 12

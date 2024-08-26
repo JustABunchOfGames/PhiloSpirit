@@ -148,15 +148,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5807102491497527616, guid: ec3fdaf43bf8e7246a3cd8653a6e3328, type: 3}
       propertyPath: m_Name
-      value: SimpleForestry
+      value: LoggingCamp
       objectReference: {fileID: 0}
     - target: {fileID: 6749486789526237371, guid: ec3fdaf43bf8e7246a3cd8653a6e3328, type: 3}
       propertyPath: m_text
-      value: Simple Forestry
+      value: Logging Camp
       objectReference: {fileID: 0}
     - target: {fileID: 6749486789526237371, guid: ec3fdaf43bf8e7246a3cd8653a6e3328, type: 3}
       propertyPath: m_fontSize
-      value: 5.65
+      value: 6.1
       objectReference: {fileID: 0}
     - target: {fileID: 7034631513941116798, guid: ec3fdaf43bf8e7246a3cd8653a6e3328, type: 3}
       propertyPath: m_LocalPosition.x
