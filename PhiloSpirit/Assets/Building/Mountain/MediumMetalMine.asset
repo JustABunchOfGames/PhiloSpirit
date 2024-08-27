@@ -1,0 +1,38 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 05117e4bdb2e52243b24e254ff8ec995, type: 3}
+  m_Name: MediumMetalMine
+  m_EditorClassIdentifier: 
+  _id: 30012
+  _buildingName: Medium Metal Mine
+  _prefab: {fileID: 1998846225780626795, guid: eec61bd418f4f864b9753332c1bc23fc, type: 3}
+  _tiles:
+  - coord: {x: 0, y: 0, z: 0}
+    neededTileType: 3
+  - coord: {x: 1, y: 0, z: 0}
+    neededTileType: 3
+  - coord: {x: 0, y: 1, z: 0}
+    neededTileType: 0
+  _cost:
+    resourceCost:
+      _inventory:
+      - _type: 1
+        quantity: 2
+      - _type: 2
+        quantity: 2
+    spiritCost:
+    - type: 0
+      quantity: 2
+  _output:
+    _inventory:
+    - _type: 3
+      quantity: 4
