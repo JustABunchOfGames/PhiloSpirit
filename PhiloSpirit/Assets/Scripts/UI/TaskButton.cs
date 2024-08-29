@@ -1,5 +1,6 @@
 using System.Collections.Generic;
 using Tasks;
+using UnityEditor;
 using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.UI;
@@ -10,6 +11,8 @@ namespace UI
     public class TaskButton : MonoBehaviour
     {
         [SerializeField] private TaskScriptable _scriptable;
+
+        [SerializeField] private Text _buttonName;
 
         [SerializeField] private Task _task;
 
@@ -79,6 +82,29 @@ namespace UI
             _indicator.transform.localPosition = indicator.position;
         }
 
+        public void ApplyName()
+        {
+            name = _task.name;
+            _buttonName.text = name;
+        }
+
         public class CompleteEvent : UnityEvent { }
+
+#if UNITY_EDITOR
+        [CustomEditor(typeof(TaskButton))]
+        public class TaskButtonEditor : Editor
+        {
+            public override void OnInspectorGUI()
+            {
+                base.OnInspectorGUI();
+
+                TaskButton taskButton = (TaskButton)target;
+                if (GUILayout.Button("ApplyName"))
+                {
+                    taskButton.ApplyName();
+                }
+            }
+        }
+#endif
     }
 }

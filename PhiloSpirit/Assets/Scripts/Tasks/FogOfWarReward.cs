@@ -14,5 +14,10 @@ namespace Tasks
         {
             _fowManager.ReduceFoW(_nbTileRevealed);
         }
+
+        public override string GetDescription(string name)
+        {
+            return "Reveal the map for " + _nbTileRevealed + " tile of range";
+        }
     }
 }

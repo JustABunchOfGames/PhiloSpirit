@@ -25,7 +25,7 @@ MonoBehaviour:
       _inventory:
       - _type: 3
         quantity: 1
-      - _type: 0
+      - _type: 1
         quantity: 1
     spiritCost:
     - type: 3

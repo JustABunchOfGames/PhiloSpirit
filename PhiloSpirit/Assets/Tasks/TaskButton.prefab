@@ -117,7 +117,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
   m_AnchoredPosition: {x: 600, y: -200}
-  m_SizeDelta: {x: 200, y: 50}
+  m_SizeDelta: {x: 200, y: 60}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &8069199447829962416
 CanvasRenderer:
@@ -226,14 +226,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _scriptable: {fileID: 11400000, guid: f7b9aada6ffdde44cb7899a5b928a097, type: 2}
+  _buttonName: {fileID: 1831899489208690663}
   _task:
     name: 
-    description: 
     _state: 0
     cost:
       _inventory: []
     reward:
       rid: -2
+  _taskToUnlock: []
   references:
     version: 2
     RefIds:

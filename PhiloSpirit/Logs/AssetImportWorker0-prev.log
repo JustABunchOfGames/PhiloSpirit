@@ -15,7 +15,7 @@ C:/Unity_Projects/PhiloSpirit/PhiloSpirit
 -logFile
 Logs/AssetImportWorker0.log
 -srvPort
-51077
+51505
 Successfully changed project path to: C:/Unity_Projects/PhiloSpirit/PhiloSpirit
 C:/Unity_Projects/PhiloSpirit/PhiloSpirit
 [UnityMemory] Configuration Parameters - Can be set up in boot.config
@@ -49,12 +49,12 @@ C:/Unity_Projects/PhiloSpirit/PhiloSpirit
     "memorysetup-temp-allocator-size-cloud-worker=32768"
     "memorysetup-temp-allocator-size-gi-baking-worker=262144"
     "memorysetup-temp-allocator-size-gfx=262144"
-Player connection [14300] Host "[IP] 192.168.1.18 [Port] 0 [Flags] 2 [Guid] 2926212092 [EditorId] 2926212092 [Version] 1048832 [Id] WindowsEditor(7,DESKTOP-1TKVIRD) [Debug] 1 [PackageName] WindowsEditor [ProjectName] Editor" joined multi-casting on [225.0.0.222:54997]...
+Player connection [2896] Host "[IP] 192.168.1.18 [Port] 0 [Flags] 2 [Guid] 2538758788 [EditorId] 2538758788 [Version] 1048832 [Id] WindowsEditor(7,DESKTOP-1TKVIRD) [Debug] 1 [PackageName] WindowsEditor [ProjectName] Editor" joined multi-casting on [225.0.0.222:54997]...
 
-Player connection [14300] Host "[IP] 192.168.1.18 [Port] 0 [Flags] 2 [Guid] 2926212092 [EditorId] 2926212092 [Version] 1048832 [Id] WindowsEditor(7,DESKTOP-1TKVIRD) [Debug] 1 [PackageName] WindowsEditor [ProjectName] Editor" joined alternative multi-casting on [225.0.0.222:34997]...
+Player connection [2896] Host "[IP] 192.168.1.18 [Port] 0 [Flags] 2 [Guid] 2538758788 [EditorId] 2538758788 [Version] 1048832 [Id] WindowsEditor(7,DESKTOP-1TKVIRD) [Debug] 1 [PackageName] WindowsEditor [ProjectName] Editor" joined alternative multi-casting on [225.0.0.222:34997]...
 
 [Physics::Module] Initialized MultithreadedJobDispatcher with 15 workers.
-Refreshing native plugins compatible for Editor in 12.02 ms, found 4 plugins.
+Refreshing native plugins compatible for Editor in 13.95 ms, found 4 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Initialize engine version: 2022.3.10f1 (ff3792e53c62)
 [Subsystems] Discovering subsystems at path C:/Program Files/Unity/Hub/Editor/2022.3.10f1/Editor/Data/Resources/UnitySubsystems
@@ -70,46 +70,46 @@ Initialize mono
 Mono path[0] = 'C:/Program Files/Unity/Hub/Editor/2022.3.10f1/Editor/Data/Managed'
 Mono path[1] = 'C:/Program Files/Unity/Hub/Editor/2022.3.10f1/Editor/Data/MonoBleedingEdge/lib/mono/unityjit-win32'
 Mono config path = 'C:/Program Files/Unity/Hub/Editor/2022.3.10f1/Editor/Data/MonoBleedingEdge/etc'
-Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56732
+Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56464
 Begin MonoManager ReloadAssembly
 Registering precompiled unity dll's ...
 Register platform support module: C:/Program Files/Unity/Hub/Editor/2022.3.10f1/Editor/Data/PlaybackEngines/WindowsStandaloneSupport/UnityEditor.WindowsStandalone.Extensions.dll
 Register platform support module: C:/Program Files/Unity/Hub/Editor/2022.3.10f1/Editor/Data/PlaybackEngines/MetroSupport/UnityEditor.UWP.Extensions.dll
-Registered in 0.009853 seconds.
-- Loaded All Assemblies, in  0.307 seconds
+Registered in 0.010709 seconds.
+- Loaded All Assemblies, in  0.322 seconds
 Native extension for UWP target not found
 Native extension for WindowsStandalone target not found
 Mono: successfully reloaded assembly
-- Finished resetting the current domain, in  0.212 seconds
-Domain Reload Profiling: 518ms
-	BeginReloadAssembly (93ms)
+- Finished resetting the current domain, in  0.220 seconds
+Domain Reload Profiling: 540ms
+	BeginReloadAssembly (91ms)
 		ExecutionOrderSort (0ms)
 		DisableScriptedObjects (0ms)
 		BackupInstance (0ms)
 		ReleaseScriptingObjects (0ms)
 		CreateAndSetChildDomain (1ms)
-	RebuildCommonClasses (28ms)
-	RebuildNativeTypeToScriptingClass (9ms)
-	initialDomainReloadingComplete (53ms)
-	LoadAllAssembliesAndSetupDomain (122ms)
-		LoadAssemblies (91ms)
+	RebuildCommonClasses (29ms)
+	RebuildNativeTypeToScriptingClass (10ms)
+	initialDomainReloadingComplete (58ms)
+	LoadAllAssembliesAndSetupDomain (132ms)
+		LoadAssemblies (88ms)
 		RebuildTransferFunctionScriptingTraits (0ms)
-		AnalyzeDomain (120ms)
-			TypeCache.Refresh (119ms)
-				TypeCache.ScanAssembly (108ms)
+		AnalyzeDomain (130ms)
+			TypeCache.Refresh (129ms)
+				TypeCache.ScanAssembly (118ms)
 			ScanForSourceGeneratedMonoScriptInfo (0ms)
 			ResolveRequiredComponents (0ms)
-	FinalizeReload (212ms)
+	FinalizeReload (221ms)
 		ReleaseScriptCaches (0ms)
 		RebuildScriptCaches (0ms)
-		SetupLoadedEditorAssemblies (164ms)
+		SetupLoadedEditorAssemblies (171ms)
 			LogAssemblyErrors (0ms)
-			InitializePlatformSupportModulesInManaged (9ms)
+			InitializePlatformSupportModulesInManaged (10ms)
 			SetLoadedEditorAssemblies (4ms)
 			RefreshPlugins (0ms)
 			BeforeProcessingInitializeOnLoad (2ms)
-			ProcessInitializeOnLoadAttributes (108ms)
-			ProcessInitializeOnLoadMethodAttributes (41ms)
+			ProcessInitializeOnLoadAttributes (112ms)
+			ProcessInitializeOnLoadMethodAttributes (43ms)
 			AfterProcessingInitializeOnLoad (0ms)
 			EditorAssembliesLoaded (0ms)
 		ExecutionOrderSort2 (0ms)
@@ -117,8 +117,8 @@ Domain Reload Profiling: 518ms
 ========================================================================
 Worker process is ready to serve import requests
 Begin MonoManager ReloadAssembly
-- Loaded All Assemblies, in  0.581 seconds
-Refreshing native plugins compatible for Editor in 4.87 ms, found 4 plugins.
+- Loaded All Assemblies, in  0.570 seconds
+Refreshing native plugins compatible for Editor in 4.84 ms, found 4 plugins.
 Native extension for UWP target not found
 Native extension for WindowsStandalone target not found
 Package Manager log level set to [2]
@@ -126,47 +126,47 @@ Package Manager log level set to [2]
 [Package Manager] UpmClient::Send -- Unable to send message (not connected to UPM process).
 [Package Manager] Cannot connect to Unity Package Manager local server
 Mono: successfully reloaded assembly
-- Finished resetting the current domain, in  0.582 seconds
-Domain Reload Profiling: 1159ms
-	BeginReloadAssembly (131ms)
+- Finished resetting the current domain, in  0.581 seconds
+Domain Reload Profiling: 1145ms
+	BeginReloadAssembly (124ms)
 		ExecutionOrderSort (0ms)
 		DisableScriptedObjects (5ms)
 		BackupInstance (0ms)
 		ReleaseScriptingObjects (0ms)
 		CreateAndSetChildDomain (16ms)
-	RebuildCommonClasses (28ms)
-	RebuildNativeTypeToScriptingClass (9ms)
-	initialDomainReloadingComplete (38ms)
-	LoadAllAssembliesAndSetupDomain (371ms)
-		LoadAssemblies (286ms)
+	RebuildCommonClasses (29ms)
+	RebuildNativeTypeToScriptingClass (10ms)
+	initialDomainReloadingComplete (39ms)
+	LoadAllAssembliesAndSetupDomain (363ms)
+		LoadAssemblies (280ms)
 		RebuildTransferFunctionScriptingTraits (0ms)
-		AnalyzeDomain (163ms)
-			TypeCache.Refresh (137ms)
-				TypeCache.ScanAssembly (124ms)
-			ScanForSourceGeneratedMonoScriptInfo (20ms)
+		AnalyzeDomain (155ms)
+			TypeCache.Refresh (127ms)
+				TypeCache.ScanAssembly (114ms)
+			ScanForSourceGeneratedMonoScriptInfo (22ms)
 			ResolveRequiredComponents (5ms)
-	FinalizeReload (582ms)
+	FinalizeReload (581ms)
 		ReleaseScriptCaches (0ms)
 		RebuildScriptCaches (0ms)
-		SetupLoadedEditorAssemblies (437ms)
+		SetupLoadedEditorAssemblies (443ms)
 			LogAssemblyErrors (0ms)
 			InitializePlatformSupportModulesInManaged (7ms)
 			SetLoadedEditorAssemblies (4ms)
 			RefreshPlugins (0ms)
-			BeforeProcessingInitializeOnLoad (71ms)
-			ProcessInitializeOnLoadAttributes (316ms)
-			ProcessInitializeOnLoadMethodAttributes (31ms)
+			BeforeProcessingInitializeOnLoad (72ms)
+			ProcessInitializeOnLoadAttributes (322ms)
+			ProcessInitializeOnLoadMethodAttributes (30ms)
 			AfterProcessingInitializeOnLoad (8ms)
 			EditorAssembliesLoaded (0ms)
 		ExecutionOrderSort2 (0ms)
-		AwakeInstancesAfterBackupRestoration (7ms)
-Launched and connected shader compiler UnityShaderCompiler.exe after 0.02 seconds
-Refreshing native plugins compatible for Editor in 5.08 ms, found 4 plugins.
+		AwakeInstancesAfterBackupRestoration (5ms)
+Launched and connected shader compiler UnityShaderCompiler.exe after 0.03 seconds
+Refreshing native plugins compatible for Editor in 5.20 ms, found 4 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Unloading 4482 Unused Serialized files (Serialized files now loaded: 0)
 Unloading 76 unused Assets / (220.1 KB). Loaded Objects now: 4958.
 Memory consumption went from 159.9 MB to 159.7 MB.
-Total: 2.948800 ms (FindLiveObjects: 0.267100 ms CreateObjectMapping: 0.269800 ms MarkObjects: 2.238800 ms  DeleteObjects: 0.172300 ms)
+Total: 3.138800 ms (FindLiveObjects: 0.276800 ms CreateObjectMapping: 0.306100 ms MarkObjects: 2.388000 ms  DeleteObjects: 0.166900 ms)
 
 AssetImportParameters requested are different than current active one (requested -> active):
   custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
@@ -183,361 +183,297 @@ AssetImportParameters requested are different than current active one (requested
   custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
 ========================================================================
 Received Import Request.
-  Time since last request: 21269.649128 seconds.
-  path: Assets/Building/Forest/WoodGathering.asset
-  artifactKey: Guid(1e3361d2c5d69d543a66e19bba74e0a3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Building/Forest/WoodGathering.asset using Guid(1e3361d2c5d69d543a66e19bba74e0a3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '354f0ca2711eac8ffa2333a70c28f3a8') in 0.041609 seconds
-Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 26
-========================================================================
-Received Import Request.
-  Time since last request: 767.663094 seconds.
-  path: Assets/Building/Forest/LoggingCamp.asset
-  artifactKey: Guid(a41da5272904871498badaf3674b701c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Building/Forest/LoggingCamp.asset using Guid(a41da5272904871498badaf3674b701c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '7799df56963c761ab621988818731c88') in 0.018621 seconds
-Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 30
-========================================================================
-Received Import Request.
-  Time since last request: 5.077310 seconds.
-  path: Assets/Building/Forest/LoggingCamp.prefab
-  artifactKey: Guid(2f359c1d9b6eb1840bf0f999387c8052) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Building/Forest/LoggingCamp.prefab using Guid(2f359c1d9b6eb1840bf0f999387c8052) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'bbafce0f2aea004916d086ef619563be') in 0.091981 seconds
-Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 49
-========================================================================
-Received Import Request.
-  Time since last request: 18.054091 seconds.
-  path: Assets/Building/Forest/Sawmill.asset
-  artifactKey: Guid(23d6f554f6d27144d807a97ca35ea8a0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Building/Forest/Sawmill.asset using Guid(23d6f554f6d27144d807a97ca35ea8a0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '2902d7d4173f729b3747100780501ad0') in 0.000872 seconds
+  Time since last request: 23142.713745 seconds.
+  path: Assets/Building/Forest/FruitPicking.asset
+  artifactKey: Guid(e2577c74ff0014e449baeed39333b6f8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Building/Forest/FruitPicking.asset using Guid(e2577c74ff0014e449baeed39333b6f8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'a1c3ff68e5170d11e38c352ac5a19f7c') in 0.009203 seconds
 Number of updated asset objects reloaded before import = 0
 Number of asset objects unloaded after import = 1
 ========================================================================
 Received Import Request.
-  Time since last request: 267.521481 seconds.
-  path: Assets/Building/Forest/LoggingCamp.prefab
-  artifactKey: Guid(2f359c1d9b6eb1840bf0f999387c8052) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Building/Forest/LoggingCamp.prefab using Guid(2f359c1d9b6eb1840bf0f999387c8052) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '0a7391b8b2c85dfbfcd0c80d9c2b5bdb') in 0.022575 seconds
-Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 49
-========================================================================
-Received Import Request.
-  Time since last request: 1.749498 seconds.
-  path: Assets/Building/Forest/LoggingCamp 1.prefab
-  artifactKey: Guid(9f9b3e61755ce5047b65e889cd632bb9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Building/Forest/LoggingCamp 1.prefab using Guid(9f9b3e61755ce5047b65e889cd632bb9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '619571492e89a8cdbe17da6926e9f656') in 0.023075 seconds
-Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 49
-========================================================================
-Received Import Request.
-  Time since last request: 3.579313 seconds.
-  path: Assets/Building/Forest/Sawmill.prefab
-  artifactKey: Guid(9f9b3e61755ce5047b65e889cd632bb9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Building/Forest/Sawmill.prefab using Guid(9f9b3e61755ce5047b65e889cd632bb9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '42126199a020f9ca01b76461dd93b6cd') in 0.029202 seconds
-Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 49
-========================================================================
-Received Import Request.
-  Time since last request: 21.715156 seconds.
-  path: Assets/Building/Forest/Sawmill.prefab
-  artifactKey: Guid(9f9b3e61755ce5047b65e889cd632bb9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Building/Forest/Sawmill.prefab using Guid(9f9b3e61755ce5047b65e889cd632bb9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'c2d350f64253d6d96697b62b147eae70') in 0.023849 seconds
-Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 49
-========================================================================
-Received Import Request.
-  Time since last request: 2.095212 seconds.
-  path: Assets/Building/Forest/Sawmill.asset
-  artifactKey: Guid(23d6f554f6d27144d807a97ca35ea8a0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Building/Forest/Sawmill.asset using Guid(23d6f554f6d27144d807a97ca35ea8a0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '278e4bde8af5a071925bb8672fc1ff39') in 0.000942 seconds
+  Time since last request: 224.842507 seconds.
+  path: Assets/Building/Forest/FruitPicking.asset
+  artifactKey: Guid(e2577c74ff0014e449baeed39333b6f8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Building/Forest/FruitPicking.asset using Guid(e2577c74ff0014e449baeed39333b6f8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'f0c73042ea8dcf6f1ac4b26ac5d1f0ee') in 0.000945 seconds
 Number of updated asset objects reloaded before import = 0
 Number of asset objects unloaded after import = 1
 ========================================================================
 Received Import Request.
-  Time since last request: 12.989297 seconds.
-  path: Assets/Building/Forest/Sawmill.asset
-  artifactKey: Guid(23d6f554f6d27144d807a97ca35ea8a0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Building/Forest/Sawmill.asset using Guid(23d6f554f6d27144d807a97ca35ea8a0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'a3b392c265064fe9ff3642d552aa04f6') in 0.015182 seconds
-Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 30
-========================================================================
-Received Import Request.
-  Time since last request: 410.353395 seconds.
-  path: Assets/Building/Land/SmallFarm.asset
-  artifactKey: Guid(2f3f48536dc520d42b93e830a386cda0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Building/Land/SmallFarm.asset using Guid(2f3f48536dc520d42b93e830a386cda0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'a80874965d08048d6c788b354010e3d9') in 0.001146 seconds
-Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 1
-========================================================================
-Received Import Request.
-  Time since last request: 92.054592 seconds.
-  path: Assets/Building/Land/Foraging 1.prefab
-  artifactKey: Guid(c14ea0c386685f3489e109373ac4b25c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Building/Land/Foraging 1.prefab using Guid(c14ea0c386685f3489e109373ac4b25c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '013eaa71da87bcc66088e7274cedc71e') in 0.027382 seconds
+  Time since last request: 8.024542 seconds.
+  path: Assets/Building/Forest/WoodGathering 1.prefab
+  artifactKey: Guid(40672087dc528a649b62ec215441ae9e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Building/Forest/WoodGathering 1.prefab using Guid(40672087dc528a649b62ec215441ae9e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'cfa8d003ca79bc3ce945c24af3af4085') in 0.100269 seconds
 Number of updated asset objects reloaded before import = 0
 Number of asset objects unloaded after import = 45
 ========================================================================
 Received Import Request.
-  Time since last request: 5.457554 seconds.
-  path: Assets/Building/Land/SmallFarm.prefab
-  artifactKey: Guid(c14ea0c386685f3489e109373ac4b25c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Building/Land/SmallFarm.prefab using Guid(c14ea0c386685f3489e109373ac4b25c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'b51afd79ae2420d872ef50684772be5f') in 0.024293 seconds
+  Time since last request: 4.730437 seconds.
+  path: Assets/Building/Forest/FruitPikcing.prefab
+  artifactKey: Guid(40672087dc528a649b62ec215441ae9e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Building/Forest/FruitPikcing.prefab using Guid(40672087dc528a649b62ec215441ae9e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'dacd3c493bba8405f164e6535724a596') in 0.021890 seconds
 Number of updated asset objects reloaded before import = 0
 Number of asset objects unloaded after import = 45
 ========================================================================
 Received Import Request.
-  Time since last request: 40.650049 seconds.
-  path: Assets/Building/Land/SmallFarm.asset
-  artifactKey: Guid(2f3f48536dc520d42b93e830a386cda0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Building/Land/SmallFarm.asset using Guid(2f3f48536dc520d42b93e830a386cda0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'a0f42760dc8e7cc6bf038407caf2dc99') in 0.000923 seconds
+  Time since last request: 476.924024 seconds.
+  path: Assets/Building/Forest/Orchard.asset
+  artifactKey: Guid(eee47a2d1ef849a46a74fa85c8e7c22e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Building/Forest/Orchard.asset using Guid(eee47a2d1ef849a46a74fa85c8e7c22e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '8c3af79f0b705dac4df041a3d923d948') in 0.001256 seconds
 Number of updated asset objects reloaded before import = 0
 Number of asset objects unloaded after import = 1
 ========================================================================
 Received Import Request.
-  Time since last request: 15.088619 seconds.
+  Time since last request: 50.659999 seconds.
   path: Assets/Building/Land/Medium Farm.asset
   artifactKey: Guid(c7a97314f9fd17b4991327ff572db06c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Building/Land/Medium Farm.asset using Guid(c7a97314f9fd17b4991327ff572db06c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'ba27e9c5d9934972344eee9573e96c37') in 0.000792 seconds
+Start importing Assets/Building/Land/Medium Farm.asset using Guid(c7a97314f9fd17b4991327ff572db06c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '7bf603dea73630c29111df07f4255be5') in 0.016292 seconds
 Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 1
+Number of asset objects unloaded after import = 34
 ========================================================================
 Received Import Request.
-  Time since last request: 17.887163 seconds.
-  path: Assets/Building/Land/SmallFarm.prefab
-  artifactKey: Guid(c14ea0c386685f3489e109373ac4b25c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Building/Land/SmallFarm.prefab using Guid(c14ea0c386685f3489e109373ac4b25c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'e35df5a6928494ece35c6b748538b122') in 0.025944 seconds
-Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 49
-========================================================================
-Received Import Request.
-  Time since last request: 1.126657 seconds.
-  path: Assets/Building/Land/SmallFarm 1.prefab
-  artifactKey: Guid(8a05b209b8aa7c74c85793fe0acbb0c9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Building/Land/SmallFarm 1.prefab using Guid(8a05b209b8aa7c74c85793fe0acbb0c9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '20fdbbf82709556b4d8afc189ee551f0') in 0.020904 seconds
-Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 49
-========================================================================
-Received Import Request.
-  Time since last request: 4.166893 seconds.
-  path: Assets/Building/Land/MediumFarm.prefab
-  artifactKey: Guid(8a05b209b8aa7c74c85793fe0acbb0c9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Building/Land/MediumFarm.prefab using Guid(8a05b209b8aa7c74c85793fe0acbb0c9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'e5e70037f75afec5045ad460fb3eb1d9') in 0.023402 seconds
-Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 49
-========================================================================
-Received Import Request.
-  Time since last request: 28.360890 seconds.
-  path: Assets/Building/Land/Medium Farm.asset
-  artifactKey: Guid(c7a97314f9fd17b4991327ff572db06c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Building/Land/Medium Farm.asset using Guid(c7a97314f9fd17b4991327ff572db06c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'b2ee44dbe2d48cfbe576e50e2e6c5706') in 0.000899 seconds
-Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 1
-========================================================================
-Received Import Request.
-  Time since last request: 53.272260 seconds.
+  Time since last request: 10.827908 seconds.
   path: Assets/Building/Land/Large Farm.asset
   artifactKey: Guid(40d9d62635c5dd1489e68b894b0fc7a7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Building/Land/Large Farm.asset using Guid(40d9d62635c5dd1489e68b894b0fc7a7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '7efc3ec2e2f2413957c2c7e283375ffa') in 0.001084 seconds
+Start importing Assets/Building/Land/Large Farm.asset using Guid(40d9d62635c5dd1489e68b894b0fc7a7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '8358e769a0b9717d4a4a38842ef47693') in 0.015324 seconds
 Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 1
+Number of asset objects unloaded after import = 38
 ========================================================================
 Received Import Request.
-  Time since last request: 30.134290 seconds.
-  path: Assets/Building/Land/MediumFarm.prefab
-  artifactKey: Guid(8a05b209b8aa7c74c85793fe0acbb0c9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Building/Land/MediumFarm.prefab using Guid(8a05b209b8aa7c74c85793fe0acbb0c9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'e4d0307943b74f8bf4eb61c26e0bca2f') in 0.024317 seconds
-Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 53
-========================================================================
-Received Import Request.
-  Time since last request: 1.061430 seconds.
-  path: Assets/Building/Land/MediumFarm 1.prefab
-  artifactKey: Guid(4d23da72f83e8b144b003d86d1b176e4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Building/Land/MediumFarm 1.prefab using Guid(4d23da72f83e8b144b003d86d1b176e4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '39f9b9cc3e34a6251da876b55ff4ae7f') in 0.022086 seconds
-Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 53
-========================================================================
-Received Import Request.
-  Time since last request: 6.294125 seconds.
-  path: Assets/Building/Land/LargeFarm.prefab
-  artifactKey: Guid(4d23da72f83e8b144b003d86d1b176e4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Building/Land/LargeFarm.prefab using Guid(4d23da72f83e8b144b003d86d1b176e4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '5e65328d7ba8cdad1cde85d9a7f63fb7') in 0.025585 seconds
-Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 53
-========================================================================
-Received Import Request.
-  Time since last request: 27.391468 seconds.
-  path: Assets/Building/Land/Large Farm.asset
-  artifactKey: Guid(40d9d62635c5dd1489e68b894b0fc7a7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Building/Land/Large Farm.asset using Guid(40d9d62635c5dd1489e68b894b0fc7a7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '22b27ecce95591d74cabf58f351d57bf') in 0.000868 seconds
-Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 1
-========================================================================
-Received Import Request.
-  Time since last request: 118.532704 seconds.
-  path: Assets/Building/Land/BasicSmelting.asset
-  artifactKey: Guid(8e8b34723ad86d549b63678e37b4572c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Building/Land/BasicSmelting.asset using Guid(8e8b34723ad86d549b63678e37b4572c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '6990eac5c653edd10013cea1eb41a323') in 0.000947 seconds
-Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 1
-========================================================================
-Received Import Request.
-  Time since last request: 226.097941 seconds.
-  path: Assets/Building/Land/Foraging 1.prefab
-  artifactKey: Guid(02bb2b1eab0f837469610f4800cde281) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Building/Land/Foraging 1.prefab using Guid(02bb2b1eab0f837469610f4800cde281) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'e78259ab178a9672b127276ea8e589fa') in 0.024029 seconds
-Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 45
-========================================================================
-Received Import Request.
-  Time since last request: 4.387246 seconds.
-  path: Assets/Building/Land/BasicSmelting.prefab
-  artifactKey: Guid(02bb2b1eab0f837469610f4800cde281) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Building/Land/BasicSmelting.prefab using Guid(02bb2b1eab0f837469610f4800cde281) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '9d13f56b3185e0db81197edb787aff9a') in 0.023774 seconds
-Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 45
-========================================================================
-Received Import Request.
-  Time since last request: 10.624584 seconds.
-  path: Assets/Building/Land/BasicSmelting.asset
-  artifactKey: Guid(8e8b34723ad86d549b63678e37b4572c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Building/Land/BasicSmelting.asset using Guid(8e8b34723ad86d549b63678e37b4572c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '3af2c66e5fff39ae1d99344f4448316d') in 0.000892 seconds
-Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 1
-========================================================================
-Received Import Request.
-  Time since last request: 5.534535 seconds.
-  path: Assets/Building/Land/BasicSmelting.prefab
-  artifactKey: Guid(02bb2b1eab0f837469610f4800cde281) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Building/Land/BasicSmelting.prefab using Guid(02bb2b1eab0f837469610f4800cde281) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'd3e0303a1e4ba1c6c4369a626ce8e2eb') in 0.022212 seconds
-Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 45
-========================================================================
-Received Import Request.
-  Time since last request: 25.402098 seconds.
-  path: Assets/Building/Land/SmeltingWorkshop.asset
-  artifactKey: Guid(ed714cdac2be18748adf7f7cdc32ec3c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Building/Land/SmeltingWorkshop.asset using Guid(ed714cdac2be18748adf7f7cdc32ec3c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'b6f9b0c4600a90909d9ca4817deb0398') in 0.001061 seconds
-Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 1
-========================================================================
-Received Import Request.
-  Time since last request: 276.509300 seconds.
-  path: Assets/Building/Land/SmeltingWorkshop.asset
-  artifactKey: Guid(ed714cdac2be18748adf7f7cdc32ec3c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Building/Land/SmeltingWorkshop.asset using Guid(ed714cdac2be18748adf7f7cdc32ec3c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'd0bd1f37c88ab5752566569d31d9b9fe') in 0.001024 seconds
-Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 1
-========================================================================
-Received Import Request.
-  Time since last request: 114.287851 seconds.
-  path: Assets/Building/Land/BasicSmelting.prefab
-  artifactKey: Guid(02bb2b1eab0f837469610f4800cde281) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Building/Land/BasicSmelting.prefab using Guid(02bb2b1eab0f837469610f4800cde281) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'da175f1185abe8b4de53dc92bbdf7bf6') in 0.026971 seconds
+  Time since last request: 25.752253 seconds.
+  path: Assets/Building/Forest/FruitPikcing.prefab
+  artifactKey: Guid(40672087dc528a649b62ec215441ae9e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Building/Forest/FruitPikcing.prefab using Guid(40672087dc528a649b62ec215441ae9e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '273b674fb81bebe3692e96b4ec8d5962') in 0.037060 seconds
 Number of updated asset objects reloaded before import = 0
 Number of asset objects unloaded after import = 49
 ========================================================================
 Received Import Request.
-  Time since last request: 0.745244 seconds.
-  path: Assets/Building/Land/BasicSmelting 1.prefab
-  artifactKey: Guid(c3405bc05cc899b48938f3b43ee9e18c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Building/Land/BasicSmelting 1.prefab using Guid(c3405bc05cc899b48938f3b43ee9e18c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'fdeb1c87e6e5a1ade1ca43fc9655fb71') in 0.024719 seconds
+  Time since last request: 0.895842 seconds.
+  path: Assets/Building/Forest/FruitPikcing 1.prefab
+  artifactKey: Guid(c3b866890324fcf45b35a26e034c7e34) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Building/Forest/FruitPikcing 1.prefab using Guid(c3b866890324fcf45b35a26e034c7e34) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '70c4f433600e8010a9920683c2eb1dc7') in 0.024067 seconds
 Number of updated asset objects reloaded before import = 0
 Number of asset objects unloaded after import = 49
 ========================================================================
 Received Import Request.
-  Time since last request: 4.935015 seconds.
-  path: Assets/Building/Land/SmeltingFurnace.prefab
-  artifactKey: Guid(c3405bc05cc899b48938f3b43ee9e18c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Building/Land/SmeltingFurnace.prefab using Guid(c3405bc05cc899b48938f3b43ee9e18c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '49d1a6844cf540631ca45462aa3d2665') in 0.021592 seconds
+  Time since last request: 3.364026 seconds.
+  path: Assets/Building/Forest/Orchard.prefab
+  artifactKey: Guid(c3b866890324fcf45b35a26e034c7e34) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Building/Forest/Orchard.prefab using Guid(c3b866890324fcf45b35a26e034c7e34) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '1e5ed90a2a4d1ba3c4f3c2f900b491f6') in 0.027271 seconds
 Number of updated asset objects reloaded before import = 0
 Number of asset objects unloaded after import = 49
 ========================================================================
 Received Import Request.
-  Time since last request: 1.684758 seconds.
-  path: Assets/Building/Land/SmeltingWorkshop.asset
-  artifactKey: Guid(ed714cdac2be18748adf7f7cdc32ec3c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Building/Land/SmeltingWorkshop.asset using Guid(ed714cdac2be18748adf7f7cdc32ec3c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'eb1019a1bfb8912dd3ea9107b2d54754') in 0.000948 seconds
+  Time since last request: 50.541077 seconds.
+  path: Assets/Building/Forest/Orchard.prefab
+  artifactKey: Guid(c3b866890324fcf45b35a26e034c7e34) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Building/Forest/Orchard.prefab using Guid(c3b866890324fcf45b35a26e034c7e34) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '139c9ee2f2b1f9c7f183b2b27975b408') in 0.026448 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 49
+========================================================================
+Received Import Request.
+  Time since last request: 0.922978 seconds.
+  path: Assets/Building/Forest/Orchard.asset
+  artifactKey: Guid(eee47a2d1ef849a46a74fa85c8e7c22e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Building/Forest/Orchard.asset using Guid(eee47a2d1ef849a46a74fa85c8e7c22e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'c6af4834ba8cb817689862aca57621c2') in 0.000900 seconds
 Number of updated asset objects reloaded before import = 0
 Number of asset objects unloaded after import = 1
 ========================================================================
 Received Import Request.
-  Time since last request: 4.378222 seconds.
-  path: Assets/Building/Land/SmeltingFurnace.asset
-  artifactKey: Guid(ed714cdac2be18748adf7f7cdc32ec3c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Building/Land/SmeltingFurnace.asset using Guid(ed714cdac2be18748adf7f7cdc32ec3c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '11a0fa15f1d16a2c396002a6c6c4ba76') in 0.000965 seconds
+  Time since last request: 121.423890 seconds.
+  path: Assets/Building/Mountain/StoneMine.asset
+  artifactKey: Guid(4786452d705fbcd41a255ead059bc505) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Building/Mountain/StoneMine.asset using Guid(4786452d705fbcd41a255ead059bc505) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '93e8d88a699e70599f25888c25c2709f') in 0.001000 seconds
 Number of updated asset objects reloaded before import = 0
 Number of asset objects unloaded after import = 1
 ========================================================================
 Received Import Request.
-  Time since last request: 74.868572 seconds.
-  path: Assets/Building/Land/SmeltingWorkshop.asset
-  artifactKey: Guid(d0c9acff33b38bb4aaea9b96a879e73b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Building/Land/SmeltingWorkshop.asset using Guid(d0c9acff33b38bb4aaea9b96a879e73b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '5366e321d1923d465c60f9f3ba68c6be') in 0.001037 seconds
+  Time since last request: 79.864126 seconds.
+  path: Assets/Building/Mountain/StoneGathering 1.prefab
+  artifactKey: Guid(0b2fd6daf6f898544b50ada414155cb6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Building/Mountain/StoneGathering 1.prefab using Guid(0b2fd6daf6f898544b50ada414155cb6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'ab445e4d968449a17add3c2029666294') in 0.025765 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 45
+========================================================================
+Received Import Request.
+  Time since last request: 3.446693 seconds.
+  path: Assets/Building/Mountain/StoneMine.prefab
+  artifactKey: Guid(0b2fd6daf6f898544b50ada414155cb6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Building/Mountain/StoneMine.prefab using Guid(0b2fd6daf6f898544b50ada414155cb6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '051a48fc708eab740d00320abfc255a0') in 0.021715 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 45
+========================================================================
+Received Import Request.
+  Time since last request: 23.568818 seconds.
+  path: Assets/Building/Mountain/StoneMine.asset
+  artifactKey: Guid(4786452d705fbcd41a255ead059bc505) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Building/Mountain/StoneMine.asset using Guid(4786452d705fbcd41a255ead059bc505) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '9815674cd3f15a5ecc2e407f5d0b2194') in 0.000881 seconds
 Number of updated asset objects reloaded before import = 0
 Number of asset objects unloaded after import = 1
 ========================================================================
 Received Import Request.
-  Time since last request: 188.977085 seconds.
-  path: Assets/Building/Land/SmeltingFurnace.prefab
-  artifactKey: Guid(c3405bc05cc899b48938f3b43ee9e18c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Building/Land/SmeltingFurnace.prefab using Guid(c3405bc05cc899b48938f3b43ee9e18c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '4285b367f1009b34895e63e3d11fc18f') in 0.028319 seconds
+  Time since last request: 0.736613 seconds.
+  path: Assets/Building/Mountain/StoneMine.prefab
+  artifactKey: Guid(0b2fd6daf6f898544b50ada414155cb6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Building/Mountain/StoneMine.prefab using Guid(0b2fd6daf6f898544b50ada414155cb6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'f528d3c66554e7103bb807eb77c5126c') in 0.025095 seconds
 Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 53
+Number of asset objects unloaded after import = 49
 ========================================================================
 Received Import Request.
-  Time since last request: 60.469482 seconds.
-  path: Assets/Building/Land/SmallFarm.asset
-  artifactKey: Guid(2f3f48536dc520d42b93e830a386cda0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Building/Land/SmallFarm.asset using Guid(2f3f48536dc520d42b93e830a386cda0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '9730e083f4719070a4dfcaae5188f9d5') in 0.015511 seconds
-Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 30
-========================================================================
-Received Import Request.
-  Time since last request: 60.261058 seconds.
-  path: Assets/Building/Land/BasicSmelting.asset
-  artifactKey: Guid(8e8b34723ad86d549b63678e37b4572c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Building/Land/BasicSmelting.asset using Guid(8e8b34723ad86d549b63678e37b4572c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '72e1e7aa5b4e5498b33a027932fa130c') in 0.015258 seconds
-Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 30
-========================================================================
-Received Import Request.
-  Time since last request: 39.775047 seconds.
-  path: Assets/Building/Land/SmeltingFurnace 1.prefab
-  artifactKey: Guid(16606033ab423a749a570e2ba9738636) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Building/Land/SmeltingFurnace 1.prefab using Guid(16606033ab423a749a570e2ba9738636) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'afc81f6468a22659a3457965c0e32191') in 0.022609 seconds
-Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 53
-========================================================================
-Received Import Request.
-  Time since last request: 8.193934 seconds.
-  path: Assets/Building/Land/SmeltingWorkshop.prefab
-  artifactKey: Guid(16606033ab423a749a570e2ba9738636) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Building/Land/SmeltingWorkshop.prefab using Guid(16606033ab423a749a570e2ba9738636) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'a215b81c36153198b2487141f319c5c3') in 0.021290 seconds
-Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 53
-========================================================================
-Received Import Request.
-  Time since last request: 40.585988 seconds.
-  path: Assets/Building/Land/PhilosopherStoneRitual.asset
-  artifactKey: Guid(9f6e30d6633500c42929b5c3c4bd749d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Building/Land/PhilosopherStoneRitual.asset using Guid(9f6e30d6633500c42929b5c3c4bd749d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'd907eb62a9f6b3e618e94197cda0bd14') in 0.015063 seconds
-Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 42
-========================================================================
-Received Import Request.
-  Time since last request: 15.364041 seconds.
-  path: Assets/Building/Land/SmeltingWorkshop.asset
-  artifactKey: Guid(d0c9acff33b38bb4aaea9b96a879e73b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Building/Land/SmeltingWorkshop.asset using Guid(d0c9acff33b38bb4aaea9b96a879e73b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'a0a2e9a966e68d40fc59a266b1ffb252') in 0.000945 seconds
+  Time since last request: 214.683525 seconds.
+  path: Assets/Building/Mountain/LargeStoneMine.asset
+  artifactKey: Guid(287b09bb8913d624fad2b25ed3d6aadc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Building/Mountain/LargeStoneMine.asset using Guid(287b09bb8913d624fad2b25ed3d6aadc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'd690b875a921fe03a413efc2bf941616') in 0.000947 seconds
 Number of updated asset objects reloaded before import = 0
 Number of asset objects unloaded after import = 1
 ========================================================================
 Received Import Request.
-  Time since last request: 6.201792 seconds.
-  path: Assets/Building/Land/SmeltingWorkshop.prefab
-  artifactKey: Guid(16606033ab423a749a570e2ba9738636) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Building/Land/SmeltingWorkshop.prefab using Guid(16606033ab423a749a570e2ba9738636) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '8d8a57801ea414848335961e731a28bf') in 0.029722 seconds
+  Time since last request: 143.560593 seconds.
+  path: Assets/Building/Mountain/StoneMine 1.prefab
+  artifactKey: Guid(e0d69f0d89cad25488751605f06a79ad) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Building/Mountain/StoneMine 1.prefab using Guid(e0d69f0d89cad25488751605f06a79ad) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '922a067cf64c25df8e7a2af0373ad119') in 0.024112 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 49
+========================================================================
+Received Import Request.
+  Time since last request: 4.894735 seconds.
+  path: Assets/Building/Mountain/LargeStoneMine.prefab
+  artifactKey: Guid(e0d69f0d89cad25488751605f06a79ad) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Building/Mountain/LargeStoneMine.prefab using Guid(e0d69f0d89cad25488751605f06a79ad) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '5088e95462c9e4a679f47b190f425586') in 0.020154 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 49
+========================================================================
+Received Import Request.
+  Time since last request: 139.831388 seconds.
+  path: Assets/Building/Mountain/Small Metal Mine.asset
+  artifactKey: Guid(dec32a19dc2f06e4fbba71171451b24a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Building/Mountain/Small Metal Mine.asset using Guid(dec32a19dc2f06e4fbba71171451b24a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '21f2e9d8b9c2814f08a54f9463ae69cc') in 0.000922 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 1
+========================================================================
+Received Import Request.
+  Time since last request: 7.896725 seconds.
+  path: Assets/Building/Mountain/SmallMetalMine.asset
+  artifactKey: Guid(dec32a19dc2f06e4fbba71171451b24a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Building/Mountain/SmallMetalMine.asset using Guid(dec32a19dc2f06e4fbba71171451b24a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '25ddfb0b111574d25f873a43bc0964e1') in 0.000833 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 1
+========================================================================
+Received Import Request.
+  Time since last request: 42.374033 seconds.
+  path: Assets/Building/Mountain/StoneMine 1.prefab
+  artifactKey: Guid(8ea2797e624818240a7877bdfb469f7a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Building/Mountain/StoneMine 1.prefab using Guid(8ea2797e624818240a7877bdfb469f7a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '6805c56cbcb4962c19821f32d8021b13') in 0.022792 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 49
+========================================================================
+Received Import Request.
+  Time since last request: 4.236328 seconds.
+  path: Assets/Building/Mountain/SmallMetalMine.prefab
+  artifactKey: Guid(8ea2797e624818240a7877bdfb469f7a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Building/Mountain/SmallMetalMine.prefab using Guid(8ea2797e624818240a7877bdfb469f7a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'affad4cb1cd3277c687a3b28ff39daf2') in 0.021539 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 49
+========================================================================
+Received Import Request.
+  Time since last request: 20.158324 seconds.
+  path: Assets/Building/Mountain/SmallMetalMine.asset
+  artifactKey: Guid(dec32a19dc2f06e4fbba71171451b24a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Building/Mountain/SmallMetalMine.asset using Guid(dec32a19dc2f06e4fbba71171451b24a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'bfab099dd9b290d215d975fb3a33d573') in 0.000897 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 1
+========================================================================
+Received Import Request.
+  Time since last request: 85.006122 seconds.
+  path: Assets/Building/Mountain/MediumMetalMine.asset
+  artifactKey: Guid(23d626a57a2fa694aa3ea8c8ceb525b8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Building/Mountain/MediumMetalMine.asset using Guid(23d626a57a2fa694aa3ea8c8ceb525b8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'ed322720feae9712f93304c59b92124f') in 0.001036 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 1
+========================================================================
+Received Import Request.
+  Time since last request: 283.317266 seconds.
+  path: Assets/Building/Mountain/LargeStoneMine.prefab
+  artifactKey: Guid(e0d69f0d89cad25488751605f06a79ad) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Building/Mountain/LargeStoneMine.prefab using Guid(e0d69f0d89cad25488751605f06a79ad) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'b04873bf1c06ac50f242281d97c88923') in 0.024602 seconds
 Number of updated asset objects reloaded before import = 0
 Number of asset objects unloaded after import = 57
+========================================================================
+Received Import Request.
+  Time since last request: 2.169517 seconds.
+  path: Assets/Building/Mountain/LargeStoneMine.asset
+  artifactKey: Guid(287b09bb8913d624fad2b25ed3d6aadc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Building/Mountain/LargeStoneMine.asset using Guid(287b09bb8913d624fad2b25ed3d6aadc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '80e496a836f405b580a9d34295621cd5') in 0.000907 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 1
+========================================================================
+Received Import Request.
+  Time since last request: 9.411518 seconds.
+  path: Assets/Building/Mountain/LargeStoneMine 1.prefab
+  artifactKey: Guid(eec61bd418f4f864b9753332c1bc23fc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Building/Mountain/LargeStoneMine 1.prefab using Guid(eec61bd418f4f864b9753332c1bc23fc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '8cd007def2b8cd798b668f7d5635cab8') in 0.025785 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 57
+========================================================================
+Received Import Request.
+  Time since last request: 6.355691 seconds.
+  path: Assets/Building/Mountain/MediumMetalMine.prefab
+  artifactKey: Guid(eec61bd418f4f864b9753332c1bc23fc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Building/Mountain/MediumMetalMine.prefab using Guid(eec61bd418f4f864b9753332c1bc23fc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '31d6e3a39e5cd0fdfb2c54f6c6f6f79e') in 0.020927 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 57
+========================================================================
+Received Import Request.
+  Time since last request: 15.134686 seconds.
+  path: Assets/Building/Mountain/MediumMetalMine.asset
+  artifactKey: Guid(23d626a57a2fa694aa3ea8c8ceb525b8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Building/Mountain/MediumMetalMine.asset using Guid(23d626a57a2fa694aa3ea8c8ceb525b8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '4abc7e1cf70b3e1393ec6be168c14538') in 0.000918 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 1
+========================================================================
+Received Import Request.
+  Time since last request: 1.983435 seconds.
+  path: Assets/Building/Mountain/MediumMetalMine.prefab
+  artifactKey: Guid(eec61bd418f4f864b9753332c1bc23fc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Building/Mountain/MediumMetalMine.prefab using Guid(eec61bd418f4f864b9753332c1bc23fc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'fc1316e57d9f2d1a7660e4dfd1799a8c') in 0.032388 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 53
+========================================================================
+Received Import Request.
+  Time since last request: 22.292760 seconds.
+  path: Assets/Building/Mountain/LargeMetalMine.asset
+  artifactKey: Guid(7dcf822e78911a44e941a0d847e4afc6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Building/Mountain/LargeMetalMine.asset using Guid(7dcf822e78911a44e941a0d847e4afc6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '3b0e277fcc3a073c3b2a5ef535212ad9') in 0.000848 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 1
+========================================================================
+Received Import Request.
+  Time since last request: 140.616864 seconds.
+  path: Assets/Building/Mountain/LargeStoneMine 1.prefab
+  artifactKey: Guid(6cf31aad037d5364bb3e0ec3498fdd4d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Building/Mountain/LargeStoneMine 1.prefab using Guid(6cf31aad037d5364bb3e0ec3498fdd4d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '2336f5a9c39d20e90259c4d06ec436b4') in 0.023658 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 57
+========================================================================
+Received Import Request.
+  Time since last request: 5.105564 seconds.
+  path: Assets/Building/Mountain/LargeMetalMine.prefab
+  artifactKey: Guid(6cf31aad037d5364bb3e0ec3498fdd4d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Building/Mountain/LargeMetalMine.prefab using Guid(6cf31aad037d5364bb3e0ec3498fdd4d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '7d661a63e6f3e863af6be37a68d6cd46') in 0.024885 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 57
+========================================================================
+Received Import Request.
+  Time since last request: 54.652341 seconds.
+  path: Assets/Building/Mountain/LargeMetalMine.asset
+  artifactKey: Guid(7dcf822e78911a44e941a0d847e4afc6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Building/Mountain/LargeMetalMine.asset using Guid(7dcf822e78911a44e941a0d847e4afc6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '845f756f57e9884708dc3f625ed62eff') in 0.000914 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 1
+========================================================================
+Received Import Request.
+  Time since last request: 8.317971 seconds.
+  path: Assets/Building/Mountain/LargeMetalMine.prefab
+  artifactKey: Guid(6cf31aad037d5364bb3e0ec3498fdd4d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Building/Mountain/LargeMetalMine.prefab using Guid(6cf31aad037d5364bb3e0ec3498fdd4d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'bcf3778d1839e8ecf1fc1d310559ef65') in 0.025485 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 61

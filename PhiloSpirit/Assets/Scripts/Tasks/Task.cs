@@ -10,7 +10,7 @@ namespace Tasks
     {
         [TextArea] public string name;
 
-        [TextArea]  public string description;
+        public string description { get { return reward.GetDescription(name); } private set { } }
 
         public StateChangeEvent stateChangeEvent = new StateChangeEvent();
 

@@ -138,6 +138,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1901122760770918256, guid: ec3fdaf43bf8e7246a3cd8653a6e3328, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1901122760770918256, guid: ec3fdaf43bf8e7246a3cd8653a6e3328, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0.5
+      objectReference: {fileID: 0}
     - target: {fileID: 5807102491497527616, guid: ec3fdaf43bf8e7246a3cd8653a6e3328, type: 3}
       propertyPath: m_Name
       value: SmallFarm

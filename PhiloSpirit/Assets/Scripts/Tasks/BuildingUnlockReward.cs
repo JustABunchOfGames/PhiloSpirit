@@ -11,5 +11,10 @@ namespace Tasks
         {
             _buildingButton.interactable = true;
         }
+
+        public override string GetDescription(string name)
+        {
+            return "Unlock Building : " + name;
+        }
     }
 }

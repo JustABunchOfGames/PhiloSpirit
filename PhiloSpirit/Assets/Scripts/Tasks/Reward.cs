@@ -1,5 +1,4 @@
-
-using UnityEditor;
+using UnityEngine;
 
 namespace Tasks
 {
@@ -7,5 +6,7 @@ namespace Tasks
     public abstract class Reward
     {
         public abstract void Apply();
+
+        public abstract string GetDescription(string name);
     }
 }
