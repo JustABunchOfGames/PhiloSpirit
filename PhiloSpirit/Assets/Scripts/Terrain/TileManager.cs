@@ -1,5 +1,6 @@
 using Core;
 using Input;
+using UnityEditor;
 using UnityEngine;
 using UnityEngine.Events;
 
@@ -7,13 +8,19 @@ namespace Terrain
 {
     public class TileManager : MonoBehaviour
     {
+        [Header("Input")]
         [SerializeField] private InputManager _inputManager;
 
+        [Header("Indicator")]
         [SerializeField] private GameObject _selectIndicatorPrefab;
         private GameObject _selectIndicator;
 
         private bool _canSelect;
         private Tile _selectedTile;
+
+        [Header("SpawnLand")]
+        [SerializeField] private GameObject _tilePrefab;
+        [SerializeField] private Vector2 _mapsize;
 
         public static TileChanged tileChanged = new TileChanged();
 
@@ -78,6 +85,35 @@ namespace Terrain
             }
         }
 
+        public void SpawnLand()
+        {
+            for(float i = -_mapsize.x; i <= _mapsize.x; i++)
+            {
+                for (float j = -_mapsize.y; j <= _mapsize.y; j++)
+                {
+                    GameObject tile = (GameObject)PrefabUtility.InstantiatePrefab(_tilePrefab, transform);
+                    tile.transform.position = new Vector3(i, j);
+                    tile.name = "Land " + i + "_" + j;
+                }
+            }
+        }
+
         public class TileChanged : UnityEvent<Tile> { }
     }
+#if UNITY_EDITOR
+    [CustomEditor(typeof(TileManager))]
+    public class TileManagerEditor : Editor
+    {
+        public override void OnInspectorGUI()
+        {
+            base.OnInspectorGUI();
+
+            TileManager manager = (TileManager)target;
+            if (GUILayout.Button("SpawnLand"))
+            {
+                manager.SpawnLand();
+            }
+        }
+    }
+#endif
 }
