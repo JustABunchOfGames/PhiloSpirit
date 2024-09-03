@@ -89,7 +89,7 @@ namespace Transport
         private void StopInputManager()
         {
             // Change behaviour to forbid tile selection
-            _tileManager.UnselectTile();
+            _tileManager.CanSelect(false);
         }
     }
 }

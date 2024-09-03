@@ -26,7 +26,6 @@ namespace Terrain
 
         private void Start()
         {
-            _canSelect = true;
             _inputManager.selectEvent.AddListener(SelectTile);
             _inputManager.unselectEvent.AddListener(UnselectTile);
 

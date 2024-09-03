@@ -3,32 +3,24 @@
   "WorkspaceRootPath": "C:\\Unity_Projects\\PhiloSpirit\\PhiloSpirit\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{F4488E99-EAEB-B2C7-9C0D-FE68E6CEE847}|Terrain.csproj|c:\\unity_projects\\philospirit\\philospirit\\assets\\scripts\\terrain\\tilemanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{F4488E99-EAEB-B2C7-9C0D-FE68E6CEE847}|Terrain.csproj|solutionrelative:assets\\scripts\\terrain\\tilemanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{3F320667-58C1-AA5F-3D61-F68B43CFC190}|Transport.csproj|c:\\unity_projects\\philospirit\\philospirit\\assets\\scripts\\transport\\transportselector.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3F320667-58C1-AA5F-3D61-F68B43CFC190}|Transport.csproj|solutionrelative:assets\\scripts\\transport\\transportselector.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{F2FD197B-CAD6-278C-0BB2-420EB1C84C6C}|UI.csproj|C:\\Unity_Projects\\PhiloSpirit\\PhiloSpirit\\assets\\scripts\\ui\\taskbutton.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{F2FD197B-CAD6-278C-0BB2-420EB1C84C6C}|UI.csproj|solutionrelative:assets\\scripts\\ui\\taskbutton.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{3F320667-58C1-AA5F-3D61-F68B43CFC190}|Transport.csproj|c:\\unity_projects\\philospirit\\philospirit\\assets\\scripts\\transport\\transportmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3F320667-58C1-AA5F-3D61-F68B43CFC190}|Transport.csproj|solutionrelative:assets\\scripts\\transport\\transportmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{69F30B8B-7A43-F26B-8DE7-90B48202E914}|Tasks.csproj|c:\\unity_projects\\philospirit\\philospirit\\assets\\scripts\\tasks\\completegamereward.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{69F30B8B-7A43-F26B-8DE7-90B48202E914}|Tasks.csproj|solutionrelative:assets\\scripts\\tasks\\completegamereward.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{F2FD197B-CAD6-278C-0BB2-420EB1C84C6C}|UI.csproj|c:\\unity_projects\\philospirit\\philospirit\\assets\\scripts\\ui\\transportscreenui.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F2FD197B-CAD6-278C-0BB2-420EB1C84C6C}|UI.csproj|solutionrelative:assets\\scripts\\ui\\transportscreenui.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{69F30B8B-7A43-F26B-8DE7-90B48202E914}|Tasks.csproj|C:\\Unity_Projects\\PhiloSpirit\\PhiloSpirit\\assets\\scripts\\tasks\\task.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{69F30B8B-7A43-F26B-8DE7-90B48202E914}|Tasks.csproj|solutionrelative:assets\\scripts\\tasks\\task.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{3F320667-58C1-AA5F-3D61-F68B43CFC190}|Transport.csproj|C:\\Unity_Projects\\PhiloSpirit\\PhiloSpirit\\assets\\scripts\\transport\\transportscriptable.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3F320667-58C1-AA5F-3D61-F68B43CFC190}|Transport.csproj|solutionrelative:assets\\scripts\\transport\\transportscriptable.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{69F30B8B-7A43-F26B-8DE7-90B48202E914}|Tasks.csproj|C:\\Unity_Projects\\PhiloSpirit\\PhiloSpirit\\assets\\scripts\\tasks\\reward.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{69F30B8B-7A43-F26B-8DE7-90B48202E914}|Tasks.csproj|solutionrelative:assets\\scripts\\tasks\\reward.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{69F30B8B-7A43-F26B-8DE7-90B48202E914}|Tasks.csproj|C:\\Unity_Projects\\PhiloSpirit\\PhiloSpirit\\assets\\scripts\\tasks\\buildingunlockreward.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{69F30B8B-7A43-F26B-8DE7-90B48202E914}|Tasks.csproj|solutionrelative:assets\\scripts\\tasks\\buildingunlockreward.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{69F30B8B-7A43-F26B-8DE7-90B48202E914}|Tasks.csproj|C:\\Unity_Projects\\PhiloSpirit\\PhiloSpirit\\assets\\scripts\\tasks\\fogofwarreward.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{69F30B8B-7A43-F26B-8DE7-90B48202E914}|Tasks.csproj|solutionrelative:assets\\scripts\\tasks\\fogofwarreward.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{F2FD197B-CAD6-278C-0BB2-420EB1C84C6C}|UI.csproj|c:\\unity_projects\\philospirit\\philospirit\\assets\\scripts\\ui\\transportlogui.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F2FD197B-CAD6-278C-0BB2-420EB1C84C6C}|UI.csproj|solutionrelative:assets\\scripts\\ui\\transportlogui.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -38,94 +30,72 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 0,
+          "SelectedChildIndex": 1,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "TileManager.cs",
-              "DocumentMoniker": "C:\\Unity_Projects\\PhiloSpirit\\PhiloSpirit\\Assets\\Scripts\\Terrain\\TileManager.cs",
-              "RelativeDocumentMoniker": "Assets\\Scripts\\Terrain\\TileManager.cs",
-              "ToolTip": "C:\\Unity_Projects\\PhiloSpirit\\PhiloSpirit\\Assets\\Scripts\\Terrain\\TileManager.cs",
-              "RelativeToolTip": "Assets\\Scripts\\Terrain\\TileManager.cs",
-              "ViewState": "AQIAAEkAAAAAAAAAAAAcwF4AAAA+AAAA",
+              "DocumentIndex": 1,
+              "Title": "TransportManager.cs",
+              "DocumentMoniker": "C:\\Unity_Projects\\PhiloSpirit\\PhiloSpirit\\Assets\\Scripts\\Transport\\TransportManager.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\Transport\\TransportManager.cs",
+              "ToolTip": "C:\\Unity_Projects\\PhiloSpirit\\PhiloSpirit\\Assets\\Scripts\\Transport\\TransportManager.cs",
+              "RelativeToolTip": "Assets\\Scripts\\Transport\\TransportManager.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-09-01T08:25:56.714Z",
+              "WhenOpened": "2024-09-03T13:52:17.671Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "TransportSelector.cs",
+              "DocumentMoniker": "C:\\Unity_Projects\\PhiloSpirit\\PhiloSpirit\\Assets\\Scripts\\Transport\\TransportSelector.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\Transport\\TransportSelector.cs",
+              "ToolTip": "C:\\Unity_Projects\\PhiloSpirit\\PhiloSpirit\\Assets\\Scripts\\Transport\\TransportSelector.cs",
+              "RelativeToolTip": "Assets\\Scripts\\Transport\\TransportSelector.cs",
+              "ViewState": "AQIAAEQAAAAAAAAAAAAIwFsAAAAoAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-03T13:51:26.602Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 2,
-              "Title": "CompleteGameReward.cs",
-              "DocumentMoniker": "C:\\Unity_Projects\\PhiloSpirit\\PhiloSpirit\\Assets\\Scripts\\Tasks\\CompleteGameReward.cs",
-              "RelativeDocumentMoniker": "Assets\\Scripts\\Tasks\\CompleteGameReward.cs",
-              "ToolTip": "C:\\Unity_Projects\\PhiloSpirit\\PhiloSpirit\\Assets\\Scripts\\Tasks\\CompleteGameReward.cs",
-              "RelativeToolTip": "Assets\\Scripts\\Tasks\\CompleteGameReward.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Title": "TransportScreenUI.cs",
+              "DocumentMoniker": "C:\\Unity_Projects\\PhiloSpirit\\PhiloSpirit\\Assets\\Scripts\\UI\\TransportScreenUI.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\UI\\TransportScreenUI.cs",
+              "ToolTip": "C:\\Unity_Projects\\PhiloSpirit\\PhiloSpirit\\Assets\\Scripts\\UI\\TransportScreenUI.cs",
+              "RelativeToolTip": "Assets\\Scripts\\UI\\TransportScreenUI.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAB4AAABJAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-08-29T13:40:24.456Z",
+              "WhenOpened": "2024-09-03T13:50:41.064Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "TaskButton.cs",
-              "DocumentMoniker": "C:\\Unity_Projects\\PhiloSpirit\\PhiloSpirit\\Assets\\Scripts\\UI\\TaskButton.cs",
-              "RelativeDocumentMoniker": "Assets\\Scripts\\UI\\TaskButton.cs",
-              "ToolTip": "C:\\Unity_Projects\\PhiloSpirit\\PhiloSpirit\\Assets\\Scripts\\UI\\TaskButton.cs",
-              "RelativeToolTip": "Assets\\Scripts\\UI\\TaskButton.cs",
-              "ViewState": "AQIAAFMAAAAAAAAAAAAIwF0AAAAIAAAA",
+              "DocumentIndex": 4,
+              "Title": "TransportLogUI.cs",
+              "DocumentMoniker": "C:\\Unity_Projects\\PhiloSpirit\\PhiloSpirit\\Assets\\Scripts\\UI\\TransportLogUI.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\UI\\TransportLogUI.cs",
+              "ToolTip": "C:\\Unity_Projects\\PhiloSpirit\\PhiloSpirit\\Assets\\Scripts\\UI\\TransportLogUI.cs",
+              "RelativeToolTip": "Assets\\Scripts\\UI\\TransportLogUI.cs",
+              "ViewState": "AQIAAAYAAAAAAAAAAAAAAAAAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-08-29T12:05:44.739Z",
+              "WhenOpened": "2024-09-03T13:49:27.076Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 3,
-              "Title": "Task.cs",
-              "DocumentMoniker": "C:\\Unity_Projects\\PhiloSpirit\\PhiloSpirit\\Assets\\Scripts\\Tasks\\Task.cs",
-              "RelativeDocumentMoniker": "Assets\\Scripts\\Tasks\\Task.cs",
-              "ToolTip": "C:\\Unity_Projects\\PhiloSpirit\\PhiloSpirit\\Assets\\Scripts\\Tasks\\Task.cs",
-              "RelativeToolTip": "Assets\\Scripts\\Tasks\\Task.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAABMAAABAAAAA",
+              "Title": "TransportScriptable.cs",
+              "DocumentMoniker": "C:\\Unity_Projects\\PhiloSpirit\\PhiloSpirit\\Assets\\Scripts\\Transport\\TransportScriptable.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\Transport\\TransportScriptable.cs",
+              "ToolTip": "C:\\Unity_Projects\\PhiloSpirit\\PhiloSpirit\\Assets\\Scripts\\Transport\\TransportScriptable.cs",
+              "RelativeToolTip": "Assets\\Scripts\\Transport\\TransportScriptable.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABsAAAA7AAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-08-29T11:23:21.618Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "Reward.cs",
-              "DocumentMoniker": "C:\\Unity_Projects\\PhiloSpirit\\PhiloSpirit\\Assets\\Scripts\\Tasks\\Reward.cs",
-              "RelativeDocumentMoniker": "Assets\\Scripts\\Tasks\\Reward.cs",
-              "ToolTip": "C:\\Unity_Projects\\PhiloSpirit\\PhiloSpirit\\Assets\\Scripts\\Tasks\\Reward.cs",
-              "RelativeToolTip": "Assets\\Scripts\\Tasks\\Reward.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAYAAAAFAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-08-29T11:17:37.2Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "BuildingUnlockReward.cs",
-              "DocumentMoniker": "C:\\Unity_Projects\\PhiloSpirit\\PhiloSpirit\\Assets\\Scripts\\Tasks\\BuildingUnlockReward.cs",
-              "RelativeDocumentMoniker": "Assets\\Scripts\\Tasks\\BuildingUnlockReward.cs",
-              "ToolTip": "C:\\Unity_Projects\\PhiloSpirit\\PhiloSpirit\\Assets\\Scripts\\Tasks\\BuildingUnlockReward.cs",
-              "RelativeToolTip": "Assets\\Scripts\\Tasks\\BuildingUnlockReward.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA4AAAA5AAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-08-29T11:17:01.904Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "FogOfWarReward.cs",
-              "DocumentMoniker": "C:\\Unity_Projects\\PhiloSpirit\\PhiloSpirit\\Assets\\Scripts\\Tasks\\FogOfWarReward.cs",
-              "RelativeDocumentMoniker": "Assets\\Scripts\\Tasks\\FogOfWarReward.cs",
-              "ToolTip": "C:\\Unity_Projects\\PhiloSpirit\\PhiloSpirit\\Assets\\Scripts\\Tasks\\FogOfWarReward.cs",
-              "RelativeToolTip": "Assets\\Scripts\\Tasks\\FogOfWarReward.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAABMAAABMAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-08-29T11:16:59.493Z"
+              "WhenOpened": "2024-09-03T12:13:56.468Z",
+              "EditorCaption": ""
             }
           ]
         }
