@@ -15,7 +15,8 @@ namespace Terrain
         [SerializeField] private GameObject _selectIndicatorPrefab;
         private GameObject _selectIndicator;
 
-        private bool _canSelect;
+        // Serilized only for testing purposes
+        [SerializeField] private bool _canSelect;
         private Tile _selectedTile;
 
         [Header("SpawnLand")]
@@ -26,6 +27,8 @@ namespace Terrain
 
         private void Start()
         {
+
+
             _inputManager.selectEvent.AddListener(SelectTile);
             _inputManager.unselectEvent.AddListener(UnselectTile);
 

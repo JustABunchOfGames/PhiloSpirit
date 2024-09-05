@@ -3,24 +3,16 @@
   "WorkspaceRootPath": "C:\\Unity_Projects\\PhiloSpirit\\PhiloSpirit\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{3F320667-58C1-AA5F-3D61-F68B43CFC190}|Transport.csproj|c:\\unity_projects\\philospirit\\philospirit\\assets\\scripts\\transport\\transportselector.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{3F320667-58C1-AA5F-3D61-F68B43CFC190}|Transport.csproj|solutionrelative:assets\\scripts\\transport\\transportselector.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{F4488E99-EAEB-B2C7-9C0D-FE68E6CEE847}|Terrain.csproj|c:\\unity_projects\\philospirit\\philospirit\\assets\\scripts\\terrain\\tilemanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F4488E99-EAEB-B2C7-9C0D-FE68E6CEE847}|Terrain.csproj|solutionrelative:assets\\scripts\\terrain\\tilemanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{3F320667-58C1-AA5F-3D61-F68B43CFC190}|Transport.csproj|c:\\unity_projects\\philospirit\\philospirit\\assets\\scripts\\transport\\transportmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{3F320667-58C1-AA5F-3D61-F68B43CFC190}|Transport.csproj|solutionrelative:assets\\scripts\\transport\\transportmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{F2FD197B-CAD6-278C-0BB2-420EB1C84C6C}|UI.csproj|c:\\unity_projects\\philospirit\\philospirit\\assets\\scripts\\ui\\tileinventoryui.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F2FD197B-CAD6-278C-0BB2-420EB1C84C6C}|UI.csproj|solutionrelative:assets\\scripts\\ui\\tileinventoryui.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{F2FD197B-CAD6-278C-0BB2-420EB1C84C6C}|UI.csproj|c:\\unity_projects\\philospirit\\philospirit\\assets\\scripts\\ui\\transportscreenui.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{F2FD197B-CAD6-278C-0BB2-420EB1C84C6C}|UI.csproj|solutionrelative:assets\\scripts\\ui\\transportscreenui.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{3F320667-58C1-AA5F-3D61-F68B43CFC190}|Transport.csproj|C:\\Unity_Projects\\PhiloSpirit\\PhiloSpirit\\assets\\scripts\\transport\\transportscriptable.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{3F320667-58C1-AA5F-3D61-F68B43CFC190}|Transport.csproj|solutionrelative:assets\\scripts\\transport\\transportscriptable.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{F2FD197B-CAD6-278C-0BB2-420EB1C84C6C}|UI.csproj|c:\\unity_projects\\philospirit\\philospirit\\assets\\scripts\\ui\\transportlogui.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{F2FD197B-CAD6-278C-0BB2-420EB1C84C6C}|UI.csproj|solutionrelative:assets\\scripts\\ui\\transportlogui.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{F2FD197B-CAD6-278C-0BB2-420EB1C84C6C}|UI.csproj|c:\\unity_projects\\philospirit\\philospirit\\assets\\scripts\\ui\\tileui.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F2FD197B-CAD6-278C-0BB2-420EB1C84C6C}|UI.csproj|solutionrelative:assets\\scripts\\ui\\tileui.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -30,71 +22,45 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 1,
+          "SelectedChildIndex": 0,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "TransportManager.cs",
-              "DocumentMoniker": "C:\\Unity_Projects\\PhiloSpirit\\PhiloSpirit\\Assets\\Scripts\\Transport\\TransportManager.cs",
-              "RelativeDocumentMoniker": "Assets\\Scripts\\Transport\\TransportManager.cs",
-              "ToolTip": "C:\\Unity_Projects\\PhiloSpirit\\PhiloSpirit\\Assets\\Scripts\\Transport\\TransportManager.cs",
-              "RelativeToolTip": "Assets\\Scripts\\Transport\\TransportManager.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "DocumentIndex": 0,
+              "Title": "TileManager.cs",
+              "DocumentMoniker": "C:\\Unity_Projects\\PhiloSpirit\\PhiloSpirit\\Assets\\Scripts\\Terrain\\TileManager.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\Terrain\\TileManager.cs",
+              "ToolTip": "C:\\Unity_Projects\\PhiloSpirit\\PhiloSpirit\\Assets\\Scripts\\Terrain\\TileManager.cs",
+              "RelativeToolTip": "Assets\\Scripts\\Terrain\\TileManager.cs",
+              "ViewState": "AQIAAAsAAAAAAAAAAAAQwBEAAAApAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-09-03T13:52:17.671Z",
+              "WhenOpened": "2024-09-04T11:38:34.018Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "TransportSelector.cs",
-              "DocumentMoniker": "C:\\Unity_Projects\\PhiloSpirit\\PhiloSpirit\\Assets\\Scripts\\Transport\\TransportSelector.cs",
-              "RelativeDocumentMoniker": "Assets\\Scripts\\Transport\\TransportSelector.cs",
-              "ToolTip": "C:\\Unity_Projects\\PhiloSpirit\\PhiloSpirit\\Assets\\Scripts\\Transport\\TransportSelector.cs",
-              "RelativeToolTip": "Assets\\Scripts\\Transport\\TransportSelector.cs",
-              "ViewState": "AQIAAEQAAAAAAAAAAAAIwFsAAAAoAAAA",
+              "DocumentIndex": 1,
+              "Title": "TileInventoryUI.cs",
+              "DocumentMoniker": "C:\\Unity_Projects\\PhiloSpirit\\PhiloSpirit\\Assets\\Scripts\\UI\\TileInventoryUI.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\UI\\TileInventoryUI.cs",
+              "ToolTip": "C:\\Unity_Projects\\PhiloSpirit\\PhiloSpirit\\Assets\\Scripts\\UI\\TileInventoryUI.cs",
+              "RelativeToolTip": "Assets\\Scripts\\UI\\TileInventoryUI.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-09-03T13:51:26.602Z",
+              "WhenOpened": "2024-09-04T11:37:50.303Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 2,
-              "Title": "TransportScreenUI.cs",
-              "DocumentMoniker": "C:\\Unity_Projects\\PhiloSpirit\\PhiloSpirit\\Assets\\Scripts\\UI\\TransportScreenUI.cs",
-              "RelativeDocumentMoniker": "Assets\\Scripts\\UI\\TransportScreenUI.cs",
-              "ToolTip": "C:\\Unity_Projects\\PhiloSpirit\\PhiloSpirit\\Assets\\Scripts\\UI\\TransportScreenUI.cs",
-              "RelativeToolTip": "Assets\\Scripts\\UI\\TransportScreenUI.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAB4AAABJAAAA",
+              "Title": "TileUI.cs",
+              "DocumentMoniker": "C:\\Unity_Projects\\PhiloSpirit\\PhiloSpirit\\Assets\\Scripts\\UI\\TileUI.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\UI\\TileUI.cs",
+              "ToolTip": "C:\\Unity_Projects\\PhiloSpirit\\PhiloSpirit\\Assets\\Scripts\\UI\\TileUI.cs",
+              "RelativeToolTip": "Assets\\Scripts\\UI\\TileUI.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-09-03T13:50:41.064Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "TransportLogUI.cs",
-              "DocumentMoniker": "C:\\Unity_Projects\\PhiloSpirit\\PhiloSpirit\\Assets\\Scripts\\UI\\TransportLogUI.cs",
-              "RelativeDocumentMoniker": "Assets\\Scripts\\UI\\TransportLogUI.cs",
-              "ToolTip": "C:\\Unity_Projects\\PhiloSpirit\\PhiloSpirit\\Assets\\Scripts\\UI\\TransportLogUI.cs",
-              "RelativeToolTip": "Assets\\Scripts\\UI\\TransportLogUI.cs",
-              "ViewState": "AQIAAAYAAAAAAAAAAAAAAAAAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-09-03T13:49:27.076Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "TransportScriptable.cs",
-              "DocumentMoniker": "C:\\Unity_Projects\\PhiloSpirit\\PhiloSpirit\\Assets\\Scripts\\Transport\\TransportScriptable.cs",
-              "RelativeDocumentMoniker": "Assets\\Scripts\\Transport\\TransportScriptable.cs",
-              "ToolTip": "C:\\Unity_Projects\\PhiloSpirit\\PhiloSpirit\\Assets\\Scripts\\Transport\\TransportScriptable.cs",
-              "RelativeToolTip": "Assets\\Scripts\\Transport\\TransportScriptable.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAABsAAAA7AAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-09-03T12:13:56.468Z",
+              "WhenOpened": "2024-09-04T11:37:26.493Z",
               "EditorCaption": ""
             }
           ]

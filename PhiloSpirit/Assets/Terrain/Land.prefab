@@ -48,9 +48,13 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4081637366764168252, guid: e9f824220eebd8e4f89fbd68aaccdf20, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: fe864b19dba296843a3ea7f172f3a7c7, type: 3}
     - target: {fileID: 4531773430715379464, guid: e9f824220eebd8e4f89fbd68aaccdf20, type: 3}
       propertyPath: m_Name
-      value: Tile
+      value: Land
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
