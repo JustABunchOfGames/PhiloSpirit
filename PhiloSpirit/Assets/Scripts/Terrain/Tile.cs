@@ -38,7 +38,7 @@ namespace Terrain
 
         public void CleanInventory()
         {
-            inventory.resources.Clear();
+            inventory.Clear();
 
             InventoryEvent();
         }

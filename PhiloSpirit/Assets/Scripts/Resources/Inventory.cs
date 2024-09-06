@@ -8,7 +8,7 @@ namespace Resources
     public class Inventory
     {
         [SerializeField] private List<Resource> _inventory = new List<Resource>();
-        public List<Resource> resources { get { return _inventory; } }
+        public List<Resource> resources { get { return GetResources(); } }
 
         public InventoryUpdateEvent updateEvent = new InventoryUpdateEvent();
 
@@ -37,10 +37,15 @@ namespace Resources
             Add(new Resource(item.type, -item.quantity));
         }
 
+        public void Clear()
+        {
+            _inventory.Clear();
+        }
+
         public void Copy(Inventory inventory)
         {
             _inventory.Clear();
-            foreach(Resource res in inventory.resources)
+            foreach(Resource res in inventory._inventory)
                 _inventory.Add(new Resource(res.type, res.quantity));
 
             updateEvent.Invoke();
@@ -74,6 +79,13 @@ namespace Resources
                     return res.quantity;
             }
             return 0;
+        }
+
+        public List<Resource> GetResources()
+        {
+            Inventory inv = new Inventory();
+            inv.Copy(this);
+            return inv._inventory;
         }
     }
 

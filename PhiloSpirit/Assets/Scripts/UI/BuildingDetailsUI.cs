@@ -9,6 +9,7 @@ namespace UI
     {
         [Header("BuildingUIScreen")]
         [SerializeField] private GameObject _screen;
+        [SerializeField] private GameObject _showMenuButton;
 
         [Header("PlacementDetails")]
         [SerializeField] private BuildingTileDetailsUI _tileDetailsUI;
@@ -104,6 +105,7 @@ namespace UI
         public void StartBuilding()
         {
             _screen.gameObject.SetActive(false);
+            _showMenuButton.SetActive(false);
 
             _buildingManager.SelectBuilding(_currentData);
         }
@@ -111,6 +113,7 @@ namespace UI
         public void StartUndo()
         {
             _screen.gameObject.SetActive(false);
+            _showMenuButton.SetActive(false);
 
             _undoManager.StartUndoSelection();
         }
@@ -118,6 +121,7 @@ namespace UI
         private void IndicatorCancelled()
         {
             _screen.gameObject.SetActive(true);
+            _showMenuButton.SetActive(true);
         }
     }
 }

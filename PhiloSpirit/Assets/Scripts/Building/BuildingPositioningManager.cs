@@ -40,7 +40,9 @@ namespace Building {
             _inputManager.unselectEvent.AddListener(Unselect);
             _inputManager.scrollEvent.AddListener(RotateIndicator);
 
+            // reset indicator transform
             _indicatorGo.transform.position = new Vector3(0,0,-1);
+            _indicatorGo.transform.rotation = Quaternion.identity;
 
             Instantiate(_northIndicator, _indicatorGo.transform);
 

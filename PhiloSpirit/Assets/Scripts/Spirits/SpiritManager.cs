@@ -62,6 +62,13 @@ namespace Spirits
             if (CanUseSpirit(spiritType, quantity))
             {
                 _spirits[spiritType].UseSpirit(quantity);
+
+                // Remove unused spirit if quantity < 0
+                for (int i = quantity; i < 0; i++)
+                {
+                    RemoveSpirit(spiritType);
+                }
+
                 updateSpiritEvent.Invoke(_spirits[spiritType], 0);
             }
         }

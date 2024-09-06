@@ -36,8 +36,8 @@ namespace UI
             _tileInventoryUI.ShowTileInventory(tile);
             _tileTransportUI.InitTransport(tile);
 
-            _tileTransportUI.gameObject.SetActive(false);
-            _tileInventoryUI.gameObject.SetActive(true);
+            // _tileTransportUI.gameObject.SetActive(false);
+            // _tileInventoryUI.gameObject.SetActive(true);
         }
 
         private void HideTileUI()

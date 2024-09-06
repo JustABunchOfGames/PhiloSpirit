@@ -8,7 +8,6 @@ namespace Building
 
         public void ShowIndicator(bool show)
         {
-            Debug.Log("show :" + show);
             indicator.SetActive(show);
         }
     }

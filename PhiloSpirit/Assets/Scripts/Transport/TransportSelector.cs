@@ -51,7 +51,7 @@ namespace Transport
             // Get Selected item
             GameObject terrain = _inputManager.GetHoveredObjectByTag(Tags.terrainTag);
 
-            if (terrain == null)
+            if (terrain == null || terrain.GetComponent<Tile>() == _fixedTile)
                 return;
 
             _transportLineRenderer.Show(false);

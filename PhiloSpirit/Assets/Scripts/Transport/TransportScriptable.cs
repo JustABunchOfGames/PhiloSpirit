@@ -217,15 +217,16 @@ namespace Transport
 
             // Update usage of Wind Spirit
             int windSpirit = _logLists.windSpiritUsed - windSpiritModif;
-            if (windSpiritModif <= 0)
-                SpiritManager.UseSpirit(SpiritType.Wind, windSpiritModif);
+
+            if (windSpirit <= 0)
+                SpiritManager.UseSpirit(SpiritType.Wind, windSpirit);
             else
             {
-                while(windSpiritModif > 0)
+                while(windSpirit > 0)
                 {
                     SpiritManager.AddSpirit(SpiritType.Wind);
                     SpiritManager.UseSpirit(SpiritType.Wind, 1);
-                    windSpiritModif--; ;
+                    windSpirit--; ;
                 }
             }
 

@@ -103,7 +103,7 @@ namespace Tasks
             }
 
             _currentTasks.Clear();
-            _totalCost.resources.Clear();
+            _totalCost.Clear();
 
             int spiritCost = SpiritManager.RecalculateCost();
 

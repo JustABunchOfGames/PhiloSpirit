@@ -87,7 +87,10 @@ namespace Terrain
             }
         }
 
-        public void SpawnLand()
+        public class TileChanged : UnityEvent<Tile> { }
+
+#if UNITY_EDITOR
+    public void SpawnLand()
         {
             for(float i = -_mapsize.x; i <= _mapsize.x; i++)
             {
@@ -99,9 +102,9 @@ namespace Terrain
                 }
             }
         }
-
-        public class TileChanged : UnityEvent<Tile> { }
+#endif
     }
+
 #if UNITY_EDITOR
     [CustomEditor(typeof(TileManager))]
     public class TileManagerEditor : Editor
