@@ -15,7 +15,7 @@ namespace UI
         [SerializeField] private GameObject _transportChoose;
         [SerializeField] private GameObject _transportSelection;
         [SerializeField] private GameObject _transportCreation;
-        [SerializeField] private GameObject _transportChange;
+        [SerializeField] private GameObject _transportEnd;
 
         private void OnEnable()
         {
@@ -63,7 +63,7 @@ namespace UI
             _tutorialUI.BlockSelection(true);
 
             _transportCreation.SetActive(false);
-            _transportChange.SetActive(true);
+            _transportEnd.SetActive(true);
 
             _scriptable.screenConfirmEvent.RemoveListener(ShowTransportChangeTutorial);
         }
