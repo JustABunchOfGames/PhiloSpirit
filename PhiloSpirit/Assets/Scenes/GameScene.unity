@@ -16072,7 +16072,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 20, y: 50}
   m_EdgeRadius: 0
 --- !u!1001 &786505331
 PrefabInstance:
@@ -21046,7 +21046,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 50, y: 20}
   m_EdgeRadius: 0
 --- !u!1 &1054333433
 GameObject:
@@ -33794,7 +33794,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 20, y: 50}
   m_EdgeRadius: 0
 --- !u!1 &1502943834
 GameObject:
@@ -42269,7 +42269,7 @@ GameObject:
   - component: {fileID: 1883702928}
   m_Layer: 0
   m_Name: FogOfWar
-  m_TagString: Untagged
+  m_TagString: FogOfWar
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -44160,7 +44160,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 50, y: 20}
   m_EdgeRadius: 0
 --- !u!1 &1988703738
 GameObject:
